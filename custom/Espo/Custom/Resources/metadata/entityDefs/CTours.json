@@ -383,7 +383,7 @@
             "maxLength": 255,
             "options": [],
             "isCustom": true,
-            "readOnlyAfterCreate": true,
+            "readOnlyAfterCreate": false,
             "copyToClipboard": true,
             "tooltip": true
         },
