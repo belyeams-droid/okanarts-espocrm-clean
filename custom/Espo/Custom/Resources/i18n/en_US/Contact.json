@@ -28,7 +28,10 @@
         "cmClickCount": "Total Engagement",
         "cmLastClick": "Most Recent Click",
         "cLeadSource": "Lead Source",
-        "relationshipNarrative": "Narrative"
+        "relationshipNarrative": "Narrative",
+        "cWorkshops": "Workshops",
+        "cTours": "Tours",
+        "cPhoto": "Photo"
     },
     "links": {
         "cBookings": "Bookings",

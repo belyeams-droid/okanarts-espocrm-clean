@@ -35,6 +35,22 @@
             ],
             [
                 {
+                    "name": "cWorkshops"
+                },
+                {
+                    "name": "cTours"
+                }
+            ],
+            [
+                {
+                    "name": "cWorkshopNotes"
+                },
+                {
+                    "name": "cTourNotes"
+                }
+            ],
+            [
+                {
                     "name": "relationshipNarrative"
                 }
             ]

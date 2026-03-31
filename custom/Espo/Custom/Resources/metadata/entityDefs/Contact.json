@@ -177,6 +177,23 @@
             "default": "Shopify",
             "maxLength": 100,
             "isCustom": true
+        },
+        "cWorkshops": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "cTours": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "cPhoto": {
+            "type": "image",
+            "previewSize": "small",
+            "isCustom": true
         }
     },
     "links": {
@@ -221,6 +238,12 @@
             "foreign": "contact",
             "entity": "CEngagement",
             "isCustom": true
+        },
+        "cPhoto": {
+            "type": "belongsTo",
+            "entity": "Attachment",
+            "skipOrmDefs": true,
+            "utility": true
         }
     }
 }

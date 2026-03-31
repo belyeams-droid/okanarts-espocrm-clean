@@ -402,6 +402,12 @@
             "type": "int",
             "readOnly": false,
             "isCustom": true
+        },
+        "leaders": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
         }
     },
     "links": {

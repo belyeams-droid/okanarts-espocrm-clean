@@ -40,6 +40,12 @@
                 {
                     "name": "contractsOutstanding"
                 }
+            ],
+            [
+                {
+                    "name": "leaders"
+                },
+                false
             ]
         ],
         "dynamicLogicVisible": null,

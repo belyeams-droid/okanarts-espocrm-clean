@@ -87,7 +87,8 @@
         "depositCount": "Deposits",
         "bookingCount": "Accepted Bookings",
         "contractsMissing": "Contracts Missing",
-        "contractsOutstanding": "Contracts Outstanding"
+        "contractsOutstanding": "Contracts Outstanding",
+        "leaders": "Leaders"
     },
     "links": {
         "meetings": "Meetings",
