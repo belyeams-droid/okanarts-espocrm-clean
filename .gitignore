@@ -1,0 +1,16 @@
+# Ignore everything
+*
+
+# Allow custom code
+!custom/
+!custom/**
+
+# Keep gitignore itself
+!.gitignore
+
+# Explicit ignores inside custom
+custom/Espo/Custom/Jobs/data/
+custom/Espo/Custom/data/
+custom/campaign-monitor.env
+custom/database-schema/
+*.sql
