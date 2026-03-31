@@ -1,0 +1,67 @@
+[
+    {
+        "label": "",
+        "rows": [
+            [{"name": "name"},{"name":"type", "readOnly": true}],
+            [{"name": "category"}, {"name": "entityType", "readOnly": true}],
+            [{"name": "description", "fullWidth": true}]
+        ]
+    },
+    {
+        "label": "Columns",
+        "rows": [
+            [
+                {
+                    "name": "columns",
+                    "view": "advanced:views/report/fields/columns-list",
+                    "params": {
+                        "required": true
+                    }
+                }
+            ],
+            [
+                {
+                    "name": "columnsControl",
+                    "noLabel": true,
+                    "view": "advanced:views/report/fields/columns-control"
+                }
+            ]
+        ]
+    },
+    {
+        "label": "Parameters",
+        "rows": [
+            [
+                {
+                    "name": "orderByList",
+                    "label": "orderByListShort"
+                },
+                false
+            ]
+        ]
+    },
+    {
+        "rows": [
+            [
+                {
+                    "name": "runtimeFilters",
+                    "view": "advanced:views/report/fields/runtime-filters"
+                },
+                false
+            ]
+        ]
+    },
+    {
+        "label": "Filters",
+        "rows": [
+            [
+                {
+                    "name": "filtersControl",
+                    "customLabel": "",
+                    "view": "advanced:views/report/fields/filters-control-2",
+                    "fullWidth": true
+                }
+            ]
+        ]
+    }
+]

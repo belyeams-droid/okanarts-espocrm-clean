@@ -1,0 +1,19 @@
+{
+    "labels": {
+        "Create ReportFilter": "Sukurti filtrą",
+        "Rebuild Filters": "Atstatyti filtrai"
+    },
+    "fields": {
+        "order": "Užsisakykite",
+        "report": "Ataskaita",
+        "entityType": "Subjekto tipas",
+        "isActive": "Ar įjungta"
+    },
+    "links": {
+        "report": "Ataskaita"
+    },
+    "tooltips": {
+        "teams": "Komandos, kurioms bus galima naudoti filtrą. Jei komandos nenurodytos, apribojimai pagal komandas nebus taikomi.",
+        "report": "Sąrašas Ataskaita, kuri bus naudojama filtrui."
+    }
+}

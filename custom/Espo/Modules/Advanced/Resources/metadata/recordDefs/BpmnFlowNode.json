@@ -1,0 +1,6 @@
+{
+    "listLoaderClassNameList": [
+        "Espo\\Modules\\Advanced\\Classes\\FieldProcessing\\BpmnFlowNode\\UserTaskLoader"
+    ],
+    "forceSelectAllAttributes": true
+}

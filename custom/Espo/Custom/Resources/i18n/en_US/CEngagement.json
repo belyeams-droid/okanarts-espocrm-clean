@@ -1,0 +1,41 @@
+{
+    "fields": {
+        "contact": "Contact",
+        "engagementType": "Engagement Type",
+        "engagementStatus": "Tour Status",
+        "firstEngagedAt": "First Engaged At",
+        "lastActivityAt": "Last Activity At",
+        "engagementScore": "Score"
+    },
+    "links": {
+        "meetings": "Meetings",
+        "calls": "Calls",
+        "tasks": "Tasks",
+        "contact": "Contact"
+    },
+    "labels": {
+        "Create CEngagement": "Create Engagement"
+    },
+    "options": {
+        "engagementType": {
+            "Tour Interest": "Tour_Interest",
+            "Tour Deposited": "Tour_Deposited",
+            "Traveler": "Traveler",
+            "Workshop Attended": "Workshop_Attended",
+            "Guild Talk Attended": "Guild_Talk_Attended",
+            "Newsletter": "Newsletter",
+            "Referral": "Referral",
+            "Repeat Traveler": "Repeat_Traveler",
+            "Alumni": "Alumni"
+        },
+        "engagementStatus": {
+            "Aware": "Aware",
+            "Curious": "Curious",
+            "Engaged": "Engaged",
+            "Considering": "Considering",
+            "Commited": "Commited",
+            "Converted": "Converted",
+            "Inactive": "Inactive"
+        }
+    }
+}

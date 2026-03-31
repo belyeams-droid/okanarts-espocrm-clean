@@ -1,0 +1,29 @@
+{
+    "labels": {
+        "Workflow Manager": "Darbo eigos tvarkyklė",
+        "Flowcharts": "Srautinės schemos",
+        "Processes": "Procesai",
+        "Business Process Management": "Verslo procesų valdymas",
+        "Report Filters": "Ataskaitų filtrai",
+        "Report Panels": "Ataskaitų skydeliai"
+    },
+    "descriptions": {
+        "workflowManager": "Konfigūruokite darbo eigos taisykles.",
+        "bpmnFlowcharts": "Verslo procesų apibrėžtys.",
+        "bpmnProcesses": "Verslo procesų egzemplioriai.",
+        "reportFilters": "Pasirinktiniai sąrašo peržiūros filtrai pagal ataskaitas.",
+        "reportPanels": "Išsamios peržiūros skydai, kuriuose rodomi ataskaitos rezultatai."
+    },
+    "messages": {
+        "newAdvancedPackVersionIsAvailable": "Pasirodė nauja išplėstinio paketo versija {latestVersion}. Ją galima atsisiųsti klientų portale."
+    },
+    "templates": {
+        "reportSendingGrid1": "Ataskaita Grid-1",
+        "reportSendingGrid2": "Ataskaita Grid-2",
+        "reportSendingList": "Ataskaitų sąrašas"
+    },
+    "keywords": {
+        "bpmnFlowcharts": "bpm",
+        "bpmnProcesses": "bpm"
+    }
+}

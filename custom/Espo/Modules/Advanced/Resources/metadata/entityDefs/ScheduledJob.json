@@ -1,0 +1,8 @@
+{
+    "jobSchedulingMap": {
+        "ReportTargetListSync": "0 2 * * *",
+        "ScheduleReportSending": "0 * * * *",
+        "RunScheduledWorkflows": "*/10 * * * *",
+        "ProcessPendingProcessFlows": "* * * * *"
+    }
+}

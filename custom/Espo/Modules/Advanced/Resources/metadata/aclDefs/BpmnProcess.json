@@ -1,0 +1,3 @@
+{
+    "ownershipCheckerClassName": "Espo\\Modules\\Advanced\\Classes\\Acl\\BpmnProcess\\OwnershipChecker"
+}

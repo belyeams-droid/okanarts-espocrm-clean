@@ -1,0 +1,140 @@
+{
+    "fields": {
+        "text": "Text",
+        "triggerType": "Trigger Type",
+        "timer": "Timer Parameters",
+        "defaultFlowId": "Default Flow",
+        "from": "From",
+        "to": "To",
+        "replyTo": "Reply-To",
+        "cc": "CC",
+        "fromEmailAddress": "From Email Address",
+        "toEmailAddress": "To Email Address",
+        "replyToEmailAddress": "Reply-To Email Address",
+        "ccEmailAddress": "CC Email Address",
+        "toSpecifiedTeams": "To Teams",
+        "toSpecifiedUsers": "To Users",
+        "toSpecifiedContacts": "To Contacts",
+        "attachmentsVariable": "Attachments Variable",
+        "emailTemplate": "Email Template",
+        "doNotStore": "Do not store sent email",
+        "actions": "Actions",
+        "formula": "Formula Script",
+        "actionType": "Action Type",
+        "targetUser": "Target User",
+        "assignmentType": "Assignment",
+        "targetTeam": "Target Team",
+        "targetUserPosition": "Target User Position",
+        "startDirection": "Start Direction",
+        "targetReport": "Target Report",
+        "scheduling": "Scheduling",
+        "schedulingApplyTimezone": "Apply timezone",
+        "messageType": "Message Type",
+        "canBeFailed": "Can be Failed",
+        "target": "Target",
+        "callableType": "Callable Type",
+        "errorCode": "Error Code",
+        "escalationCode": "Escalation Code",
+        "cancelActivity": "Is Interrupting",
+        "isInterrupting": "Is Interrupting",
+        "targetType": "Target Entity Type",
+        "flowchartVisualization": "Flowchart",
+        "flowchart": "Flowchart",
+        "signal": "Signal",
+        "isolateVariables": "Isolate Variables",
+        "returnVariableList": "Return Variables",
+        "returnCollectionVariable": "Return Collection Variable",
+        "repliedTo": "Reply To",
+        "relatedTo": "Related To",
+        "instructions": "Instructions",
+        "conditionsFormula": "Conditions Formula",
+        "optOutLink": "Opt-Out Link",
+        "isMultiInstance": "Multi-Instance",
+        "isSequential": "Sequential",
+        "loopCollectionExpression": "Collection Expression",
+        "targetIdExpression": "Target ID Expression",
+        "activityId": "Activity ID"
+    },
+    "labels": {
+        "Conditions": "Conditions",
+        "Actions": "Actions",
+        "Field": "Field",
+        "Flows Conditions": "Flows Conditions"
+    },
+    "tooltips": {
+        "attachmentsVariable": "A Formula variable name that contains an attachment ID or an array of attachment IDs. You can generate needed attachments in a Script Task earlier in the flow.",
+        "compensateActivityId": "An ID of an activity to compensate. If omitted, all completed compensable activities will be compensated.",
+        "targetIdExpression": "The expression defining an ID of the target record.",
+        "returnCollectionVariable": "Specify a variable name for data that will be returned from the multi-instance sub-process. The variable will contain an array of objects. Each object will contain return-variables of each sub-process instance.",
+        "loopCollectionExpression": "The expression defining a list of values. Each value will instantiate a separate sub-process. Within a sub-process, the value will be available in the variable `$inputItem`.",
+        "taskSendMessageFromEmailAddress": "Available placeholders:\n\n* `{$$variable}`",
+        "taskSendMessageEmailAddress": "Multiple email addresses can be specified by separating them with a semicolon.\n\nAvailable placeholders:\n\n* `{$$variable}`",
+        "targetReport": "Every record returned by the specified list report will instantiate a new process.",
+        "target": "Specify a record to be used as the target of the sub-process.",
+        "userTaskName": "A name of the User Task record that will be created.\n\nAvailable placeholders:\n* `{$attribute}`\n* `{$$variable}`",
+        "userTaskInstructions": "Instructions for a user. Markdown is supported.\n\nAvailable placeholders:\n* `{$attribute}`\n* `{$$variable}`",
+        "returnVariableList": "Specify Formula variables that will be copied from the sub-process to the parent process once the sub-process successfully ends.",
+        "scheduling": "Crontab notation. Defines the frequency of process runs.\n\n`*/5 * * * *` – every 5 minutes\n\n`0 */2 * * *` – every 2 hours\n\n`30 1 * * *` – at 01:30 once a day\n\n`0 0 1 * *` – on the first day of the month",
+        "schedulingApplyTimezone": "Apply the system default timezone to scheduling. Otherwise, UTC will be used.",
+        "isolateVariables": "Do not expose Formula variables defined within the task.",
+        "taskReturnVariableList": "Specify Formula variables that will be copied from the task and be available further in the flow after the task is processed."
+    },
+    "options": {
+        "emailAddress": {
+            "system": "System",
+            "currentUser": "Current User",
+            "specifiedEmailAddress": "Specific email address",
+            "assignedUser": "Assigned User",
+            "followers": "Followers",
+            "specifiedContacts": "Specified Contacts",
+            "specifiedUsers": "Specific Users",
+            "specifiedTeams": "Specific Teams",
+            "followersExcludingAssignedUser": "Followers excluding Assigned User",
+            "processAssignedUser": "User assigned to Process",
+            "targetEntity": "Target Record",
+            "": "None"
+        },
+        "triggerType": {
+            "afterRecordCreated": "After record created",
+            "afterRecordSaved": "After record saved",
+            "afterRecordUpdated": "After record updated",
+            "sequential": "Sequential"
+        },
+        "timerShiftOperator": {
+            "plus": "plus",
+            "minus": "minus"
+        },
+        "timerShiftUnits": {
+            "minutes": "minutes",
+            "hours": "hours",
+            "days": "days",
+            "months": "months",
+            "seconds": "seconds"
+        },
+        "timerBase": {
+            "moment": "Moment when event triggered",
+            "formula": "Calculated by formula"
+        },
+        "actionType": {
+            "Approve": "Approve",
+            "Review": "Review"
+        },
+        "assignmentType": {
+            "": "None",
+            "processAssignedUser": "User assigned to Process",
+            "specifiedUser": "Specified User",
+            "rule:Round-Robin": "Round-Robin",
+            "rule:Least-Busy": "Least-Busy"
+        },
+        "startDirection": {
+            "": "Auto",
+            "r": "Right",
+            "d": "Down",
+            "u": "Up",
+            "l": "Left"
+        },
+        "messageType": {
+            "Email": "Email"
+        }
+    }
+}

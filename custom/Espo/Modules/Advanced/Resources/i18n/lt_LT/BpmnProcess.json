@@ -1,0 +1,50 @@
+{
+    "labels": {
+        "Create BpmnProcess": "Proceso pradžia",
+        "Stop Process": "Sustabdyti procesą",
+        "User Tasks": "Naudotojo užduotys",
+        "Flowcharts": "Srautinės schemos",
+        "Interrupt": "Pertrauka",
+        "Reject": "Atmesti",
+        "Start flow from here": "Pradėkite srautą nuo čia"
+    },
+    "fields": {
+        "status": "Statusas",
+        "targetType": "Tikslinio subjekto tipas",
+        "target": "Tikslinė",
+        "createdEntitiesData": "Sukurtų subjektų duomenys",
+        "flowchartData": "Srauto diagramos duomenys",
+        "flowchart": "Srauto diagrama",
+        "flowchartVisualization": "Srauto diagrama (vizualizacija)",
+        "flowchartElementsDataHash": "Srauto diagramos elementai",
+        "variables": "Kintamieji",
+        "endedAt": "Baigėsi ties",
+        "startElementId": "Pradžios elementas",
+        "workflowId": "Darbo eigos ID",
+        "parentProcess": "Tėvų procesas",
+        "parentProcessFlowNode": "Tėvinis proceso srauto mazgas"
+    },
+    "links": {
+        "flowchart": "Srauto diagrama",
+        "target": "Tikslinė",
+        "flowNodes": "Srauto žurnalas",
+        "userTasks": "Naudotojo proceso užduotys",
+        "childProcesses": "Vaikų procesai",
+        "parentProcess": "Tėvų procesas",
+        "parentProcessFlowNode": "Tėvinis proceso srauto mazgas"
+    },
+    "options": {
+        "status": {
+            "Created": "Sukurta",
+            "Started": "Pradžia",
+            "Ended": "Baigėsi",
+            "Paused": "Pristabdyta",
+            "Stopped": "Sustabdyta",
+            "Interrupted": "Nutrauktas"
+        }
+    },
+    "presetFilters": {
+        "actual": "Tikrasis",
+        "ended": "Baigėsi"
+    }
+}

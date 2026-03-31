@@ -1,0 +1,125 @@
+{
+    "fields": {
+        "text": "Tekstas",
+        "triggerType": "Trigerio tipas",
+        "timer": "Laikmačio parametrai",
+        "defaultFlowId": "Numatytasis srautas",
+        "from": "Iš",
+        "to": "Į",
+        "replyTo": "Atsakyti į",
+        "fromEmailAddress": "Iš el. pašto adreso",
+        "toEmailAddress": "Į el. pašto adresą",
+        "replyToEmailAddress": "Atsakyti į el. pašto adresą",
+        "toSpecifiedTeams": "Komandoms",
+        "toSpecifiedUsers": "Vartotojams",
+        "toSpecifiedContacts": "Į kontaktus",
+        "emailTemplate": "El. pašto šablonas",
+        "doNotStore": "Nesaugoti išsiųstų el. laiškų",
+        "actions": "Veiksmai",
+        "formula": "Formulė (scenarijus)",
+        "actionType": "Veiksmo tipas",
+        "targetUser": "Tikslinis naudotojas",
+        "assignmentType": "Užduotis",
+        "targetTeam": "Tikslinė komanda",
+        "targetUserPosition": "Tikslinio naudotojo pozicija",
+        "startDirection": "Pradžios kryptis",
+        "targetReport": "Tikslinė ataskaita",
+        "scheduling": "Planavimas",
+        "messageType": "Pranešimo tipas",
+        "canBeFailed": "Gali nepavykti",
+        "target": "Tikslinė",
+        "callableType": "Iššaukiamasis tipas",
+        "errorCode": "Klaidos kodas",
+        "escalationCode": "Eskalacijos kodas",
+        "cancelActivity": "Ar pertraukia",
+        "isInterrupting": "Ar pertraukia",
+        "targetType": "Tikslinio subjekto tipas",
+        "flowchartVisualization": "Srauto diagrama",
+        "flowchart": "Srauto diagrama",
+        "signal": "Signalas",
+        "returnVariableList": "Grąžinti kintamieji",
+        "returnCollectionVariable": "Grąžinimo rinkimo kintamasis",
+        "repliedTo": "Atsakyti į",
+        "relatedTo": "Susiję su",
+        "instructions": "Instrukcijos",
+        "conditionsFormula": "Sąlygų formulė",
+        "optOutLink": "Atsisakymo nuoroda",
+        "isMultiInstance": "Kelių egzempliorių",
+        "isSequential": "Nuoseklusis",
+        "loopCollectionExpression": "Kolekcijos išraiška",
+        "targetIdExpression": "Tikslinis ID Išraiška"
+    },
+    "labels": {
+        "Conditions": "Sąlygos",
+        "Actions": "Veiksmai",
+        "Field": "Laukas",
+        "Flows Conditions": "Srautai Sąlygos"
+    },
+    "tooltips": {
+        "targetIdExpression": "Išraiška, apibrėžianti tikslinio įrašo ID.",
+        "returnCollectionVariable": "Nurodykite kintamojo vardą duomenims, kurie bus grąžinami iš daugiainstancio paproceso. Kintamajame bus objektų masyvas. Kiekviename objekte bus kiekvieno paproceso egzemplioriaus grąžinami kintamieji.",
+        "loopCollectionExpression": "Išraiška, apibrėžianti verčių sąrašą. Kiekviena reikšmė inicijuoja atskirą paprocesį. Vertė bus prieinama kintamajame `$inputItem`.",
+        "taskSendMessageEmailAddress": "Galimos vietos žymos:\n\n* `{$$ kintamasis}`",
+        "targetReport": "Įrašai iš sąrašo ataskaitos bus perduoti naujam procesui.",
+        "target": "Pasirinkite, kuris įrašas bus naudojamas kaip tikslinis.",
+        "userTaskName": "Vartotojo užduoties įrašo, kuris bus sukurtas, pavadinimas.\n\nGalimi žymenys:\n* `{$attribute}``\n* `{$$$variable}`",
+        "userTaskInstructions": "Naudotojo instrukcijos. Palaikomas žymėjimas.\n\nGalimi žymekliai:\n* `{$attribute}`\n* `{$$ kintamasis}`",
+        "returnVariableList": "Nurodykite formulės kintamuosius, kurie bus nukopijuoti iš paproceso į pagrindinį procesą, kai paprocesas sėkmingai baigsis.",
+        "scheduling": "Crontab užrašas. Apibrėžia dažnį. UTC laiko juosta.\n\n`*/5 * * * *` - kas 5 minutes\n\n`0 */2 * * * *` - kas 2 valandas\n\n`30 1 * * * *` - kartą per dieną 01:30 val\n\n`0 0 0 1 * * *` - pirmąją mėnesio dieną"
+    },
+    "options": {
+        "emailAddress": {
+            "system": "Sistema",
+            "currentUser": "Dabartinis naudotojas",
+            "specifiedEmailAddress": "Nurodytas el. pašto adresas",
+            "assignedUser": "Priskirtas naudotojas",
+            "followers": "Sekėjai",
+            "specifiedContacts": "Nurodyti kontaktai",
+            "specifiedUsers": "Nurodyti naudotojai",
+            "specifiedTeams": "Nurodytos komandos",
+            "followersExcludingAssignedUser": "Sekėjai, išskyrus Priskirtąjį naudotoją",
+            "processAssignedUser": "Procesui priskirtas naudotojas",
+            "targetEntity": "Tikslinis įrašas"
+        },
+        "triggerType": {
+            "afterRecordCreated": "Sukūrus įrašą",
+            "afterRecordSaved": "Po įrašo išsaugojimo",
+            "afterRecordUpdated": "Atnaujinus įrašą",
+            "sequential": "Nuoseklusis"
+        },
+        "timerShiftOperator": {
+            "plus": "plius",
+            "minus": "minus"
+        },
+        "timerShiftUnits": {
+            "minutes": "minutės",
+            "hours": "valandos",
+            "days": "dienos",
+            "months": "mėnesių",
+            "seconds": "sekundės"
+        },
+        "timerBase": {
+            "moment": "Momentas, kai įvykis suveikė",
+            "formula": "Apskaičiuojama pagal formulę"
+        },
+        "actionType": {
+            "Approve": "Patvirtinti",
+            "Review": "Peržiūrėkite"
+        },
+        "assignmentType": {
+            "processAssignedUser": "Procesui priskirtas naudotojas",
+            "specifiedUser": "Nurodytas naudotojas",
+            "rule:Round-Robin": "Round-Robin",
+            "rule:Least-Busy": "Mažiausiai užimtas"
+        },
+        "startDirection": {
+            "r": "Dešinė",
+            "d": "Žemyn",
+            "u": "Į viršų",
+            "l": "Kairėje pusėje"
+        },
+        "messageType": {
+            "Email": "El. paštas"
+        }
+    }
+}

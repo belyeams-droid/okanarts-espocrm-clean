@@ -1,0 +1,39 @@
+{
+    "labels": {
+        "Resolve": "Atrisināt"
+    },
+    "fields": {
+        "actionType": "Darbības veids",
+        "resolution": "Rezolūcija",
+        "target": "Mērķis",
+        "process": "Process",
+        "isResolved": "Ir atrisināts",
+        "resolutionNote": "Rezolūcijas piezīme",
+        "instructions": "Instrukcijas",
+        "isCanceled": "Ir atcelts"
+    },
+    "links": {
+        "process": "Process",
+        "target": "Mērķis",
+        "flowNode": "Plūsmas mezgls"
+    },
+    "options": {
+        "actionType": {
+            "Approve": "Apstiprināt",
+            "Review": "Pārskats",
+            "Accomplish": "Paveikt"
+        },
+        "resolution": {
+            "Approved": "Apstiprināts",
+            "Rejected": "Noraidīts",
+            "Reviewed": "Pārskatīts",
+            "Completed": "Pabeigts",
+            "Canceled": "Atcelts"
+        }
+    },
+    "presetFilters": {
+        "actual": "Faktiskais",
+        "resolved": "Atrisināts",
+        "canceled": "Atcelts"
+    }
+}

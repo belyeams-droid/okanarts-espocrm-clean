@@ -1,0 +1,21 @@
+{
+  "Espo\\Custom\\Services\\EngagementOrchestrator": {
+    "className": "Espo\\Custom\\Services\\EngagementOrchestrator",
+    "arguments": [
+      "@entityManager",
+      "@Espo\\Custom\\Services\\RelationshipNarrative"
+    ]
+  },
+  "Espo\\Custom\\Services\\RelationshipNarrative": {
+    "className": "Espo\\Custom\\Services\\RelationshipNarrative",
+    "arguments": [
+      "@entityManager"
+    ]
+  },
+  "ContactNarrativeBuilder": {
+    "className": "Espo\\Custom\\Services\\ContactNarrativeBuilder",
+    "arguments": [
+      "@entityManager"
+    ]
+  }
+}

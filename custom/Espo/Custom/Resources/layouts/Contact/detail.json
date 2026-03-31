@@ -1,0 +1,50 @@
+[
+    {
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "cPreferredName"
+                }
+            ],
+            [
+                {
+                    "name": "emailAddress"
+                },
+                {
+                    "name": "phoneNumber"
+                }
+            ],
+            [
+                {
+                    "name": "address"
+                },
+                {
+                    "name": "cSocialMedia"
+                }
+            ],
+            [
+                {
+                    "name": "cWorkshopsAttended"
+                },
+                {
+                    "name": "cToursAttended"
+                }
+            ],
+            [
+                {
+                    "name": "relationshipNarrative"
+                }
+            ]
+        ],
+        "dynamicLogicVisible": null,
+        "style": "default",
+        "dynamicLogicStyled": null,
+        "tabBreak": false,
+        "hidden": false,
+        "noteText": null,
+        "customLabel": "Contact"
+    }
+]

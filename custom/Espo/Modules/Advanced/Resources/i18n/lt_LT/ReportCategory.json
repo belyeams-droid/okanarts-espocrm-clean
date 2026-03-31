@@ -1,0 +1,13 @@
+{
+    "labels": {
+        "Create ReportCategory": "Sukurti kategoriją",
+        "Manage Categories": "Tvarkyti kategorijas",
+        "Reports": "Ataskaitos"
+    },
+    "fields": {
+        "order": "Užsisakykite"
+    },
+    "links": {
+        "reports": "Ataskaitos"
+    }
+}

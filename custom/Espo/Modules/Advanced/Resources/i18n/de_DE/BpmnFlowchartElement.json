@@ -1,0 +1,123 @@
+{
+  "fields": {
+    "triggerType": "Triggertyp",
+    "timer": "Timer-Parameter",
+    "defaultFlowId": "Standardfluss",
+    "from": "Von",
+    "to": "An",
+    "replyTo": "Antwort-an",
+    "fromEmailAddress": "Von der E-Mail Adresse",
+    "toEmailAddress": "An E-Mail Adresse",
+    "replyToEmailAddress": "Antwort-an E-Mail Adresse",
+    "toSpecifiedTeams": "Zu Teams",
+    "toSpecifiedUsers": "Für Benutzer",
+    "toSpecifiedContacts": "Zu Kontakten",
+    "emailTemplate": "E-Mail Vorlage",
+    "doNotStore": "Keine gesendete E-Mails speichern",
+    "actions": "Aktionen",
+    "formula": "Formel (Skript)",
+    "actionType": "Aktionstyp",
+    "targetUser": "Zielbenutzer",
+    "assignmentType": "Zuweisung",
+    "targetTeam": "Zielteam",
+    "targetUserPosition": "Position des Zielbenutzers",
+    "startDirection": "Startrichtung",
+    "targetReport": "Zielbericht",
+    "scheduling": "Planung",
+    "schedulingApplyTimezone": "Zeitzone anwenden",
+    "messageType": "Nachrichttyp",
+    "canBeFailed": "Kann fehlschlagen",
+    "target": "Ziel",
+    "callableType": "Aufrufbarer Typ",
+    "errorCode": "Fehlercode",
+    "escalationCode": "Eskalationscode",
+    "cancelActivity": "Unterbricht",
+    "isInterrupting": "Unterbricht",
+    "targetType": "Zielentitätstyp",
+    "flowchartVisualization": "Flussdiagramme",
+    "flowchart": "Flussdiagramme",
+    "returnVariableList": "Rückgabevariablen",
+    "returnCollectionVariable": "Sammlungsvariable zurückgeben",
+    "repliedTo": "Antwort an",
+    "relatedTo": "Verbunden mit",
+    "instructions": "Anweisungen",
+    "conditionsFormula": "Bedingungen Formel",
+    "isMultiInstance": "Mehrere Instanzen",
+    "isSequential": "Sequentiell",
+    "loopCollectionExpression": "Sammlungsausdruck",
+    "targetIdExpression": "Ziel ID Ausdruck",
+    "activityId": "Aktivität ID"
+  },
+  "labels": {
+    "Conditions": "Bedingungen",
+    "Actions": "Aktionen",
+    "Field": "Feld",
+    "Flows Conditions": "Flussbedingungen"
+  },
+  "tooltips": {
+    "compensateActivityId": "Eine ID einer Aktivität, die kompensiert werden soll. Wenn weggelassen, werden alle abgeschlossenen kompensierbaren Aktivitäten kompensiert.",
+    "targetIdExpression": "Der Ausdruck, der eine ID des Zieldatensatzes definiert.",
+    "returnCollectionVariable": "Geben Sie einen Variablennamen für Daten an, die vom Unterprozess mit mehreren Instanzen zurückgegeben werden. Die Variable enthält ein Array von Objekten. Jedes Objekt enthält Rückgabevariablen jeder Unterprozessinstanz.",
+    "loopCollectionExpression": "Der Ausdruck, der eine Liste von Werten definiert. Jeder Wert instanziiert einen separaten Unterprozess. Der Wert ist in der Variable `$inputItem` verfügbar.",
+    "taskSendMessageEmailAddress": "Verfügbare Platzhalter:\n\n* `{$$variable}`",
+    "targetReport": "Datensätze aus dem Listenbericht werden an den neuen Prozess übergeben.",
+    "target": "Wählen Sie aus, welcher Datensatz als Ziel verwendet werden soll.",
+    "userTaskName": "Ein Name des zu erstellenden Benutzeraufgabendatensatzes.\n\nVerfügbare Platzhalter:\n* `{$attribute}`\n* `{$$variable}`",
+    "userTaskInstructions": "Anweisungen für einen Benutzer. Markdown wird unterstützt.\n\nVerfügbare Platzhalter:\n* `{$attribute}`\n* `{$$variable}`",
+    "returnVariableList": "Geben Sie Formelvariablen an, die vom Unterprozess in den übergeordneten Prozess kopiert werden, sobald der Unterprozess erfolgreich beendet wurde.",
+    "scheduling": "Crontab-Notation. Definiert die Frequenz. UTC Zeitzone\n\n`* / 5 * * * *` - alle 5 Minuten\n\n`0 * / 2 * * *` - alle 2 Stunden\n\n`30 1 * * *` - um 01:30 einmal am Tag\n\n`0 0 1 * *` - am ersten Tag des Monats",
+    "schedulingApplyTimezone": "Bei der Planung die Standardzeitzone des Systems anwenden. Andernfalls wird UTC verwendet."
+  },
+  "options": {
+    "emailAddress": {
+      "currentUser": "Aktueller Benutzer",
+      "specifiedEmailAddress": "Angegebene E-Mail Adresse",
+      "assignedUser": "Zugewiesener Benutzer",
+      "followers": "Abonnenten",
+      "specifiedContacts": "Angegebene Kontakte",
+      "specifiedUsers": "Angegebene Benutzer",
+      "specifiedTeams": "Angegebene Teams",
+      "followersExcludingAssignedUser": "Follower ohne zugewiesenen Benutzer",
+      "processAssignedUser": "Benutzer wurde dem Prozess zugewiesen",
+      "targetEntity": "Zieldatensatz",
+      "": "Kein(e)"
+    },
+    "triggerType": {
+      "afterRecordCreated": "Nachdem der Datensatz erstellt wurde",
+      "afterRecordSaved": "Nach dem Speichern des Datensatzes",
+      "afterRecordUpdated": "Nach Aktualisierung des Datensatzes",
+      "sequential": "Sequentiell"
+    },
+    "timerShiftUnits": {
+      "minutes": "Minuten",
+      "hours": "Stunden",
+      "days": "Tage",
+      "months": "Monate",
+      "seconds": "Sekunden"
+    },
+    "timerBase": {
+      "moment": "Moment, als das Ereignis ausgelöst wurde",
+      "formula": "Berechnet durch Formel"
+    },
+    "actionType": {
+      "Approve": "Genehmigen",
+      "Review": "Überprüfen"
+    },
+    "assignmentType": {
+      "": "Kein(e)",
+      "processAssignedUser": "dem Prozess zugewiesener Benutzer",
+      "specifiedUser": "Angegebener Benutzer",
+      "rule:Round-Robin": "Umlauf-Verfahren",
+      "rule:Least-Busy": "Geringste Auslastung"
+    },
+    "startDirection": {
+      "r": "Recht",
+      "d": "Unten",
+      "u": "Oben",
+      "l": "Links"
+    },
+    "messageType": {
+      "Email": "E-Mail"
+    }
+  }
+}

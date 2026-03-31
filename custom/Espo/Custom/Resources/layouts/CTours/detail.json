@@ -1,0 +1,378 @@
+[
+    {
+        "rows": [
+            [
+                {
+                    "name": "tourCode"
+                },
+                {
+                    "name": "tourCapacity"
+                }
+            ],
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "depositCount"
+                }
+            ],
+            [
+                {
+                    "name": "tourStartDate"
+                },
+                {
+                    "name": "availablePlaces"
+                }
+            ],
+            [
+                {
+                    "name": "tourEndDate"
+                },
+                {
+                    "name": "bookingCount"
+                }
+            ],
+            [
+                {
+                    "name": "tourLeaders"
+                },
+                {
+                    "name": "contractsOutstanding"
+                }
+            ]
+        ],
+        "dynamicLogicVisible": null,
+        "style": "default",
+        "dynamicLogicStyled": null,
+        "tabBreak": true,
+        "tabLabel": "Tour Info",
+        "hidden": false,
+        "noteText": null,
+        "customLabel": "Tour Info"
+    },
+    {
+        "rows": [
+            [
+                {
+                    "name": "tourCost"
+                },
+                {
+                    "name": "deposit"
+                },
+                {
+                    "name": "refundAmount"
+                }
+            ],
+            [
+                {
+                    "name": "finalPayment"
+                },
+                {
+                    "name": "invoiceDate"
+                },
+                {
+                    "name": "finalPaymentdue"
+                }
+            ]
+        ],
+        "dynamicLogicVisible": null,
+        "style": "default",
+        "tabBreak": true,
+        "tabLabel": "Tour Cost",
+        "hidden": false,
+        "noteText": null,
+        "noteStyle": "info",
+        "customLabel": "Tour Cost"
+    },
+    {
+        "rows": [
+            [
+                {
+                    "name": "arrivalAirport"
+                },
+                {
+                    "name": "departureAirport"
+                },
+                {
+                    "name": "passportExpiry"
+                }
+            ]
+        ],
+        "dynamicLogicVisible": null,
+        "style": "default",
+        "tabBreak": true,
+        "tabLabel": "Transit Info",
+        "hidden": false,
+        "noteText": null,
+        "noteStyle": "info",
+        "customLabel": "Transit Info"
+    },
+    {
+        "rows": [
+            [
+                {
+                    "name": "contractPdf"
+                },
+                {
+                    "name": "transit"
+                },
+                {
+                    "name": "other"
+                }
+            ]
+        ],
+        "dynamicLogicVisible": null,
+        "style": "default",
+        "tabBreak": true,
+        "tabLabel": "Files",
+        "hidden": false,
+        "noteText": null,
+        "noteStyle": "info",
+        "customLabel": "Files"
+    },
+    {
+        "rows": [
+            [
+                {
+                    "name": "hotel1Name"
+                },
+                {
+                    "name": "hotel1URL"
+                },
+                {
+                    "name": "hotel1Dates"
+                }
+            ],
+            [
+                {
+                    "name": "hotel1Address"
+                },
+                {
+                    "name": "hotel1AddressMap"
+                }
+            ]
+        ],
+        "dynamicLogicVisible": null,
+        "style": "default",
+        "tabBreak": true,
+        "tabLabel": "First Hotel",
+        "hidden": false,
+        "noteText": null,
+        "noteStyle": "info",
+        "customLabel": "Hotel 1"
+    },
+    {
+        "rows": [
+            [
+                {
+                    "name": "hotel1Onsen"
+                },
+                {
+                    "name": "hotel1OnsenLocation"
+                },
+                {
+                    "name": "hotel1OnsenNotes"
+                }
+            ],
+            [
+                {
+                    "name": "hotel1Gym"
+                },
+                {
+                    "name": "hotel1GymLocation"
+                },
+                {
+                    "name": "hotel1GymNotes"
+                }
+            ],
+            [
+                {
+                    "name": "hotel1Pool"
+                },
+                {
+                    "name": "hotel1PoolLocation"
+                },
+                {
+                    "name": "hotel1PoolNotes"
+                }
+            ],
+            [
+                {
+                    "name": "hotel1OtherAmenities"
+                }
+            ]
+        ],
+        "dynamicLogicVisible": null,
+        "style": "default",
+        "tabBreak": false,
+        "tabLabel": "Amenities",
+        "hidden": false,
+        "noteText": null,
+        "noteStyle": "info",
+        "customLabel": "Amenities"
+    },
+    {
+        "rows": [
+            [
+                {
+                    "name": "hotel1BreakfastLocation"
+                },
+                {
+                    "name": "hotel1BreakfastHours"
+                }
+            ],
+            [
+                {
+                    "name": "hotel1OtherDining"
+                }
+            ]
+        ],
+        "dynamicLogicVisible": null,
+        "style": "default",
+        "tabBreak": false,
+        "hidden": false,
+        "noteText": null,
+        "noteStyle": "info",
+        "customLabel": "Dining"
+    },
+    {
+        "rows": [
+            [
+                {
+                    "name": "hotel1Notes"
+                }
+            ]
+        ],
+        "dynamicLogicVisible": null,
+        "style": "default",
+        "tabBreak": false,
+        "hidden": false,
+        "noteText": null,
+        "noteStyle": "info",
+        "customLabel": "Other Info"
+    },
+    {
+        "rows": [
+            [
+                {
+                    "name": "hotel2Name"
+                },
+                {
+                    "name": "hotel2URL"
+                },
+                {
+                    "name": "hotel2Dates"
+                }
+            ],
+            [
+                {
+                    "name": "hotel2AddressCity"
+                },
+                {
+                    "name": "hotel2AddressMap"
+                }
+            ]
+        ],
+        "dynamicLogicVisible": null,
+        "style": "default",
+        "tabBreak": true,
+        "tabLabel": "Second Hotel",
+        "hidden": false,
+        "noteText": null,
+        "noteStyle": "info",
+        "customLabel": "Hotel 2"
+    },
+    {
+        "rows": [
+            [
+                {
+                    "name": "hotel2onsen"
+                },
+                {
+                    "name": "hotel2onsenLocation"
+                },
+                {
+                    "name": "hotel2onsenNotes"
+                }
+            ],
+            [
+                {
+                    "name": "hotel2Gym"
+                },
+                {
+                    "name": "hotel2GymLocation"
+                },
+                {
+                    "name": "hotel2GymNotes"
+                }
+            ],
+            [
+                {
+                    "name": "hotel2Pool"
+                },
+                {
+                    "name": "hotel2PoolLocation"
+                },
+                {
+                    "name": "hotel2PoolNotes"
+                }
+            ],
+            [
+                {
+                    "name": "hotel2OtherAmenities"
+                }
+            ]
+        ],
+        "dynamicLogicVisible": null,
+        "style": "default",
+        "tabBreak": false,
+        "tabLabel": null,
+        "hidden": false,
+        "noteText": null,
+        "noteStyle": "info",
+        "customLabel": "Amenities"
+    },
+    {
+        "rows": [
+            [
+                {
+                    "name": "hotel2BreakfastLocation"
+                },
+                {
+                    "name": "hotel2BreakfastHours"
+                }
+            ],
+            [
+                {
+                    "name": "hotel2OtherDining"
+                }
+            ]
+        ],
+        "dynamicLogicVisible": null,
+        "style": "default",
+        "tabBreak": false,
+        "tabLabel": null,
+        "hidden": false,
+        "noteText": null,
+        "noteStyle": "info",
+        "customLabel": "Dining"
+    },
+    {
+        "rows": [
+            [
+                {
+                    "name": "hotel2Notes"
+                }
+            ]
+        ],
+        "dynamicLogicVisible": null,
+        "style": "default",
+        "tabBreak": false,
+        "tabLabel": null,
+        "hidden": false,
+        "noteText": null,
+        "noteStyle": "info",
+        "customLabel": "Other Info"
+    }
+]

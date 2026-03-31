@@ -1,0 +1,15 @@
+[
+    {
+        "name": "engagementStatus",
+        "width": 20
+    },
+    {
+        "name": "description",
+        "width": 95,
+        "align": "left"
+    },
+    {
+        "name": "engagementScore",
+        "width": 20
+    }
+]

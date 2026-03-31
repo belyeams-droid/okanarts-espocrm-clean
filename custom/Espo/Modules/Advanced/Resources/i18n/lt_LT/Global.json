@@ -1,0 +1,31 @@
+{
+    "scopeNames": {
+        "Workflow": "Darbo eiga",
+        "Report": "Ataskaita",
+        "ReportCategory": "Ataskaitos kategorija",
+        "WorkflowLogRecord": "Darbo eigos žurnalo įrašas",
+        "BpmnFlowchart": "Proceso schema",
+        "BpmnProcess": "Procesas",
+        "BpmnUserTask": "Proceso naudotojo užduotis",
+        "ReportFilter": "Ataskaitų filtras",
+        "ReportPanel": "Ataskaitų grupė"
+    },
+    "scopeNamesPlural": {
+        "Workflow": "Darbo eigos",
+        "Report": "Ataskaitos",
+        "ReportCategory": "Ataskaitų kategorijos",
+        "WorkflowLogRecord": "Darbo eigos žurnalas",
+        "BpmnFlowchart": "Procesų srautų diagramos",
+        "BpmnProcess": "Procesai",
+        "BpmnUserTask": "Naudotojo proceso užduotys",
+        "ReportFilter": "Ataskaitų filtrai",
+        "ReportPanel": "Ataskaitų skydeliai"
+    },
+    "dashlets": {
+        "Report": "Ataskaita",
+        "BpmnUserTasks": "Naudotojo proceso užduotys"
+    },
+    "labels": {
+        "Start Process": "Proceso pradžia"
+    }
+}

@@ -1,0 +1,40 @@
+{
+  "collection": {
+    "orderBy": "name",
+    "order": "asc"
+  },
+  "fields": {
+    "slug": {
+      "type": "varchar",
+      "required": true,
+      "unique": true
+    },
+    "experienceType": {
+      "type": "enum",
+      "options": [
+        "tour",
+        "workshop",
+        "retreat",
+        "course",
+        "event"
+      ]
+    },
+    "experienceMode": {
+      "type": "enum",
+      "options": [
+        "travel",
+        "in_person",
+        "online",
+        "hybrid",
+        "content"
+      ]
+    },
+    "region": {
+      "type": "varchar"
+    },
+    "isActive": {
+      "type": "bool",
+      "default": true
+    }
+  }
+}

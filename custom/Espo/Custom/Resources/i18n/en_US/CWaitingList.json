@@ -1,0 +1,17 @@
+{
+    "fields": {
+        "tours": "Tours",
+        "contact": "Contact",
+        "notes": "Notes"
+    },
+    "links": {
+        "meetings": "Meetings",
+        "calls": "Calls",
+        "tasks": "Tasks",
+        "tours": "Tours",
+        "contact": "Contact"
+    },
+    "labels": {
+        "Create CWaitingList": "Create Waiting List"
+    }
+}

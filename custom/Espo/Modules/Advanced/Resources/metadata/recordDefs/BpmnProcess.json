@@ -1,0 +1,18 @@
+{
+    "actions": {
+        "merge": {
+            "disabled": true
+        }
+    },
+    "relationships": {
+        "flowNodes": {
+            "selectAccessControlDisabled": true
+        }
+    },
+    "readLoaderClassNameList": [
+        "Espo\\Modules\\Advanced\\Classes\\FieldProcessing\\BpmnProcess\\FlowchartDataLoader"
+    ],
+    "beforeUpdateHookClassNameList": [
+        "Espo\\Modules\\Advanced\\Classes\\RecordHooks\\BpmnProcess\\BeforeUpdate"
+    ]
+}

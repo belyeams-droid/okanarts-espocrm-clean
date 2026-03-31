@@ -1,0 +1,42 @@
+{
+    "controller": "controllers/record-tree",
+    "collection": "collections/tree",
+    "massUpdateDisabled": true,
+    "menu": {
+        "listTree": {
+            "buttons": [
+                {
+                    "label": "List View",
+                    "link": "#BpmnFlowchartCategory\/list",
+                    "acl": "read"
+                },
+                {
+                    "labelTranslation": "Global.scopeNamesPlural.BpmnFlowchart",
+                    "link": "#BpmnFlowchart",
+                    "acl": "read",
+                    "aclScope": "BpmnFlowchart"
+                }
+            ]
+        },
+        "list": {
+            "buttons": [
+                {
+                    "label": "Tree View",
+                    "link": "#BpmnFlowchartCategory",
+                    "acl": "read"
+                },
+                {
+                    "labelTranslation": "Global.scopeNamesPlural.BpmnFlowchart",
+                    "link": "#BpmnFlowchart",
+                    "acl": "read",
+                    "aclScope": "BpmnFlowchart"
+                }
+            ]
+        }
+    },
+    "relationshipPanels": {
+        "workflows": {
+            "create": false
+        }
+    }
+}

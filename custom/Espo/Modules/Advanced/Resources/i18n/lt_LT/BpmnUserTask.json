@@ -1,0 +1,39 @@
+{
+    "labels": {
+        "Resolve": "Išspręsti"
+    },
+    "fields": {
+        "actionType": "Veiksmo tipas",
+        "resolution": "Rezoliucija",
+        "target": "Tikslinė",
+        "process": "Procesas",
+        "isResolved": "Yra išspręsta",
+        "resolutionNote": "Rezoliucijos pastaba",
+        "instructions": "Instrukcijos",
+        "isCanceled": "Atšaukiama"
+    },
+    "links": {
+        "process": "Procesas",
+        "target": "Tikslinė",
+        "flowNode": "Srauto mazgas"
+    },
+    "options": {
+        "actionType": {
+            "Approve": "Patvirtinti",
+            "Review": "Peržiūrėkite",
+            "Accomplish": "Pasiekti"
+        },
+        "resolution": {
+            "Approved": "Patvirtinta",
+            "Rejected": "Atmesta",
+            "Reviewed": "Apžvelgta",
+            "Completed": "Užbaigta",
+            "Canceled": "Atšauktas"
+        }
+    },
+    "presetFilters": {
+        "actual": "Tikrasis",
+        "resolved": "Išspręsta",
+        "canceled": "Atšauktas"
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "controller": "controllers/record-tree",
+    "collection": "collections/tree",
+    "menu": {
+        "listTree": {
+            "buttons": [
+                {
+                    "label": "List View",
+                    "link": "#WorkflowCategory\/list",
+                    "acl": "read"
+                },
+                {
+                    "label": "Workflows",
+                    "labelTranslation": "Global.scopeNamesPlural.Workflow",
+                    "link": "#Workflow",
+                    "acl": "read",
+                    "aclScope": "Workflow"
+                }
+            ]
+        },
+        "list": {
+            "buttons": [
+                {
+                    "label": "Tree View",
+                    "link": "#WorkflowCategory",
+                    "acl": "read",
+                    "style": "default"
+                },
+                {
+                    "label": "Workflows",
+                    "labelTranslation": "Global.scopeNamesPlural.Workflow",
+                    "link": "#Workflow",
+                    "acl": "read",
+                    "aclScope": "Workflow"
+                }
+            ]
+        }
+    },
+    "relationshipPanels": {
+        "workflows": {
+            "create": false
+        }
+    }
+}

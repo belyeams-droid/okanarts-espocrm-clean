@@ -1,0 +1,7 @@
+{
+    "primaryFilterClassNameMap": {
+        "actual": "Espo\\Modules\\Advanced\\Classes\\Select\\BpmnUserTask\\PrimaryFilters\\Actual",
+        "resolved": "Espo\\Modules\\Advanced\\Classes\\Select\\BpmnUserTask\\PrimaryFilters\\Resolved",
+        "canceled": "Espo\\Modules\\Advanced\\Classes\\Select\\BpmnUserTask\\PrimaryFilters\\Canceled"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "_delimiter_": {
+        "disabled": true
+    },
+    "activities": {
+        "disabled": true
+    },
+    "history": {
+        "disabled": true
+    },
+    "cShopifyTourDeposits": {
+        "index": 0
+    },
+    "stream": {
+        "sticked": false,
+        "index": 1
+    },
+    "opportunities": {
+        "index": 2
+    },
+    "cases": {
+        "index": 3
+    },
+    "targetLists": {
+        "index": 4
+    }
+}

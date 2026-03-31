@@ -1,0 +1,16 @@
+{
+    "controller": "controllers/record",
+    "boolFilterList": [
+        "onlyMy"
+    ],
+    "relationshipPanels": {
+        "contact": {
+            "layout": null,
+            "selectPrimaryFilterName": null
+        },
+        "booking": {
+            "layout": null,
+            "selectPrimaryFilterName": null
+        }
+    }
+}

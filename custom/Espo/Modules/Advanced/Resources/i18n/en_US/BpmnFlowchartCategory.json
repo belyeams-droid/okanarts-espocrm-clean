@@ -1,0 +1,11 @@
+{
+    "labels": {
+        "Create BpmnFlowchartCategory": "Create Category"
+    },
+    "fields": {
+        "order": "Order"
+    },
+    "links": {
+        "flowcharts": "Flowcharts"
+    }
+}

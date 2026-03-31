@@ -1,0 +1,14 @@
+{
+    "primaryFilterClassNameMap": {
+        "listTargets": "Espo\\Modules\\Advanced\\Classes\\Select\\Report\\PrimaryFilters\\ListTargets",
+        "listAccounts": "Espo\\Modules\\Advanced\\Classes\\Select\\Report\\PrimaryFilters\\ListAccounts",
+        "listContacts": "Espo\\Modules\\Advanced\\Classes\\Select\\Report\\PrimaryFilters\\ListContacts",
+        "listLeads": "Espo\\Modules\\Advanced\\Classes\\Select\\Report\\PrimaryFilters\\ListLeads",
+        "listUsers": "Espo\\Modules\\Advanced\\Classes\\Select\\Report\\PrimaryFilters\\ListUsers",
+        "list": "Espo\\Modules\\Advanced\\Classes\\Select\\Report\\PrimaryFilters\\ListType",
+        "grid": "Espo\\Modules\\Advanced\\Classes\\Select\\Report\\PrimaryFilters\\GridType"
+    },
+    "accessControlFilterClassNameMap": {
+        "mandatory": "Espo\\Modules\\Advanced\\Classes\\Select\\Report\\AccessControlFilters\\Mandatory"
+    }
+}

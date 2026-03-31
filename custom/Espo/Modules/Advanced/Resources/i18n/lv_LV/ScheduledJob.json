@@ -1,0 +1,10 @@
+{
+    "options": {
+        "job": {
+            "ReportTargetListSync": "Mērķu sarakstu sinhronizēšana ar pārskatiem",
+            "ScheduleReportSending": "Plānota atskaites nosūtīšana",
+            "RunScheduledWorkflows": "Izpildīt plānotās darbplūsmas",
+            "ProcessPendingProcessFlows": "Procesa gaidāmie plūsmas"
+        }
+    }
+}

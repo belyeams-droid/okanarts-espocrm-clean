@@ -1,0 +1,5 @@
+{
+    "beforeUpdateHookClassNameList": [
+        "Espo\\Modules\\Advanced\\Classes\\RecordHooks\\BpmnUserTask\\BeforeUpdate"
+    ]
+}

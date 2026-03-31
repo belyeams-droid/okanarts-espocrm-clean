@@ -1,0 +1,187 @@
+{
+    "fields": {
+        "engagementScore": {
+            "type": "int",
+            "default": 0,
+            "audited": true,
+            "isCustom": true
+        },
+        "name": {
+            "type": "varchar",
+            "required": true,
+            "pattern": "$noBadCharacters"
+        },
+        "description": {
+            "type": "text"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user"
+        },
+        "modifiedBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user"
+        },
+        "assignedUser": {
+            "type": "link",
+            "view": "views/fields/assigned-user"
+        },
+        "teams": {
+            "type": "linkMultiple",
+            "view": "views/fields/teams"
+        },
+        "contact": {
+            "type": "link",
+            "entity": "Contact",
+            "foreignKey": "contactId"
+        },
+        "engagementType": {
+            "type": "enum",
+            "required": true,
+            "audited": true,
+            "options": [
+                "Tour Interest",
+                "Tour Deposited",
+                "Traveler",
+                "Workshop Attended",
+                "Guild Talk Attended",
+                "Newsletter",
+                "Referral",
+                "Repeat Traveler",
+                "Alumni"
+            ],
+            "default": "Tour Interest",
+            "maxLength": 100,
+            "isCustom": true
+        },
+        "engagementStatus": {
+            "type": "enum",
+            "required": true,
+            "audited": true,
+            "options": [
+                "Aware",
+                "Curious",
+                "Engaged",
+                "Considering",
+                "Commited",
+                "Converted",
+                "Inactive"
+            ],
+            "default": "Aware",
+            "maxLength": 100,
+            "isCustom": true,
+            "style": {
+                "Aware": null,
+                "Curious": null,
+                "Engaged": null,
+                "Considering": null,
+                "Commited": null,
+                "Converted": null,
+                "Inactive": null
+            }
+        },
+        "firstEngagedAt": {
+            "type": "datetime",
+            "audited": true,
+            "minuteStep": 30,
+            "isCustom": true
+        },
+        "lastActivityAt": {
+            "type": "datetime",
+            "audited": true,
+            "minuteStep": 30,
+            "isCustom": true
+        },
+        "clickedUrl": {
+            "type": "varchar",
+            "maxLength": 2048,
+            "isCustom": true
+        }
+    },
+    "links": {
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "modifiedBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "assignedUser": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "teams": {
+            "type": "hasMany",
+            "entity": "Team",
+            "relationName": "entityTeam",
+            "layoutRelationshipsDisabled": true
+        },
+        "contact": {
+            "type": "belongsTo",
+            "entity": "Contact",
+            "foreignKey": "contactId"
+        },
+        "meetings": {
+            "type": "hasMany",
+            "entity": "Meeting",
+            "foreign": "parent"
+        },
+        "calls": {
+            "type": "hasMany",
+            "entity": "Call",
+            "foreign": "parent"
+        },
+        "tasks": {
+            "type": "hasChildren",
+            "entity": "Task",
+            "foreign": "parent"
+        },
+        "emails": {
+            "type": "hasChildren",
+            "entity": "Email",
+            "foreign": "parent",
+            "layoutRelationshipsDisabled": true
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc"
+    },
+    "indexes": {
+        "name": {
+            "columns": [
+                "name",
+                "deleted"
+            ]
+        },
+        "assignedUser": {
+            "columns": [
+                "assignedUserId",
+                "deleted"
+            ]
+        },
+        "createdAt": {
+            "columns": [
+                "createdAt"
+            ]
+        },
+        "createdAtId": {
+            "unique": true,
+            "columns": [
+                "createdAt",
+                "id"
+            ]
+        }
+    }
+}

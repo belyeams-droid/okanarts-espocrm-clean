@@ -1,0 +1,10 @@
+{
+  "links": {
+    "meetings": "Möten",
+    "calls": "Samtal",
+    "tasks": "Uppgifter"
+  },
+  "labels": {
+    "Create CTours": "Skapa Tours"
+  }
+}

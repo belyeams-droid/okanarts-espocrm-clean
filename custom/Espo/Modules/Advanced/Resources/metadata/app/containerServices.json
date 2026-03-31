@@ -1,0 +1,11 @@
+{
+    "workflowManager": {
+        "loaderClassName": "Espo\\Modules\\Advanced\\Core\\Loaders\\WorkflowManager"
+    },
+    "workflowHelper": {
+        "loaderClassName": "Espo\\Modules\\Advanced\\Core\\Loaders\\WorkflowHelper"
+    },
+    "signalManager": {
+        "loaderClassName": "Espo\\Modules\\Advanced\\Core\\Loaders\\SignalManager"
+    }
+}

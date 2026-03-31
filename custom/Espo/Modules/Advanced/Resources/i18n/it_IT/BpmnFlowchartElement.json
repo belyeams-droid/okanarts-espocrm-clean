@@ -1,0 +1,132 @@
+{
+  "fields": {
+    "text": "Testo",
+    "triggerType": "Tipo di trigger",
+    "timer": "Parametri del temporizzatore",
+    "defaultFlowId": "Flusso predefinito",
+    "from": "Da",
+    "to": "A",
+    "replyTo": "Rispondi a",
+    "fromEmailAddress": "Indirizzo e-mail del mittente",
+    "toEmailAddress": "Indirizzo email destinatario",
+    "replyToEmailAddress": "Indirizzo E-Mail Risposta",
+    "ccEmailAddress": "Indirizzo e-mail CC",
+    "toSpecifiedTeams": "Al team",
+    "toSpecifiedUsers": "Agli utenti",
+    "toSpecifiedContacts": "Ai contatti",
+    "attachmentsVariable": "Variabile Allegati",
+    "emailTemplate": "Modello di e-mail",
+    "doNotStore": "Non conservare e-mail inviate",
+    "actions": "Azioni",
+    "actionType": "Tipo di azione",
+    "targetUser": "Utente di destinazione",
+    "assignmentType": "Assegnazione",
+    "targetTeam": "Team di destinazione",
+    "targetUserPosition": "Posizione utente di destinazione",
+    "startDirection": "Direzione di partenza",
+    "targetReport": "Report di destinazione",
+    "scheduling": "Programmazione",
+    "schedulingApplyTimezone": "Applica il fuso orario",
+    "messageType": "Tipo di messaggio",
+    "canBeFailed": "Può fallire",
+    "callableType": "Tipo richiamabile",
+    "errorCode": "Codice di errore",
+    "escalationCode": "Codice di escalation",
+    "cancelActivity": "sta interrompendo",
+    "isInterrupting": "sta interrompendo",
+    "targetType": "Tipo di entità di destinazione",
+    "flowchartVisualization": "Organigramma",
+    "flowchart": "Organigramma",
+    "signal": "Segnale",
+    "isolateVariables": "Isola le variabili",
+    "returnVariableList": "Variabili di ritorno",
+    "returnCollectionVariable": "Restituisci la Variabile della Collezione",
+    "repliedTo": "Rispondi a",
+    "relatedTo": "Relativo a",
+    "instructions": "Istruzioni",
+    "conditionsFormula": "Formula delle Condizioni",
+    "optOutLink": "Link di disattivazione",
+    "isMultiInstance": "Multi-istanza",
+    "isSequential": "Sequenziale",
+    "loopCollectionExpression": "Espressione sulla Collezione",
+    "targetIdExpression": "Espressione ID Target",
+    "activityId": "ID attività"
+  },
+  "labels": {
+    "Conditions": "Condizioni",
+    "Actions": "Azioni",
+    "Field": "Campo",
+    "Flows Conditions": "Condizioni di flusso"
+  },
+  "tooltips": {
+    "attachmentsVariable": "Si tratta del nome di una variabile che deve contenere l’ID di un allegato o un elenco di ID. Gli allegati possono essere generati in un’attività di tipo Script Task eseguita prima in questo processo.",
+    "compensateActivityId": "ID dell’attività da compensare. Se omesso, verranno compensate tutte le attività completate e compensabili.",
+    "targetIdExpression": "Espressione che definisce un ID del record di destinazione.",
+    "returnCollectionVariable": "Specificare un nome di variabile per i dati che verranno restituiti dal sotto-processo a istanze multiple. La variabile conterrà un array di oggetti. Ogni oggetto conterrà le variabili di ritorno di ogni istanza del sotto-processo .",
+    "loopCollectionExpression": "Espressione che definisce un elenco di valori. Ogni valore creerà un'istanza di un sotto-processo separato. All'interno di un sotto-processo, il valore sarà disponibile nella variabile '$inputItem'.",
+    "taskSendMessageFromEmailAddress": "Segnaposto disponibili:\n\n* '{$$variable}'",
+    "taskSendMessageEmailAddress": "È possibile specificare più indirizzi e-mail separandoli con un punto e virgola.\n\nSegnaposto disponibili:\n\n* '{$$variable}'",
+    "targetReport": "I record verranno passati dalla lista report al nuovo processo.",
+    "target": "Specificare un record da utilizzare come Target del sotto-processo.",
+    "userTaskName": "Nome del record dell'attività utente che verrà creato.\n\nSegnaposto disponibili:\n* '{$attribute}'\n* '{$$variable}'",
+    "userTaskInstructions": "Istruzioni per un utente. Markdown è supportato.\n\nSegnaposto disponibili:\n* '{$attribute}'\n* '{$$variable}'",
+    "returnVariableList": "Specifica le variabili di formula che verranno copiate dal sotto-processo al processo principale una volta che il sotto-processo si sarà concluso con successo.",
+    "scheduling": "Notazione crontab. Definisce la frequenza. UTC TimeZone.\n\n`*/5 * * * *`-ogni 5 minuti `0 */2 * * *`-ogni 2 ore `30 1 * * *`-a 01:30 una volta al giorno `0 0 1 * *`-il primo giorno del mese",
+    "schedulingApplyTimezone": "Applica il fuso orario predefinito del sistema alla pianificazione. In caso contrario, verrà utilizzato l'UTC.",
+    "isolateVariables": "Impedisce che le variabili di formula create nel task siano visibili all’esterno.",
+    "taskReturnVariableList": "Specifica le variabili di formula che verranno copiate dal task e saranno disponibili nel resto del flusso dopo l’elaborazione del task."
+  },
+  "options": {
+    "emailAddress": {
+      "system": "Sistema",
+      "currentUser": "Utente Attuale",
+      "specifiedEmailAddress": "Indirizzo email specificato",
+      "assignedUser": "Utente Assegnato",
+      "specifiedContacts": "Contatti specificati",
+      "specifiedUsers": "Utenti specificati",
+      "specifiedTeams": "Team specificati",
+      "followersExcludingAssignedUser": "Followers escluso utente assegnato",
+      "processAssignedUser": "Utente assegnato al processo",
+      "targetEntity": "Record di destinazione",
+      "": "Nessuno"
+    },
+    "triggerType": {
+      "afterRecordCreated": "Dopo aver creato il record",
+      "afterRecordSaved": "Dopo aver salvato il record",
+      "afterRecordUpdated": "Dopo l'aggiornamento del record",
+      "sequential": "Sequenziale"
+    },
+    "timerShiftOperator": {
+      "plus": "più",
+      "minus": "meno"
+    },
+    "timerShiftUnits": {
+      "minutes": "minuti",
+      "hours": "ore",
+      "days": "giorni",
+      "months": "mesi",
+      "seconds": "secondi"
+    },
+    "timerBase": {
+      "moment": "Momento in cui l'evento viene attivato",
+      "formula": "Calcolato dalla formula"
+    },
+    "actionType": {
+      "Approve": "Approva",
+      "Review": "Revisione"
+    },
+    "assignmentType": {
+      "": "Nessuno",
+      "processAssignedUser": "Utente assegnato al processo",
+      "specifiedUser": "Utente specificato",
+      "rule:Round-Robin": "Round Robin",
+      "rule:Least-Busy": "Meno occupato"
+    },
+    "startDirection": {
+      "r": "Destra",
+      "d": "Giù",
+      "u": "Su",
+      "l": "Sinistra"
+    }
+  }
+}

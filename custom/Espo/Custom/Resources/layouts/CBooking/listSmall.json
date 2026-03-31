@@ -1,0 +1,21 @@
+[
+    {
+        "name": "contractLifecycleState",
+        "width": 20,
+        "link": true,
+        "align": "left"
+    },
+    {
+        "name": "name",
+        "width": 20,
+        "align": "left"
+    },
+    {
+        "name": "createdAt",
+        "width": 20
+    },
+    {
+        "name": "contact",
+        "width": 20
+    }
+]

@@ -1,0 +1,54 @@
+{
+  "labels": {
+    "Create BpmnProcess": "Prozess starten",
+    "Stop Process": "Prozess stoppen",
+    "User Tasks": "Benutzeraufgaben",
+    "Flowcharts": "Flussdiagramme",
+    "Interrupt": "Unterbrechen",
+    "Reject": "Ablehnen",
+    "Start flow from here": "Starten den Fluss hier",
+    "Reactivate": "Reaktivieren",
+    "View Variables": "Variablen anzeigen",
+    "View Error": "Fehler anzeigen",
+    "Error Message": "Fehlermeldung"
+  },
+  "fields": {
+    "targetType": "Zielentitätstyp",
+    "target": "Ziel",
+    "createdEntitiesData": "Erstellte Entitätsdaten",
+    "flowchartData": "Datenflussdiagramm",
+    "flowchart": "Flussdiagramme",
+    "flowchartVisualization": "Flussdiagramm (Visualisierung )",
+    "flowchartElementsDataHash": "Flussdiagrammelemente",
+    "variables": "Variablen",
+    "endedAt": "Beendet bei",
+    "startElementId": "Element starten",
+    "parentProcess": "Übergeordneter Prozess",
+    "parentProcessFlowNode": "Übergeordneter Prozessflussknoten",
+    "rootProcess": "Root-Prozess"
+  },
+  "links": {
+    "flowchart": "Flussdiagramm",
+    "target": "Ziel",
+    "flowNodes": "Flussprotokoll",
+    "userTasks": "Benutzeraufgaben verarbeiten",
+    "childProcesses": "Untergeordnete Prozesse",
+    "parentProcess": "Übergeordneter Prozess",
+    "parentProcessFlowNode": "Übergeordneter Prozessflussknoten",
+    "rootProcess": "Root-Prozess"
+  },
+  "options": {
+    "status": {
+      "Created": "Erstellt",
+      "Started": "Gestartet",
+      "Ended": "Beendet",
+      "Paused": "Pausiert",
+      "Stopped": "Gestoppt",
+      "Interrupted": "Unterbrochen"
+    }
+  },
+  "presetFilters": {
+    "actual": "Aktuell",
+    "ended": "Beendet"
+  }
+}

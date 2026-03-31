@@ -1,0 +1,40 @@
+[
+    {
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "isActive"
+                }
+            ],
+            [
+                {
+                    "name": "targetType"
+                },
+                {
+                    "name": "category"
+                }
+            ],
+            [
+                {
+                    "name": "description"
+                }
+            ]
+        ]
+    },
+    {
+        "label": "",
+        "rows": [
+            [
+                {
+                    "name": "flowchart",
+                    "fullWidth": true,
+                    "customLabel": "",
+                    "noLabel": true
+                }
+            ]
+        ]
+    }
+]

@@ -1,0 +1,15 @@
+{
+    "aclDependencies": {
+        "Workflow": {
+            "anyScopeList": [
+                "BpmnProcess",
+                "BpmnFlowchart"
+            ]
+        },
+        "BpmnFlowchart": {
+            "anyScopeList": [
+                "BpmnProcess"
+            ]
+        }
+    }
+}

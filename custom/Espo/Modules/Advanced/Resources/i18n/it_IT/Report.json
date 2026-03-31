@@ -1,0 +1,185 @@
+{
+  "labels": {
+    "Create Report": "Crea report",
+    "Run": "Esegui",
+    "Total": "Totale",
+    "Group Total": "Totale Gruppo",
+    "-Empty-": "-Vuoto-",
+    "Parameters": "Parametri",
+    "Filters": "Filtri",
+    "Chart": "Grafico",
+    "List Report": "Report elenco",
+    "Grid Report": "Report griglia",
+    "days": "giorni",
+    "never": "mai",
+    "Get Csv": "Get CSV",
+    "EmailSending": "Invio e-mail",
+    "View Report": "Visualizza report",
+    "Complex expression": "Espressione complessa",
+    "Having": "Che ha",
+    "Add AND group": "Aggiungi gruppo AND",
+    "Add OR group": "Aggiungi gruppo OR",
+    "Add NOT group": "Aggiungi gruppo NOT",
+    "Add IN group": "Aggiungi gruppo IN",
+    "Add Having group": "Aggiungi gruppo con condizione",
+    "Add Complex expression": "Aggiungi espressione complessa",
+    "Columns": "Colonne",
+    "Send Email": "Invia Email",
+    "Results View": "Visualizzazione dei risultati",
+    "Create Joint Grid Report": "Creazione di un rapporto griglia congiunta",
+    "Label": "Etichetta",
+    "Type": "Tipo",
+    "Decimal Places": "Posizioni Decimali",
+    "Preview": "Anteprima"
+  },
+  "fields": {
+    "type": "Tipo",
+    "entityType": "Tipo di entità",
+    "description": "Descrizione",
+    "groupBy": "Raggruppa per",
+    "columns": "Colonne",
+    "orderBy": "Ordina per",
+    "filters": "Filtri",
+    "runtimeFilters": "Filtri di runtime",
+    "chartType": "Tipo di grafico",
+    "emailSendingInterval": "Intervallo",
+    "emailSendingTime": "Orario",
+    "emailSendingUsers": "Utenti",
+    "emailSendingSettingDay": "Giorno",
+    "emailSendingSettingMonth": "Mese",
+    "emailSendingSettingWeekdays": "Giorni",
+    "emailSendingDoNotSendEmptyReport": "Non inviare se il rapporto è vuoto",
+    "chartColorList": "Colori del grafico",
+    "chartColor": "Colore grafico",
+    "chartOneColumns": "Colonne del grafico",
+    "chartOneY2Columns": "Colonne dell'asse secondario del grafico",
+    "orderByList": "Ordine di elenco",
+    "orderByListShort": "Ordine",
+    "column": "Colonna",
+    "exportFormat": "Formato",
+    "category": "Categoria",
+    "applyAcl": "Applica ACL",
+    "portals": "Portali",
+    "joinedReports": "Report Secondari",
+    "joinedReportLabel": "Etichetta Report Secondari",
+    "filtersDataList": "Elenco dati filtri",
+    "columnsData": "Dati colonne",
+    "filtersData": "Filtra i dati"
+  },
+  "tooltips": {
+    "chartOneColumns": "Colonne da visualizzare nel grafico. Se non specificato, il sistema includerà tutte le colonne che possono essere combinate in un unico grafico.",
+    "chartOneY2Columns": "Colonne da visualizzare sull'asse secondario del grafico.",
+    "orderBy": "I dati dei risultati verranno ordinati in base alle colonne e ai gruppi specificati.",
+    "emailSendingUsers": "Il risultato del report degli utenti verrà inviato a.",
+    "chartColorList": "Colori personalizzati per gruppi specifici.",
+    "applyAcl": "I risultati del report dipenderanno dall'accesso dell'utente.",
+    "groupBy": "I dati verranno aggregati in base ai gruppi specificati. Il numero massimo di gruppi è due. Se vuoto, i dati non verranno aggregati, ma verranno visualizzati solo i totali.\n\n[Espressioni complesse](https://www.espocrm.com/documentation/user-guide/complex-expressions/).",
+    "columns": "Quali dati visualizzare. \n\n[Espressioni complesse](https://www.espocrm.com/documentation/user-guide/complex-expressions/).",
+    "runtimeFilters": "Filtri aggiuntivi che saranno disponibili nella visualizzazione del report.",
+    "portals": "Il report sarà disponibile solo nei portali specificati."
+  },
+  "functions": {
+    "COUNT": "Conteggio",
+    "SUM": "Somma",
+    "AVG": "Media",
+    "MAX": "Massimo",
+    "YEAR": "Anno",
+    "QUARTER": "Trimestre",
+    "MONTH": "Mese",
+    "DAY": "Giorno",
+    "WEEK": "Settimana",
+    "YEAR_FISCAL": "Anno Fiscale",
+    "QUARTER_FISCAL": "Trimestre fiscale"
+  },
+  "orders": {
+    "ASC": "Ascendente",
+    "DESC": "Discendente",
+    "LIST": "Elenco"
+  },
+  "options": {
+    "dashletDisplayType": {
+      "Chart": "Grafico",
+      "List": "Lista",
+      "Chart-Total": "Grafico e totale",
+      "Total": "Totale",
+      "Table": "Tabella"
+    },
+    "chartType": {
+      "BarHorizontal": "Barra (orizzontale)",
+      "BarVertical": "Barra (verticale)",
+      "BarGroupedHorizontal": "Barre Raggruppate Orizzontalmente",
+      "BarGroupedVertical": "Barre raggruppate · Verticalmente",
+      "Pie": "Torta",
+      "Line": "Linea"
+    },
+    "emailSendingInterval": {
+      "Daily": "Giornaliero",
+      "Weekly": "Settimanale",
+      "Monthly": "Mensile",
+      "Yearly": "Annuale"
+    },
+    "emailSendingSettingDay": {
+      "32": "Ultimo giorno del mese"
+    },
+    "type": {
+      "Grid": "Griglia",
+      "List": "Lista",
+      "JointGrid": "Griglia congiunta"
+    },
+    "function": {
+      "": "--Nessuna funzione--",
+      "custom": "Espressione",
+      "customWithOperator": "Espressione con operatore",
+      "WEEK_NUMBER_0": "WEEK (Domenica)",
+      "WEEK_NUMBER_1": "WEEK (Lunedì)"
+    },
+    "layoutAlign": {
+      "left": "Sinistra",
+      "right": "Destra"
+    },
+    "columnType": {
+      "Summary": "Sommario"
+    }
+  },
+  "messages": {
+    "noSubReportInPreview": "I report secondari non possono essere visualizzati in modalità anteprima.",
+    "emailTemplateParsingError": "Errore durante l'analisi del modello '{template}'.",
+    "executionError": "Impossibile eseguire il report. Controllare i parametri del report. Per ulteriori dettagli, consultare il file di log.",
+    "emptyStringGroupExcluded": "Un gruppo con un valore stringa vuoto viene escluso dai risultati.",
+    "notAllowedFormulaInFilter": "L'espressione della formula nei filtri contiene una funzione non consentita.",
+    "validateMaxCount": "Count non deve essere maggiore di {maxCount}",
+    "havingFilterWithoutGroupByError": "Non puoi applicare la condizione su aggregati senza usare Group By.",
+    "gridReportDescription": "Raggruppare per una o due colonne e vedere sommatoria. Può essere visualizzato come un grafico.",
+    "listReportDescription": "Semplice elenco di record che soddisfano i criteri dei filtri.",
+    "invalidColumnError": "Nome colonna non valido. Controllare i parametri del report.",
+    "sqlSyntaxError": "Impossibile comporre un SQL valido dai parametri del report.",
+    "onlyFullGroupByError": "Parametri del report non supportati. Modificare i parametri o disabilitare la modalità SQL \"ONLY_FULL_GROUP_BY\" nella configurazione del database."
+  },
+  "presetFilters": {
+    "list": "Lista",
+    "grid": "Griglia",
+    "listTargets": "Elenco (destinazioni)",
+    "listAccounts": "Elenco (account)",
+    "listContacts": "Lista (contatti)",
+    "listLeads": "Elenco (lead)",
+    "listUsers": "Elenco (utenti)"
+  },
+  "errorMessages": {
+    "error": "Errore",
+    "noChart": "Nessun grafico selezionato per il report.",
+    "selectReport": "Selezionare un report nelle opzioni dashlet."
+  },
+  "filtersGroupTypes": {
+    "or": "O",
+    "and": "E",
+    "not": "NON E DENTRO",
+    "subQueryIn": "DENTRO",
+    "having": "Che ha"
+  },
+  "layoutFields": {
+    "width": "Larghezza",
+    "notSortable": "Non ordinabile",
+    "exportOnly": "Solo Esportazione",
+    "align": "Allinea"
+  }
+}

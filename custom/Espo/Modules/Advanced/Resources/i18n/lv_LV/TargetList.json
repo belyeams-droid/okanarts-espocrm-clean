@@ -1,0 +1,18 @@
+{
+    "labels": {
+        "Sync with Reports": "Sinhronizēšana ar ziņojumiem"
+    },
+    "fields": {
+        "syncWithReports": "Ziņojumi",
+        "syncWithReportsEnabled": "Ieslēgts",
+        "syncWithReportsUnlink": "Atvienojiet saiti"
+    },
+    "links": {
+        "syncWithReports": "Sinhronizēšana ar ziņojumiem"
+    },
+    "tooltips": {
+        "syncWithReportsEnabled": "Iespējot automātisko sinhronizāciju ar saraksta pārskatu.",
+        "syncWithReportsUnlink": "Ieraksti, kas nav iekļauti pārskata rezultātos, tiks noņemti no Target List.",
+        "syncWithReports": "Mērķa saraksts tiks sinhronizēts ar atlasīto pārskatu rezultātiem."
+    }
+}

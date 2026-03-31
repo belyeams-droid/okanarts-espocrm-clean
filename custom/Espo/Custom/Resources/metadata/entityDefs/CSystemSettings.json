@@ -1,0 +1,11 @@
+{
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc"
+    },
+    "fields": {
+        "lastShopifySync": {
+            "type": "datetime"
+        }
+    }
+}

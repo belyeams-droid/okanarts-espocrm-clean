@@ -1,0 +1,37 @@
+[
+    {
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "firstEngagedAt"
+                }
+            ],
+            [
+                {
+                    "name": "engagementType"
+                },
+                {
+                    "name": "engagementStatus"
+                }
+            ],
+            [
+                {
+                    "name": "engagementScore"
+                },
+                {
+                    "name": "contact"
+                }
+            ],
+            [
+                {
+                    "name": "description"
+                }
+            ]
+        ],
+        "style": "default",
+        "label": "Overview"
+    }
+]

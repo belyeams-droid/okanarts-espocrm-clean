@@ -1,0 +1,11 @@
+{
+  "labels": {
+    "Create WorkflowCategory": "Crea Categoria"
+  },
+  "fields": {
+    "order": "Ordine"
+  },
+  "links": {
+    "workflows": "Flussi di lavoro"
+  }
+}

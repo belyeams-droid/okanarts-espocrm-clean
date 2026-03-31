@@ -1,0 +1,32 @@
+[
+    {
+        "name": "tourCode",
+        "width": 16
+    },
+    {
+        "name": "name",
+        "width": 16,
+        "link": true,
+        "align": "left"
+    },
+    {
+        "name": "contactEmail",
+        "width": 16
+    },
+    {
+        "name": "contactPhone",
+        "width": 16
+    },
+    {
+        "name": "address",
+        "width": 16
+    },
+    {
+        "name": "passportDetails",
+        "width": 16
+    },
+    {
+        "name": "firstEmergencyContact",
+        "width": 16
+    }
+]

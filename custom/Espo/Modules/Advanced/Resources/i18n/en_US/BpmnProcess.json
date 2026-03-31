@@ -1,0 +1,56 @@
+{
+    "labels": {
+        "Create BpmnProcess": "Start Process",
+        "Stop Process": "Stop Process",
+        "User Tasks": "User Tasks",
+        "Flowcharts": "Flowcharts",
+        "Interrupt": "Interrupt",
+        "Reject": "Reject",
+        "Start flow from here": "Start flow from here",
+        "Reactivate": "Reactivate",
+        "View Variables": "View Variables",
+        "View Error": "View Error",
+        "Error Message": "Error Message"
+    },
+    "fields": {
+        "status": "Status",
+        "targetType": "Target Entity Type",
+        "target": "Target",
+        "createdEntitiesData": "Created Entities Data",
+        "flowchartData": "Flowchart Data",
+        "flowchart": "Flowchart",
+        "flowchartVisualization": "Flowchart (visualization)",
+        "flowchartElementsDataHash": "Flowchart Elements",
+        "variables": "Variables",
+        "endedAt": "Ended At",
+        "startElementId": "Start Element",
+        "workflowId": "Workflow ID",
+        "parentProcess": "Parent Process",
+        "parentProcessFlowNode": "Parent Process Flow Node",
+        "rootProcess": "Root Process"
+    },
+    "links": {
+        "flowchart": "Flowchart",
+        "target": "Target",
+        "flowNodes": "Flow Log",
+        "userTasks": "Process User Tasks",
+        "childProcesses": "Child Processes",
+        "parentProcess": "Parent Process",
+        "parentProcessFlowNode": "Parent Process Flow Node",
+        "rootProcess": "Root Process"
+    },
+    "options": {
+        "status": {
+            "Created": "Created",
+            "Started": "Started",
+            "Ended": "Ended",
+            "Paused": "Paused",
+            "Stopped": "Stopped",
+            "Interrupted": "Interrupted"
+        }
+    },
+    "presetFilters": {
+        "actual": "Active",
+        "ended": "Ended"
+    }
+}

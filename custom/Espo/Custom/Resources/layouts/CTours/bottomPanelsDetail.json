@@ -1,0 +1,27 @@
+{
+    "activities": {
+        "disabled": true
+    },
+    "history": {
+        "disabled": true
+    },
+    "_delimiter_": {
+        "disabled": true
+    },
+    "shopifyTourDeposits": {
+        "index": 0
+    },
+    "bookings": {
+        "index": 1
+    },
+    "waitingLists": {
+        "index": 2
+    },
+    "cancellations": {
+        "index": 3
+    },
+    "stream": {
+        "sticked": false,
+        "index": 4
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "labels": {
+    "Create BpmnFlowchartCategory": "Kategorie erstellen"
+  },
+  "fields": {
+    "order": "Reihenfolge"
+  }
+}

@@ -1,0 +1,204 @@
+{
+    "labels": {
+        "Create Report": "Izveidot ziņojumu",
+        "Run": "Palaist",
+        "Total": "Kopā",
+        "Group Total": "Grupa Kopā",
+        "-Empty-": "-Tukšs -",
+        "Parameters": "Parametri",
+        "Filters": "Filtri",
+        "Chart": "Diagramma",
+        "List Report": "Saraksta ziņojums",
+        "Grid Report": "Tīkla ziņojums",
+        "days": "dienas",
+        "never": "nekad",
+        "Get Csv": "Iegūt Csv",
+        "EmailSending": "E-pasta sūtīšana",
+        "View Report": "Apskatīt ziņojumu",
+        "Report": "Ziņojums",
+        "AND": "UN",
+        "OR": "VAI",
+        "NOT": "NAV IN",
+        "IN": "IN",
+        "Complex expression": "Sarežģīta izteiksme",
+        "Having": "Ar",
+        "Add AND group": "Pievienot grupu AND",
+        "Add OR group": "Pievienot OR grupu",
+        "Add NOT group": "Pievienot NOT grupu",
+        "Add IN group": "Pievienot IN grupu",
+        "Add Having group": "Pievienot Ņemot grupu",
+        "Add Complex expression": "Pievienot Sarežģītu izteiksmi",
+        "Columns": "Kolonnas",
+        "Send Email": "Sūtīt e-pastu",
+        "Results View": "Rezultātu skats",
+        "Create Joint Grid Report": "Izveidot kopīgu režģa ziņojumu"
+    },
+    "fields": {
+        "type": "Tips",
+        "entityType": "Vienības veids",
+        "description": "Apraksts",
+        "groupBy": "Grupa pēc",
+        "columns": "Kolonnas",
+        "orderBy": "Pasūtīt pēc",
+        "filters": "Filtri",
+        "runtimeFilters": "Runtime filtri",
+        "chartType": "Diagrammas veids",
+        "emailSendingInterval": "Intervals",
+        "emailSendingTime": "Laiks",
+        "emailSendingUsers": "Lietotāji",
+        "emailSendingSettingDay": "Diena",
+        "emailSendingSettingMonth": "Mēnesis",
+        "emailSendingSettingWeekdays": "Dienas",
+        "emailSendingDoNotSendEmptyReport": "Nesūtīt, ja ziņojums ir tukšs",
+        "chartColorList": "Krāsas",
+        "chartColor": "Krāsa",
+        "chartOneColumns": "Diagrammas kolonnas",
+        "chartOneY2Columns": "Diagrammas sekundārās ass kolonnas",
+        "orderByList": "Saraksta secība",
+        "column": "Kolonna",
+        "exportFormat": "Formāts",
+        "category": "Kategorija",
+        "applyAcl": "Piesakies ACL",
+        "portals": "Portāli",
+        "joinedReports": "Apakšziņojumi",
+        "joinedReportLabel": "Apakšziņojuma etiķete"
+    },
+    "tooltips": {
+        "emailSendingUsers": "Lietotāju ziņojuma rezultāts tiks nosūtīts uz",
+        "chartColorList": "Pielāgotas krāsas konkrētām grupām.",
+        "applyAcl": "Ziņojuma rezultāti būs atkarīgi no lietotāja piekļuves.",
+        "groupBy": "Dati tiks apkopoti pēc vienas vai divām grupām. Ja tas ir tukšs, tad dati netiks apkopoti, bet tiks parādītas tikai kopsummas.\n\nvar izmantot [Sarežģītas izteiksmes](https://www.espocrm.com/documentation/user-guide/complex-expressions/).",
+        "columns": "Kādus datus rādīt.",
+        "runtimeFilters": "Papildu filtri, kas būs pieejami pārskata skatā.",
+        "portals": "Ziņojums būs pieejams tikai norādītajos portālos."
+    },
+    "functions": {
+        "COUNT": "Count",
+        "SUM": "Summa",
+        "AVG": "Vidēji",
+        "MIN": "Min",
+        "MAX": "Max",
+        "YEAR": "Gads",
+        "QUARTER": "Ceturtdaļa",
+        "MONTH": "Mēnesis",
+        "DAY": "Diena",
+        "WEEK": "Nedēļa",
+        "YEAR_FISCAL": "Fiskālais gads",
+        "QUARTER_FISCAL": "Fiskālais ceturksnis"
+    },
+    "orders": {
+        "ASC": "ASC",
+        "DESC": "DESC",
+        "LIST": "SARAKSTS"
+    },
+    "options": {
+        "dashletDisplayType": {
+            "Chart": "Diagramma",
+            "List": "Saraksts",
+            "Chart-Total": "Diagramma un kopsumma",
+            "Total": "Kopā",
+            "Table": "Tabula"
+        },
+        "chartType": {
+            "BarHorizontal": "Sliede (horizontāli)",
+            "BarVertical": "Stabiņš (vertikāls)",
+            "BarGroupedHorizontal": "Līmeņu grupēšana (horizontāli)",
+            "BarGroupedVertical": "Bārs Grupēts (vertikāli)",
+            "Pie": "Pīrāgs",
+            "Line": "Līnija",
+            "Radar": "Radars"
+        },
+        "emailSendingInterval": {
+            "Daily": "Dienas",
+            "Weekly": "Nedēļas",
+            "Monthly": "Ikmēneša",
+            "Yearly": "Gada"
+        },
+        "emailSendingSettingDay": {
+            "32": "Mēneša pēdējā diena"
+        },
+        "type": {
+            "Grid": "Tīkls",
+            "List": "Saraksts",
+            "JointGrid": "Kopīgais režģis"
+        },
+        "function": {
+            "custom": "Izteiksme",
+            "customWithOperator": "Izteiksme ar/operators",
+            "DATE_NUMBER": "DATUMS",
+            "MONTH_NUMBER": "MĒNESIS",
+            "YEAR_NUMBER": "GADS",
+            "QUARTER_NUMBER": "KVARTĀLS",
+            "DAYOFWEEK_NUMBER": "DAYOFWEEK",
+            "HOUR_NUMBER": "HOUR",
+            "MINUTE_NUMBER": "MINUTE",
+            "LOWER": "LOWER",
+            "UPPER": "UPPER",
+            "TRIM": "TRIM",
+            "LENGTH": "LENGTH",
+            "WEEK_NUMBER_0": "Nedēļa (svētdiena)",
+            "WEEK_NUMBER_1": "Nedēļa (pirmdiena)",
+            "COUNT": "COUNT",
+            "SUM": "SUM",
+            "AVG": "AVG",
+            "MAX": "MAX",
+            "MIN": "MIN"
+        },
+        "operator": {
+            "equals": "Vienāds ar",
+            "notEquals": "Nav vienādi",
+            "greaterThan": "Lielāks par",
+            "lessThan": "Mazāk nekā",
+            "greaterThanOrEquals": "Lielāks par vai vienāds ar",
+            "lessThanOrEquals": "Mazāk nekā vai vienāds",
+            "in": "In",
+            "notIn": "Nav iekļauts",
+            "isTrue": "Vai ir taisnība",
+            "isFalse": "Ir nepatiess",
+            "isNull": "Vai ir nulle",
+            "isNotNull": "Vai nav nulle",
+            "like": "Tāpat kā"
+        },
+        "exportFormat": {
+            "csv": "CSV",
+            "xlsx": "XLSX (Excel)"
+        },
+        "layoutAlign": {
+            "left": "Kreisā",
+            "right": "Tiesības"
+        }
+    },
+    "messages": {
+        "validateMaxCount": "Count nedrīkst būt lielāks par {maxCount}",
+        "gridReportDescription": "Grupējiet pēc vienas vai divām kolonnām un skatiet summas. Var attēlot kā diagrammu.",
+        "listReportDescription": "Vienkāršs ierakstu saraksts, kas atbilst filtru kritērijiem."
+    },
+    "presetFilters": {
+        "list": "Saraksts",
+        "grid": "Tīkls",
+        "listTargets": "Saraksts (Mērķi)",
+        "listAccounts": "Saraksts (Konti)",
+        "listContacts": "Saraksts (Kontakti)",
+        "listLeads": "Saraksts (līderi)",
+        "listUsers": "Saraksts (Lietotāji)"
+    },
+    "errorMessages": {
+        "error": "Kļūda",
+        "noChart": "Ziņojumam nav izvēlēta diagramma.",
+        "selectReport": "Izvēlieties atskaiti paneļa opcijās."
+    },
+    "filtersGroupTypes": {
+        "or": "VAI",
+        "and": "UN",
+        "not": "NAV IN",
+        "subQueryIn": "IN",
+        "having": "Ar"
+    },
+    "layoutFields": {
+        "link": "Saite",
+        "width": "Platums",
+        "notSortable": "Nav šķirojams",
+        "exportOnly": "Tikai eksportēt",
+        "align": "Saskaņot"
+    }
+}

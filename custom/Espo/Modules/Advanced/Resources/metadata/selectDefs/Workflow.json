@@ -1,0 +1,8 @@
+{
+    "accessControlFilterClassNameMap": {
+        "mandatory": "Espo\\Modules\\Advanced\\Classes\\Select\\Workflow\\AccessControlFilters\\Mandatory"
+    },
+    "primaryFilterClassNameMap": {
+        "active": "Espo\\Modules\\Advanced\\Classes\\Select\\Workflow\\PrimaryFilters\\Active"
+    }
+}

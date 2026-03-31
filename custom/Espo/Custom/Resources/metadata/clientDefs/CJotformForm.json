@@ -1,0 +1,20 @@
+{
+    "controller": "controllers/record",
+    "boolFilterList": [
+        "onlyMy"
+    ],
+    "relationshipPanels": {
+        "tours": {
+            "layout": null,
+            "selectPrimaryFilterName": null
+        },
+        "booking": {
+            "layout": null,
+            "selectPrimaryFilterName": null
+        },
+        "bookings": {
+            "layout": null,
+            "selectPrimaryFilterName": null
+        }
+    }
+}

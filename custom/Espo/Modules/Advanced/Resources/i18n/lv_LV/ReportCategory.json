@@ -1,0 +1,13 @@
+{
+    "labels": {
+        "Create ReportCategory": "Izveidot kategoriju",
+        "Manage Categories": "Pārvaldīt kategorijas",
+        "Reports": "Ziņojumi"
+    },
+    "fields": {
+        "order": "Pasūtījums"
+    },
+    "links": {
+        "reports": "Ziņojumi"
+    }
+}

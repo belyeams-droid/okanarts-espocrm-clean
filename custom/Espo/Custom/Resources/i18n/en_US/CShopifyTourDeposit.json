@@ -1,0 +1,42 @@
+{
+    "fields": {
+        "shopifyOrderId": "Shopify Order Id",
+        "amount": "Amount",
+        "amountCurrency": "Amount (Currency)",
+        "amountConverted": "Amount (Converted)",
+        "orderDate": "Order Date",
+        "productTitle": "Product Title",
+        "contact": "Contact",
+        "shopifyEmail": "Shopify Email",
+        "detectionMethod": "Detection Method",
+        "shopifySku": "Shopify SKU",
+        "booking": "Booking",
+        "touchFlag": "Touch Flag",
+        "contractStatus": "Contract Status",
+        "shopifyLineItemId": "Shopify Line Item Id",
+        "tour": "Tour",
+        "contractSentAt": "Contract Sent"
+    },
+    "labels": {
+        "Create CShopifyTourDeposit": "Create ShopifyTourDeposit"
+    },
+    "links": {
+        "contact": "Contact",
+        "booking": "Booking"
+    },
+    "options": {
+        "detectionMethod": {
+            "price-rule": "price-rule",
+            "fallback-email": "fallback-email",
+            "manual": "manual"
+        },
+        "contractStatus": {
+            "Deposit Received": "Deposit Received",
+            "Contract Sent": "Contract Sent",
+            "Customer Requires Attention": "Customer Requires Attention",
+            "Contract Received": "Contract Received",
+            "Booking Created": "Booking Created",
+            "Cancelled": "Cancelled"
+        }
+    }
+}

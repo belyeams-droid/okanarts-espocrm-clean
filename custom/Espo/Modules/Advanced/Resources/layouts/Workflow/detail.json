@@ -1,0 +1,100 @@
+[
+    {
+        "label": "General",
+        "rows": [
+            [
+                {"name": "name"},
+                {"name": "isActive"}
+            ],
+            [
+                {"name": "category"},
+                false
+            ]
+        ]
+    },
+    {
+        "rows": [
+            [
+                {"name": "entityType"},
+                {"name": "type"}
+            ],
+            [
+                {"name": "processOrder"},
+                {"name": "signalName"}
+            ],
+            [
+                {"name":"portalOnly"},
+                {"name":"portal"}
+            ]
+        ]
+    },
+    {
+        "name": "scheduled",
+        "label": "Scheduled Trigger",
+        "rows": [
+            [
+                {"name": "targetReport"},
+                {"name": "scheduling"}
+            ],
+            [
+                false,
+                {"name": "schedulingApplyTimezone"}
+            ]
+        ]
+    },
+    {
+        "name": "manual",
+        "label": "Manual Trigger",
+        "rows": [
+            [
+                {
+                    "name": "manualElementType",
+                    "label": "manualElementTypeInForm"
+                },
+                {
+                    "name": "manualLabel",
+                    "label": "manualLabelInForm"
+                }
+            ],
+            [
+                {
+                    "name": "manualAccessRequired",
+                    "label": "manualAccessRequiredInForm"
+                },
+                {
+                    "name": "manualTeams",
+                    "label": "manualTeamsInForm"
+                }
+            ],
+            [
+                {
+                    "name": "manualConfirmation",
+                    "label": "manualConfirmationInForm"
+                },
+                {
+                    "name": "manualConfirmationText",
+                    "label": "manualConfirmationTextInForm"
+                }
+            ],
+            [
+                {
+                    "name": "manualDynamicLogic",
+                    "label": "manualDynamicLogicInForm"
+                },
+                {
+                    "name": "manualStyle",
+                    "label": "manualStyleInForm"
+                }
+            ]
+        ]
+    },
+    {
+        "rows": [
+            [
+                {
+                    "name": "description"
+                }
+            ]
+        ]
+    }
+]

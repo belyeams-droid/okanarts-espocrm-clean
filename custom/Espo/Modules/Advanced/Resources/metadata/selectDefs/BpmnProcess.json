@@ -1,0 +1,9 @@
+{
+    "primaryFilterClassNameMap": {
+        "actual": "Espo\\Modules\\Advanced\\Classes\\Select\\BpmnProcess\\PrimaryFilters\\Actual",
+        "ended": "Espo\\Modules\\Advanced\\Classes\\Select\\BpmnProcess\\PrimaryFilters\\Ended"
+    },
+    "accessControlFilterClassNameMap": {
+        "mandatory": "Espo\\Modules\\Advanced\\Classes\\Select\\BpmnProcess\\AccessControlFilters\\Mandatory"
+    }
+}

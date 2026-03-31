@@ -1,0 +1,8 @@
+{
+    "relationshipPanels": {
+        "bookings": {
+            "layout": null,
+            "selectPrimaryFilterName": null
+        }
+    }
+}

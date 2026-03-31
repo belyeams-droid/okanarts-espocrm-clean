@@ -1,0 +1,9 @@
+{
+  "entity": true,
+  "object": true,
+  "tab": true,
+  "module": "Custom",
+  "stream": false,
+  "defaultOrderBy": "name",
+  "defaultOrder": "asc"
+}

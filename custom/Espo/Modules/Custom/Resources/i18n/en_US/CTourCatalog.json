@@ -1,0 +1,12 @@
+{
+  "labels": {
+    "Create CTourCatalog": "Create Experience"
+  },
+  "fields": {
+    "slug": "Slug",
+    "experienceType": "Experience Type",
+    "experienceMode": "Mode",
+    "region": "Region",
+    "isActive": "Active"
+  }
+}

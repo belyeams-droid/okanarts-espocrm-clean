@@ -1,0 +1,9 @@
+{
+    "links": {
+        "manualWorkflows": {
+            "type": "hasMany",
+            "entity": "Workflow",
+            "foreign": "manualTeams"
+        }
+    }
+}

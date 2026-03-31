@@ -1,0 +1,10 @@
+{
+    "links": {
+        "reportEmailSending": {
+            "type": "hasMany",
+            "entity": "Report",
+            "foreign": "emailSendingUsers",
+            "utility": true
+        }
+    }
+}

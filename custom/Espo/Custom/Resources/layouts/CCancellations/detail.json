@@ -1,0 +1,18 @@
+[
+    {
+        "rows": [
+            [
+                {
+                    "name": "name"
+                }
+            ],
+            [
+                {
+                    "name": "notes"
+                }
+            ]
+        ],
+        "style": "default",
+        "label": "Overview"
+    }
+]

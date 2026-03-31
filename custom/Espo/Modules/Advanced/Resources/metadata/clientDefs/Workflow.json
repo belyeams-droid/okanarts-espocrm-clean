@@ -1,0 +1,249 @@
+{
+    "controller": "controllers/record",
+    "recordViews": {
+        "detail": "advanced:views/workflow/record/detail",
+        "edit": "advanced:views/workflow/record/edit",
+        "list": "advanced:views/workflow/record/list"
+    },
+    "views": {
+        "list": "advanced:views/workflow/list"
+    },
+    "menu": {
+        "list": {
+            "dropdown": [
+                {
+                    "label": "Workflows Log",
+                    "link": "#WorkflowLogRecord"
+                },
+                {
+                    "label": "Manage Categories",
+                    "link": "#WorkflowCategory",
+                    "acl": "edit",
+                    "aclScope": "WorkflowCategory"
+                }
+            ]
+        }
+    },
+    "filterList": [
+        "active"
+    ],
+    "dynamicLogic": {
+        "fields": {
+            "entityType": {
+                "readOnly": {
+                    "conditionGroup": [
+                        {
+                            "type": "or",
+                            "value": [
+                                {
+                                   "type": "isNotEmpty",
+                                   "attribute": "id"
+                                }
+                            ]
+                        }
+
+                    ]
+                }
+            },
+            "type": {
+                "readOnly": {
+                    "conditionGroup": [
+                        {
+                            "type": "or",
+                            "value": [
+                                {
+                                   "type": "isNotEmpty",
+                                   "attribute": "id"
+                                }
+                            ]
+                        }
+
+                    ]
+                }
+            },
+            "signalName": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                           "type": "in",
+                           "attribute": "type",
+                           "value": "signal"
+                        }
+                    ]
+                },
+                "required": {
+                    "conditionGroup": [
+                        {
+                           "type": "in",
+                           "attribute": "type",
+                           "value": "signal"
+                        }
+                    ]
+                }
+            },
+            "manualLabel": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "in",
+                            "attribute": "type",
+                            "value": "manual"
+                        }
+                    ]
+                },
+                "required": {
+                    "conditionGroup": [
+                        {
+                            "type": "in",
+                            "attribute": "type",
+                            "value": "manual"
+                        }
+                    ]
+                }
+            },
+            "manualTeams": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "in",
+                            "attribute": "type",
+                            "value": "manual"
+                        }
+                    ]
+                }
+            },
+            "manualDynamicLogic": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "in",
+                            "attribute": "type",
+                            "value": "manual"
+                        },
+                        {
+                            "type": "isNotEmpty",
+                            "attribute": "entityType"
+                        }
+                    ]
+                }
+            },
+            "manualAccessRequired": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "in",
+                            "attribute": "type",
+                            "value": "manual"
+                        }
+                    ]
+                }
+            },
+            "manualElementType": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "in",
+                            "attribute": "type",
+                            "value": "manual"
+                        }
+                    ]
+                }
+            },
+            "manualConfirmation": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "in",
+                            "attribute": "type",
+                            "value": "manual"
+                        }
+                    ]
+                }
+            },
+            "manualConfirmationText": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "in",
+                            "attribute": "type",
+                            "value": "manual"
+                        },
+                        {
+                            "type": "isTrue",
+                            "attribute": "manualConfirmation"
+                        }
+                    ]
+                }
+            },
+            "manualStyle": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "in",
+                            "attribute": "type",
+                            "value": "manual"
+                        },
+                        {
+                            "type": "in",
+                            "attribute": "manualElementType",
+                            "value": "Button"
+                        }
+                    ]
+                }
+            },
+            "schedulingApplyTimezone": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "in",
+                            "attribute": "type",
+                            "value": "scheduled"
+                        }
+                    ]
+                }
+            },
+            "processOrder": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "in",
+                            "attribute": "type",
+                            "value": [
+                                "afterRecordCreated",
+                                "afterRecordUpdated",
+                                "afterRecordSaved",
+                                "scheduled",
+                                "signal"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "panels": {
+            "manual": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "in",
+                            "attribute": "type",
+                            "value": "manual"
+                        }
+                    ]
+                }
+            },
+            "scheduled": {
+                "visible": {
+                    "conditionGroup": [
+                        {
+                            "type": "in",
+                            "attribute": "type",
+                            "value": "scheduled"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "iconClass": "fas fa-code-commit"
+}

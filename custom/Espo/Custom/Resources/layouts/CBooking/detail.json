@@ -1,0 +1,185 @@
+[
+    {
+        "rows": [
+            [
+                {
+                    "name": "tours"
+                },
+                {
+                    "name": "contact"
+                },
+                {
+                    "name": "sendFollowUp"
+                }
+            ],
+            [
+                {
+                    "name": "tourCode"
+                },
+                {
+                    "name": "contractLifecycleState"
+                },
+                {
+                    "name": "followUpLifecycleState"
+                }
+            ],
+            [
+                {
+                    "name": "tourStartDate"
+                },
+                {
+                    "name": "dateSent"
+                },
+                {
+                    "name": "followUpSentAt"
+                }
+            ],
+            [
+                {
+                    "name": "tourEndDate"
+                },
+                {
+                    "name": "returnDate"
+                },
+                {
+                    "name": "followUpReceivedAt"
+                }
+            ]
+        ],
+        "dynamicLogicVisible": null,
+        "style": "primary",
+        "dynamicLogicStyled": null,
+        "tabBreak": true,
+        "tabLabel": "Tour Info & Progress",
+        "hidden": false,
+        "noteText": null,
+        "customLabel": "Tour Info & Progress"
+    },
+    {
+        "rows": [
+            [
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "preferredName"
+                },
+                {
+                    "name": "clientStatus"
+                }
+            ],
+            [
+                {
+                    "name": "contactPhone"
+                },
+                {
+                    "name": "contactEmail"
+                },
+                {
+                    "name": "socialMedia"
+                }
+            ],
+            [
+                {
+                    "name": "address"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "dietaryInfo"
+                },
+                {
+                    "name": "rawFish"
+                }
+            ],
+            [
+                false,
+                false
+            ],
+            [
+                false,
+                false
+            ],
+            [
+                false,
+                false
+            ]
+        ],
+        "dynamicLogicVisible": null,
+        "style": "primary",
+        "dynamicLogicStyled": null,
+        "tabBreak": true,
+        "tabLabel": "Travel Client",
+        "hidden": false,
+        "noteText": null,
+        "noteStyle": "info",
+        "customLabel": "Travel Client"
+    },
+    {
+        "rows": [
+            [
+                {
+                    "name": "departureCity"
+                },
+                false
+            ],
+            [
+                {
+                    "name": "arrivalAirport"
+                },
+                {
+                    "name": "departureAirport"
+                }
+            ],
+            [
+                {
+                    "name": "arrivalAirline"
+                },
+                {
+                    "name": "departureAirline"
+                }
+            ],
+            [
+                {
+                    "name": "arrivalFlightNumber"
+                },
+                {
+                    "name": "departureFlightNumber"
+                }
+            ],
+            [
+                {
+                    "name": "arrivalDateTime"
+                },
+                {
+                    "name": "departureDateTime"
+                }
+            ],
+            [
+                {
+                    "name": "independentTravel"
+                }
+            ],
+            [
+                {
+                    "name": "guidance"
+                }
+            ],
+            [
+                {
+                    "name": "companions"
+                }
+            ]
+        ],
+        "dynamicLogicVisible": null,
+        "style": "primary",
+        "dynamicLogicStyled": null,
+        "tabBreak": true,
+        "tabLabel": "Follow-Up Info",
+        "hidden": false,
+        "noteText": null,
+        "noteStyle": "info",
+        "customLabel": "Follow-Up Info"
+    }
+]

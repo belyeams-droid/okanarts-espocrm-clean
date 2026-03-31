@@ -1,0 +1,35 @@
+{
+    "scopeNames": {
+        "Workflow": "Workflow",
+        "Report": "Report",
+        "ReportCategory": "Report Category",
+        "WorkflowLogRecord": "Workflow Log Record",
+        "WorkflowCategory": "Workflow Category",
+        "BpmnFlowchart": "Flowchart",
+        "BpmnProcess": "Process",
+        "BpmnUserTask": "Process User Task",
+        "ReportFilter": "Report Filter",
+        "ReportPanel": "Report Panel",
+        "BpmnFlowchartCategory": "Flowchart Category"
+    },
+    "scopeNamesPlural": {
+        "Workflow": "Workflows",
+        "Report": "Reports",
+        "ReportCategory": "Report Categories",
+        "WorkflowLogRecord": "Workflows Log",
+        "WorkflowCategory": "Workflow Categories",
+        "BpmnFlowchart": "Flowcharts",
+        "BpmnProcess": "Processes",
+        "BpmnUserTask": "Process User Tasks",
+        "ReportFilter": "Report Filters",
+        "ReportPanel": "Report Panels",
+        "BpmnFlowchartCategory": "Flowchart Categories"
+    },
+    "dashlets": {
+        "Report": "Report",
+        "BpmnUserTasks": "Process User Tasks"
+    },
+    "labels": {
+        "Start Process": "Start Process"
+    }
+}

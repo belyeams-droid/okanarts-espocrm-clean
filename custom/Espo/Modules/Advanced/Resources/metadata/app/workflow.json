@@ -1,0 +1,34 @@
+{
+    "serviceActions": {
+        "Meeting": {
+            "sendEventInvitations": {
+                "className": "Espo\\Modules\\Advanced\\Classes\\ServiceActions\\Meeting\\SendInvitations"
+            }
+        },
+        "Call": {
+            "sendEventInvitations": {
+                "className": "Espo\\Modules\\Advanced\\Classes\\ServiceActions\\Meeting\\SendInvitations"
+            }
+        },
+        "Contact": {
+            "optOut": {
+                "className": "Espo\\Modules\\Advanced\\Classes\\ServiceActions\\Person\\OptOut"
+            }
+        },
+        "Lead": {
+            "optOut": {
+                "className": "Espo\\Modules\\Advanced\\Classes\\ServiceActions\\Person\\OptOut"
+            }
+        },
+        "Account": {
+            "optOut": {
+                "className": "Espo\\Modules\\Advanced\\Classes\\ServiceActions\\Person\\OptOut"
+            }
+        },
+        "User": {
+            "generateAndSendPassword": {
+                "className": "Espo\\Modules\\Advanced\\Classes\\ServiceActions\\User\\GenerateAndSendPassword"
+            }
+        }
+    }
+}

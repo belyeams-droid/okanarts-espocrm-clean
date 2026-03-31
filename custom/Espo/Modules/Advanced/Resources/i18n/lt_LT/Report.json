@@ -1,0 +1,204 @@
+{
+    "labels": {
+        "Create Report": "Sukurti ataskaitą",
+        "Run": "Paleisti",
+        "Total": "Iš viso",
+        "Group Total": "Grupė Iš viso",
+        "-Empty-": "-Tuščias -",
+        "Parameters": "Parametrai",
+        "Filters": "Filtrai",
+        "Chart": "Diagrama",
+        "List Report": "Sąrašo ataskaita",
+        "Grid Report": "Tinklelio ataskaita",
+        "days": "dienos",
+        "never": "niekada",
+        "Get Csv": "Gauti Csv",
+        "EmailSending": "El. laiškų siuntimas",
+        "View Report": "Peržiūrėti ataskaitą",
+        "Report": "Ataskaita",
+        "AND": "IR",
+        "OR": "ARBA",
+        "NOT": "NĖRA",
+        "IN": "IN",
+        "Complex expression": "Sudėtinga išraiška",
+        "Having": "Turėdami",
+        "Add AND group": "Pridėti grupę AND",
+        "Add OR group": "Pridėti OR grupę",
+        "Add NOT group": "Pridėti NOT grupę",
+        "Add IN group": "Pridėti IN grupę",
+        "Add Having group": "Pridėti turint grupę",
+        "Add Complex expression": "Pridėti sudėtingą išraišką",
+        "Columns": "Stulpeliai",
+        "Send Email": "Siųsti el. paštu",
+        "Results View": "Rezultatų peržiūra",
+        "Create Joint Grid Report": "Sukurti bendrą tinklelio ataskaitą"
+    },
+    "fields": {
+        "type": "Tipas",
+        "entityType": "Subjekto tipas",
+        "description": "Aprašymas",
+        "groupBy": "Grupė pagal",
+        "columns": "Stulpeliai",
+        "orderBy": "Užsakyti pagal",
+        "filters": "Filtrai",
+        "runtimeFilters": "Vykdymo laiko filtrai",
+        "chartType": "Diagramos tipas",
+        "emailSendingInterval": "Intervalas",
+        "emailSendingTime": "Laikas",
+        "emailSendingUsers": "Vartotojai",
+        "emailSendingSettingDay": "Diena",
+        "emailSendingSettingMonth": "Mėnuo",
+        "emailSendingSettingWeekdays": "Dienos",
+        "emailSendingDoNotSendEmptyReport": "Nesiųsti, jei ataskaita yra tuščia",
+        "chartColorList": "Spalvos",
+        "chartColor": "Spalva",
+        "chartOneColumns": "Diagramos stulpeliai",
+        "chartOneY2Columns": "Diagramos antrinės ašies stulpeliai",
+        "orderByList": "Sąrašo tvarka",
+        "column": "Stulpelis",
+        "exportFormat": "Formatas",
+        "category": "Kategorija",
+        "applyAcl": "Taikyti ACL",
+        "portals": "Portalai",
+        "joinedReports": "Papildomos ataskaitos",
+        "joinedReportLabel": "Papildomos ataskaitos etiketė"
+    },
+    "tooltips": {
+        "emailSendingUsers": "Vartotojų ataskaitos rezultatas bus išsiųstas adresu",
+        "chartColorList": "Pasirinktinės spalvos konkrečioms grupėms.",
+        "applyAcl": "Ataskaitos rezultatai priklauso nuo naudotojo prieigos.",
+        "groupBy": "Duomenys bus apibendrinti pagal vieną ar dvi grupes. Jei tuščia, duomenys nebus sumuojami, bus rodomos tik bendros sumos.\n\ngalima naudoti [Sudėtines išraiškas](https://www.espocrm.com/documentation/user-guide/complex-expressions/).",
+        "columns": "Kokius duomenis rodyti.",
+        "runtimeFilters": "Papildomi filtrai, kuriuos bus galima naudoti ataskaitos rodinyje.",
+        "portals": "Ataskaita bus prieinama tik nurodytuose portaluose."
+    },
+    "functions": {
+        "COUNT": "Skaičiuokite",
+        "SUM": "Suma",
+        "AVG": "Vidutinis",
+        "MIN": "Min",
+        "MAX": "Max",
+        "YEAR": "Metai",
+        "QUARTER": "Ketvirtis",
+        "MONTH": "Mėnuo",
+        "DAY": "Diena",
+        "WEEK": "Savaitė",
+        "YEAR_FISCAL": "Fiskaliniai metai",
+        "QUARTER_FISCAL": "Fiskalinis ketvirtis"
+    },
+    "orders": {
+        "ASC": "ASC",
+        "DESC": "DESC",
+        "LIST": "SĄRAŠAS"
+    },
+    "options": {
+        "dashletDisplayType": {
+            "Chart": "Diagrama",
+            "List": "Sąrašas",
+            "Chart-Total": "Diagrama ir iš viso",
+            "Total": "Iš viso",
+            "Table": "Lentelė"
+        },
+        "chartType": {
+            "BarHorizontal": "Juosta (horizontali)",
+            "BarVertical": "Strypas (vertikalus)",
+            "BarGroupedHorizontal": "Stulpeliai sugrupuoti (horizontaliai)",
+            "BarGroupedVertical": "Stulpeliai sugrupuoti (vertikaliai)",
+            "Pie": "Pyragas",
+            "Line": "Linija",
+            "Radar": "Radaras"
+        },
+        "emailSendingInterval": {
+            "Daily": "Kasdien",
+            "Weekly": "Savaitinis",
+            "Monthly": "Mėnesinis",
+            "Yearly": "Metinis"
+        },
+        "emailSendingSettingDay": {
+            "32": "Paskutinė mėnesio diena"
+        },
+        "type": {
+            "Grid": "Tinklelis",
+            "List": "Sąrašas",
+            "JointGrid": "Bendras tinklelis"
+        },
+        "function": {
+            "custom": "Išraiška",
+            "customWithOperator": "Išraiška su operatoriumi",
+            "DATE_NUMBER": "DATA",
+            "MONTH_NUMBER": "MĖNESIS",
+            "YEAR_NUMBER": "METAI",
+            "QUARTER_NUMBER": "KVARTALAS",
+            "DAYOFWEEK_NUMBER": "SAVAITĖS DIENA",
+            "HOUR_NUMBER": "VALANDOS",
+            "MINUTE_NUMBER": "MINUTĖ",
+            "LOWER": "ŽEMIAU ESANTIS",
+            "UPPER": "UPPER",
+            "TRIM": "TRIM",
+            "LENGTH": "ILGIS",
+            "WEEK_NUMBER_0": "Savaitė (sekmadienis)",
+            "WEEK_NUMBER_1": "Savaitė (pirmadienis)",
+            "COUNT": "COUNT",
+            "SUM": "SUMA",
+            "AVG": "AVG",
+            "MAX": "MAX",
+            "MIN": "MIN"
+        },
+        "operator": {
+            "equals": "Lygus",
+            "notEquals": "Ne lygūs",
+            "greaterThan": "Didesnis nei",
+            "lessThan": "Mažiau nei",
+            "greaterThanOrEquals": "Didesnis už arba lygus",
+            "lessThanOrEquals": "Mažiau nei arba lygu",
+            "in": "Svetainėje",
+            "notIn": "Nėra",
+            "isTrue": "Ar tiesa",
+            "isFalse": "Yra klaidinga",
+            "isNull": "Yra nulinis",
+            "isNotNull": "Is Not Null",
+            "like": "Kaip"
+        },
+        "exportFormat": {
+            "csv": "CSV",
+            "xlsx": "XLSX (Excel)"
+        },
+        "layoutAlign": {
+            "left": "Kairėje pusėje",
+            "right": "Dešinė"
+        }
+    },
+    "messages": {
+        "validateMaxCount": "Skaičius neturėtų būti didesnis nei {maxCount}",
+        "gridReportDescription": "Sugrupuokite pagal vieną ar du stulpelius ir peržiūrėkite sumas. Galima rodyti kaip diagramą.",
+        "listReportDescription": "Paprastas filtrų kriterijus atitinkančių įrašų sąrašas."
+    },
+    "presetFilters": {
+        "list": "Sąrašas",
+        "grid": "Tinklelis",
+        "listTargets": "Sąrašas (Tikslai)",
+        "listAccounts": "Sąrašas (Sąskaitos)",
+        "listContacts": "Sąrašas (Kontaktai)",
+        "listLeads": "Sąrašas (vadovai)",
+        "listUsers": "Sąrašas (Vartotojai)"
+    },
+    "errorMessages": {
+        "error": "Klaida",
+        "noChart": "Ataskaitai nepasirinkta jokia diagrama.",
+        "selectReport": "Pasirinkite ataskaitą brūkšninio skydelio parinktyse."
+    },
+    "filtersGroupTypes": {
+        "or": "ARBA",
+        "and": "IR",
+        "not": "NĖRA",
+        "subQueryIn": "IN",
+        "having": "Turėdami"
+    },
+    "layoutFields": {
+        "link": "Nuoroda",
+        "width": "Plotis",
+        "notSortable": "Nerūšiuojama",
+        "exportOnly": "Tik eksportuoti",
+        "align": "Suderinti"
+    }
+}

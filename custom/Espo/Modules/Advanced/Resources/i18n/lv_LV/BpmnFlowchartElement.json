@@ -1,0 +1,125 @@
+{
+    "fields": {
+        "text": "Teksts",
+        "triggerType": "Sprūda veids",
+        "timer": "Taimera parametri",
+        "defaultFlowId": "Noklusējuma plūsma",
+        "from": "No",
+        "to": "Uz",
+        "replyTo": "Atbildēt-atbildēt",
+        "fromEmailAddress": "No e-pasta adreses",
+        "toEmailAddress": "Uz e-pasta adresi",
+        "replyToEmailAddress": "Atbildes e-pasta adrese",
+        "toSpecifiedTeams": "Komandām",
+        "toSpecifiedUsers": "Lietotājiem",
+        "toSpecifiedContacts": "Kontaktpersonām",
+        "emailTemplate": "E-pasta veidne",
+        "doNotStore": "Nesaglabāt nosūtīto e-pastu",
+        "actions": "Darbības",
+        "formula": "Formula (skripts)",
+        "actionType": "Darbības veids",
+        "targetUser": "Mērķa lietotājs",
+        "assignmentType": "Uzdevums",
+        "targetTeam": "Mērķa komanda",
+        "targetUserPosition": "Mērķa lietotāja pozīcija",
+        "startDirection": "Sākuma virziens",
+        "targetReport": "Mērķa ziņojums",
+        "scheduling": "Plānošana",
+        "messageType": "Ziņojuma veids",
+        "canBeFailed": "Var neizdoties",
+        "target": "Mērķis",
+        "callableType": "Izsaucamais tips",
+        "errorCode": "Kļūdas kods",
+        "escalationCode": "Eskalācijas kods",
+        "cancelActivity": "Vai pārtrauc",
+        "isInterrupting": "Vai pārtrauc",
+        "targetType": "Mērķa subjekta veids",
+        "flowchartVisualization": "Plūsmas shēma",
+        "flowchart": "Plūsmas shēma",
+        "signal": "Signāls",
+        "returnVariableList": "Atgrieztie mainīgie",
+        "returnCollectionVariable": "Atgrieztā savākšanas mainīgais",
+        "repliedTo": "Atbildēt uz",
+        "relatedTo": "Saistīts ar",
+        "instructions": "Instrukcijas",
+        "conditionsFormula": "Nosacījumu formula",
+        "optOutLink": "Atsacīšanās saite",
+        "isMultiInstance": "Vairāku instanču",
+        "isSequential": "Secquential",
+        "loopCollectionExpression": "Kolekcijas izteiksme",
+        "targetIdExpression": "Mērķa ID Izteiksme"
+    },
+    "labels": {
+        "Conditions": "Nosacījumi",
+        "Actions": "Darbības",
+        "Field": "Laukums",
+        "Flows Conditions": "Plūsmas nosacījumi"
+    },
+    "tooltips": {
+        "targetIdExpression": "Izteiksme, kas definē mērķa ieraksta ID.",
+        "returnCollectionVariable": "Norādiet mainīgā nosaukumu datiem, kas tiks atgriezti no vairāku instanču apakšprocesa. Mainīgais satur objektu masīvu. Katrs objekts saturēs katra apakšprocesa gadījuma atgrieztos mainīgos.",
+        "loopCollectionExpression": "Izteiksme, kas definē vērtību sarakstu. Katra vērtība iestancē atsevišķu apakšprocesu. Vērtība būs pieejama mainīgajā `$inputItem`.",
+        "taskSendMessageEmailAddress": "Pieejamās vietzīmes:\n\n* `{$$Pārmaināmā}`",
+        "targetReport": "Ieraksti no saraksta ziņojuma tiks nodoti jaunajam procesam.",
+        "target": "Izvēlieties, kurš ieraksts tiks izmantots kā mērķis.",
+        "userTaskName": "Izveidojamā lietotāja uzdevuma ieraksta nosaukums.\n\nPieejamās vietzīmes:\n* `{$attribute}`\n* `{$$$mainīgais}`",
+        "userTaskInstructions": "Norādījumi lietotājam. Tiek atbalstīta atkļūdošana.\n\nPieejamās vietzīmes:\n* `{$attribute}`\n* `{$$$mainīgais}`",
+        "returnVariableList": "Norādiet formulas mainīgos, kas tiks kopēti no apakšprocesa uz vecāko procesu, kad apakšprocess veiksmīgi beigsies.",
+        "scheduling": "Crontab pieraksts. Definē biežumu. UTC laika josla.\n\n`*/5 * * * * *` - ik pēc 5 minūtēm\n\n`0 */2 * * * *` - ik pēc 2 stundām\n\n`30 1 * * * *` - reizi dienā pulksten 01:30\n\n`0 0 0 1 * * *` - mēneša pirmajā dienā"
+    },
+    "options": {
+        "emailAddress": {
+            "system": "Sistēma",
+            "currentUser": "Pašreizējais lietotājs",
+            "specifiedEmailAddress": "Norādītā e-pasta adrese",
+            "assignedUser": "Piešķirtais lietotājs",
+            "followers": "Sekotāji",
+            "specifiedContacts": "Norādītie kontakti",
+            "specifiedUsers": "Norādītie lietotāji",
+            "specifiedTeams": "Norādītās komandas",
+            "followersExcludingAssignedUser": "Sekotāji, izņemot Piešķirtais lietotājs",
+            "processAssignedUser": "Lietotājs, kam piešķirts Process",
+            "targetEntity": "Mērķa ieraksts"
+        },
+        "triggerType": {
+            "afterRecordCreated": "Pēc ieraksta izveidošanas",
+            "afterRecordSaved": "Pēc ieraksta saglabāšanas",
+            "afterRecordUpdated": "Pēc ieraksta atjaunināšanas",
+            "sequential": "Sekvenciālais"
+        },
+        "timerShiftOperator": {
+            "plus": "plus",
+            "minus": "mīnus"
+        },
+        "timerShiftUnits": {
+            "minutes": "protokols",
+            "hours": "stundas",
+            "days": "dienas",
+            "months": "mēneši",
+            "seconds": "sekundes"
+        },
+        "timerBase": {
+            "moment": "Notikuma rašanās brīdis",
+            "formula": "Aprēķina pēc formulas"
+        },
+        "actionType": {
+            "Approve": "Apstiprināt",
+            "Review": "Pārskats"
+        },
+        "assignmentType": {
+            "processAssignedUser": "Lietotājs, kam piešķirts Process",
+            "specifiedUser": "Norādītais lietotājs",
+            "rule:Round-Robin": "Round-Robin",
+            "rule:Least-Busy": "Vismazāk aizņemts"
+        },
+        "startDirection": {
+            "r": "Tiesības",
+            "d": "Lejup",
+            "u": "Uz augšu",
+            "l": "Kreisā"
+        },
+        "messageType": {
+            "Email": "E-pasts"
+        }
+    }
+}

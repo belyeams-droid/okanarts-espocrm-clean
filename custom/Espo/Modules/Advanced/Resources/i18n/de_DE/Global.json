@@ -1,0 +1,33 @@
+{
+  "scopeNames": {
+    "Report": "Bericht",
+    "ReportCategory": "Berichtskategorie",
+    "WorkflowLogRecord": "Workflow Protokollsatz",
+    "WorkflowCategory": "Workflow Kategorie",
+    "BpmnFlowchart": "Flussdiagramm zu verarbeiten",
+    "BpmnProcess": "Prozess",
+    "BpmnUserTask": "Benutzeraufgabe zu verarbeiten",
+    "ReportFilter": "Berichtsfilter",
+    "ReportPanel": "Berichtspanel",
+    "BpmnFlowchartCategory": "Flussdiagramm-Kategorie"
+  },
+  "scopeNamesPlural": {
+    "Report": "Berichte",
+    "ReportCategory": "Berichtskategorien",
+    "WorkflowLogRecord": "Workflows Protokoll",
+    "WorkflowCategory": "Workflow Kategorien",
+    "BpmnFlowchart": "Flowcharts zu verarbeiten",
+    "BpmnProcess": "Prozesse",
+    "BpmnUserTask": "Benutzeraufgaben zu verarbeiten",
+    "ReportFilter": "Berichtsfilter",
+    "ReportPanel": "Berichtspanels",
+    "BpmnFlowchartCategory": "Flussdiagramm-Kategorien"
+  },
+  "dashlets": {
+    "Report": "Bericht",
+    "BpmnUserTasks": "Benutzeraufgaben zu verarbeiten"
+  },
+  "labels": {
+    "Start Process": "Prozess starten"
+  }
+}

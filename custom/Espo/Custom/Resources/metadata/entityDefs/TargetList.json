@@ -1,0 +1,11 @@
+{
+    "links": {
+        "cBookings": {
+            "type": "hasMany",
+            "foreign": "targetList",
+            "entity": "CBooking",
+            "audited": false,
+            "isCustom": true
+        }
+    }
+}

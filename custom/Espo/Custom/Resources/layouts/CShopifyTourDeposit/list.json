@@ -1,0 +1,44 @@
+[
+    {
+        "name": "name",
+        "link": true
+    },
+    {
+        "name": "productTitle",
+        "width": 16
+    },
+    {
+        "name": "contact",
+        "width": 16,
+        "link": true,
+        "align": "left"
+    },
+    {
+        "name": "amountConverted",
+        "width": 16
+    },
+    {
+        "name": "booking",
+        "width": 16
+    },
+    {
+        "name": "orderDate",
+        "width": 16
+    },
+    {
+        "name": "shopifyEmail",
+        "width": 16
+    },
+    {
+        "name": "shopifyOrderId",
+        "width": 16
+    },
+    {
+        "name": "shopifySku",
+        "width": 16
+    },
+    {
+        "name": "touchFlag",
+        "width": 16
+    }
+]

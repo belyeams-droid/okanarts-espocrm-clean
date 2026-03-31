@@ -1,0 +1,58 @@
+{
+    "fieldTypeList": [
+        "currencyConverted",
+        "int",
+        "float",
+        "duration",
+        "enumInt",
+        "enumFloat",
+        "enum",
+        "varchar",
+        "link",
+        "date",
+        "datetime",
+        "datetimeOptional",
+        "email",
+        "phone",
+        "url",
+        "personName",
+        "array",
+        "multiEnum",
+        "checklist",
+        "urlMultiple",
+        "decimal"
+    ],
+    "numericFieldTypeList": [
+        "currencyConverted",
+        "int",
+        "float",
+        "enumInt",
+        "enumFloat",
+        "duration",
+        "decimal"
+    ],
+    "noGroupFieldTypeList": [
+        "linkMultiple",
+        "date",
+        "datetime",
+        "datetimeOptional",
+        "currency",
+        "currencyConverted",
+        "text",
+        "map",
+        "multiEnum",
+        "array",
+        "checklist",
+        "urlMultiple",
+        "address",
+        "foreign",
+        "linkOne",
+        "attachmentMultiple"
+    ],
+    "noForeignGroupFieldTypeList": [
+        "linkParent",
+        "phone",
+        "email",
+        "personName"
+    ]
+}

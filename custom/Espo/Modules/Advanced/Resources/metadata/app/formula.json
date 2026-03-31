@@ -1,0 +1,128 @@
+{
+    "functionClassNameMap": {
+        "processEntity\\attribute": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\BpmGroup\\ProcessEntityGroup\\AttributeType",
+        "bpm\\broadcastSignal": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\BpmGroup\\BroadcastSignalType",
+        "bpm\\processEntity\\attribute": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\BpmGroup\\ProcessEntityGroup\\AttributeType",
+        "bpm\\createdEntity\\attribute": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\BpmGroup\\CreatedEntityGroup\\AttributeType",
+        "bpm\\targetEntity\\attribute": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\TargetEntityGroup\\AttributeType",
+        "bpm\\startProcess": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\BpmGroup\\StartProcessType",
+        "bpm\\caughtErrorMessage": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\BpmGroup\\CaughtErrorMessage",
+        "bpm\\caughtErrorCode": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\BpmGroup\\CaughtErrorCode",
+        "targetEntity\\attribute": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\TargetEntityGroup\\AttributeType",
+        "targetEntity\\attributeFetched": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\TargetEntityGroup\\AttributeFetchedType",
+        "targetEntity\\isAttributeChanged": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\TargetEntityGroup\\IsAttributeChangedType",
+        "targetEntity\\isAttributeNotChanged": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\TargetEntityGroup\\IsAttributeNotChangedType",
+        "targetEntity\\isNew": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\TargetEntityGroup\\IsNewType",
+        "targetEntity\\isRelated": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\TargetEntityGroup\\IsRelatedType",
+        "targetEntity\\hasLinkMultipleId": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\TargetEntityGroup\\HasLinkMultipleIdType",
+        "workflow\\lastHttpResponseBody": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\WorkflowGroup\\LastHttpResponseBodyType",
+        "workflow\\lastHttpResponseCode": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\WorkflowGroup\\LastHttpResponseCodeType",
+        "workflow\\trigger": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\WorkflowGroup\\TriggerType",
+        "workflow\\targetEntity\\attribute": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\TargetEntityGroup\\AttributeType",
+        "workflow\\targetEntity\\attributeFetched": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\TargetEntityGroup\\AttributeFetchedType",
+        "workflow\\targetEntity\\isAttributeChanged": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\TargetEntityGroup\\IsAttributeChangedType",
+        "workflow\\targetEntity\\isAttributeNotChanged": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\TargetEntityGroup\\IsAttributeNotChangedType",
+        "workflow\\signalParam": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\WorkflowGroup\\SignalParamType",
+        "workflow\\lastCreatedEntityId": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\WorkflowGroup\\LastCreatedEntityIdType",
+        "workflow\\alert": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\WorkflowGroup\\AlertType",
+        "report\\recordAttribute": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\ReportGroup\\RecordAttribute",
+        "report\\export": "Espo\\Modules\\Advanced\\Core\\Workflow\\Formula\\Functions\\ReportGroup\\Export"
+    },
+    "functionList": [
+        "__APPEND__",
+        {
+            "name": "report\\export",
+            "insertText": "report\\export('REPORT_ID')",
+            "returnType": "string",
+            "unsafe": true
+        },
+        {
+            "name": "report\\recordAttribute",
+            "unsafe": true
+        },
+        {
+            "name": "bpm\\processEntity\\attribute",
+            "insertText": "bpm\\processEntity\\attribute('ATTRIBUTE_NAME')",
+            "returnType": "mixed",
+            "unsafe": true
+        },
+        {
+            "name": "bpm\\targetEntity\\attribute",
+            "insertText": "bpm\\targetEntity\\attribute('ATTRIBUTE_NAME)'",
+            "returnType": "mixed",
+            "unsafe": true
+        },
+        {
+            "name": "bpm\\createdEntity\\attribute",
+            "insertText": "bpm\\createdEntity\\attribute('ALIAS_ID', 'ATTRIBUTE_NAME')",
+            "returnType": "mixed",
+            "unsafe": true
+        },
+        {
+            "name": "bpm\\broadcastSignal",
+            "insertText": "bpm\\broadcastSignal(SIGNAL_NAME, [ENTITY_TYPE], [ENTITY_ID])",
+            "unsafe": true
+        },
+        {
+            "name": "bpm\\startProcess",
+            "insertText": "bpm\\startProcess(FLOWCHART_ID, TARGET_TYPE, TARGET_ID)",
+            "unsafe": true
+        },
+        {
+            "name": "bpm\\caughtErrorCode",
+            "insertText": "bpm\\caughtErrorCode()",
+            "returnType": "?string",
+            "unsafe": true
+        },
+        {
+            "name": "bpm\\caughtErrorMessage",
+            "insertText": "bpm\\caughtErrorMessage()",
+            "returnType": "?string",
+            "unsafe": true
+        },
+        {
+            "name": "workflow\\targetEntity\\attribute",
+            "insertText": "workflow\\targetEntity\\attribute('ATTRIBUTE_NAME')",
+            "unsafe": true
+        },
+        {
+            "name": "workflow\\targetEntity\\attributeFetched",
+            "insertText": "workflow\\targetEntity\\attributeFetched('ATTRIBUTE_NAME')",
+            "unsafe": true
+        },
+        {
+            "name": "workflow\\trigger",
+            "insertText": "workflow\\trigger(ENTITY_TYPE, ID, WORKFLOW_ID)",
+            "unsafe": true
+        },
+        {
+            "name": "workflow\\lastHttpResponseBody",
+            "insertText": "workflow\\lastHttpResponseBody()",
+            "returnType": "string|null",
+            "unsafe": true
+        },
+        {
+            "name": "workflow\\lastHttpResponseCode",
+            "insertText": "workflow\\lastHttpResponseCode()",
+            "returnType": "int|null",
+            "unsafe": true
+        },
+        {
+            "name": "workflow\\signalParam",
+            "insertText": "workflow\\signalParam(NAME)",
+            "returnType": "mixed",
+            "unsafe": true
+        },
+        {
+            "name": "workflow\\lastCreatedEntityId",
+            "insertText": "workflow\\lastCreatedEntityId()",
+            "returnType": "string|null",
+            "unsafe": true
+        },
+        {
+            "name": "workflow\\alert",
+            "insertText": "workflow\\alert(MESSAGE)",
+            "unsafe": true
+        }
+    ]
+}

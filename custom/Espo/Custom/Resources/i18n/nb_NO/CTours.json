@@ -1,0 +1,10 @@
+{
+  "links": {
+    "meetings": "Møter",
+    "calls": "Samtaler",
+    "tasks": "Oppgaver"
+  },
+  "labels": {
+    "Create CTours": "Opprett Tours"
+  }
+}

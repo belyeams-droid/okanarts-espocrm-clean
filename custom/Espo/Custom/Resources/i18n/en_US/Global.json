@@ -1,0 +1,22 @@
+{
+    "scopeNames": {
+        "CTours": "Tours",
+        "CBooking": "Booking",
+        "CCancellations": "Cancellations",
+        "CWaitingList": "Waiting List",
+        "CJotformForm": "Jotform Form",
+        "CShopifyTourDeposit": "ShopifyTourDeposit",
+        "CEngagement": "Engagement",
+        "CCSystemSettings": "CSystemSettings"
+    },
+    "scopeNamesPlural": {
+        "CTours": "Tours",
+        "CBooking": "Bookings",
+        "CCancellations": "Cancellations",
+        "CWaitingList": "Waiting Lists",
+        "CJotformForm": "Jotform Forms",
+        "CShopifyTourDeposit": "ShopifyTourDeposits",
+        "CEngagement": "Engagements",
+        "CCSystemSettings": "CSystemSettingses"
+    }
+}

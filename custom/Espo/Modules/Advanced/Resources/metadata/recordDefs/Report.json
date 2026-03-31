@@ -1,0 +1,25 @@
+{
+    "massActions": {
+        "delete": {
+            "allowed": true
+        },
+        "update": {
+            "allowed": true
+        }
+    },
+    "loadAdditionalFieldsAfterUpdate": true,
+    "readLoaderClassNameList": [
+        "Espo\\Modules\\Advanced\\Classes\\FieldProcessing\\Report\\ChartOneLoader",
+        "Espo\\Modules\\Advanced\\Classes\\FieldProcessing\\Report\\UnsetPortals"
+    ],
+    "listLoaderClassNameList": [
+        "Espo\\Modules\\Advanced\\Classes\\FieldProcessing\\Report\\UnsetPortals"
+    ],
+    "forceSelectAllAttributes": true,
+    "beforeCreateHookClassNameList": [
+        "Espo\\Modules\\Advanced\\Classes\\RecordHooks\\Report\\BeforeCreate"
+    ],
+    "beforeUpdateHookClassNameList": [
+        "Espo\\Modules\\Advanced\\Classes\\RecordHooks\\Report\\BeforeUpdate"
+    ]
+}

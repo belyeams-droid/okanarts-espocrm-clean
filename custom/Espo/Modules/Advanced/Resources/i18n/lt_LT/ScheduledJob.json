@@ -1,0 +1,10 @@
+{
+    "options": {
+        "job": {
+            "ReportTargetListSync": "Tikslinių sąrašų sinchronizavimas su ataskaitomis",
+            "ScheduleReportSending": "Ataskaitų siuntimo grafikas",
+            "RunScheduledWorkflows": "Paleisti suplanuotas darbo eigas",
+            "ProcessPendingProcessFlows": "Nebaigtų procesų srautai"
+        }
+    }
+}

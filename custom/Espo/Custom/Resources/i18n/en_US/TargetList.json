@@ -1,0 +1,8 @@
+{
+    "fields": {
+        "cBookings": "Bookings"
+    },
+    "links": {
+        "cBookings": "Bookings"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "primaryFilterClassNameMap": {
+        "active": "Espo\\Modules\\Advanced\\Classes\\Select\\BpmnFlowchart\\PrimaryFilters\\Active",
+        "activeHasNoneStartEvent": "Espo\\Modules\\Advanced\\Classes\\Select\\BpmnFlowchart\\PrimaryFilters\\ActiveHasNoneStartEvent",
+        "isManuallyStartable": "Espo\\Modules\\Advanced\\Classes\\Select\\BpmnFlowchart\\PrimaryFilters\\IsManuallyStartable"
+    }
+}

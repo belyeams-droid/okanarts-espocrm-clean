@@ -1,0 +1,11 @@
+{
+  "handlers": {
+    "main": {
+      "className": "Monolog\\Handler\\StreamHandler",
+      "params": {
+        "stream": "data/logs/espo.log",
+        "level": "DEBUG"
+      }
+    }
+  }
+}

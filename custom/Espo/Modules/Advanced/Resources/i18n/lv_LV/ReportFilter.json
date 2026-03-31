@@ -1,0 +1,19 @@
+{
+    "labels": {
+        "Create ReportFilter": "Izveidot filtru",
+        "Rebuild Filters": "Pārbūves filtri"
+    },
+    "fields": {
+        "order": "Pasūtījums",
+        "report": "Ziņojums",
+        "entityType": "Vienības veids",
+        "isActive": "Ir iespējots"
+    },
+    "links": {
+        "report": "Ziņojums"
+    },
+    "tooltips": {
+        "teams": "Komandas, kurām filtrs būs pieejams. Ja nav norādītas komandas, tad ierobežojums pēc komandas netiks piemērots.",
+        "report": "Saraksta atskaite, kas tiks izmantota filtram."
+    }
+}

@@ -1,0 +1,9 @@
+{
+  "fields": {
+    "column": "Sommatoria colonna",
+    "displayOnlyCount": "Visualizza solo il totale",
+    "displayTotal": "Visualizzazione il totale",
+    "useSiMultiplier": "Moltiplicatore SI",
+    "displayType": "Cosa mostrare"
+  }
+}

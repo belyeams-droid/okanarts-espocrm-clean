@@ -1,0 +1,1125 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": false,
+            "pattern": "$noBadCharacters",
+            "options": [],
+            "default": null
+        },
+        "description": {
+            "type": "text"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user"
+        },
+        "modifiedBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user"
+        },
+        "assignedUser": {
+            "type": "link",
+            "required": false,
+            "view": "views/fields/assigned-user"
+        },
+        "teams": {
+            "type": "linkMultiple",
+            "view": "views/fields/teams"
+        },
+        "arrivalAirline": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "arrivalAirport": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "birthDate": {
+            "notNull": false,
+            "type": "date",
+            "isCustom": true
+        },
+        "bookingAddress": {
+            "type": "address",
+            "isCustom": true
+        },
+        "clientStatus": {
+            "type": "enum",
+            "style": {
+                "New": null,
+                "Alum": null
+            },
+            "maxLength": 100,
+            "isCustom": true,
+            "options": [
+                "New",
+                "Alum"
+            ],
+            "default": "New"
+        },
+        "companions": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "dateOfDepositPayment": {
+            "notNull": false,
+            "type": "date",
+            "isCustom": true,
+            "audited": true
+        },
+        "dateSent": {
+            "notNull": false,
+            "type": "date",
+            "isCustom": true,
+            "tooltip": true
+        },
+        "dateofFinalPayment": {
+            "notNull": false,
+            "type": "date",
+            "isCustom": true
+        },
+        "departureAirline": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "departureAirport": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "departureCity": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "departureFlightNumber": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "dietaryInfo": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "emergencyContact": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "fullAddress": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "fullNameonPassport": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "guidance": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "independentTravel": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "notes": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "passortCountry": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "passportExpirationDate": {
+            "notNull": false,
+            "type": "date",
+            "isCustom": true
+        },
+        "passportNotes": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "passportNumber": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "arrivalFlightNumber": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "tours": {
+            "type": "link"
+        },
+        "contact": {
+            "type": "link",
+            "autocompleteOnEmpty": true,
+            "tooltip": true,
+            "createButton": true
+        },
+        "address": {
+            "type": "address",
+            "isCustom": true
+        },
+        "passport": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "passwordRecoveryLink": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "paymentNotes": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "postTourDatesForwardedtoBooking": {
+            "notNull": false,
+            "type": "date",
+            "isCustom": true
+        },
+        "postTourDatesRequested": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "postTourNotes": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "preTourDatesForwardedtoBooking": {
+            "notNull": false,
+            "type": "date",
+            "isCustom": true
+        },
+        "preTourDatesRequested": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "preTourNotes": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "primaryPhone": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "rawFish": {
+            "type": "enum",
+            "options": [
+                "Unknown",
+                "Yes",
+                "No"
+            ],
+            "style": {
+                "Unknown": null,
+                "Yes": null,
+                "No": null
+            },
+            "default": "Unknown",
+            "maxLength": 100,
+            "isCustom": true
+        },
+        "tourContractNotes": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "tourCosts": {
+            "readOnly": true,
+            "type": "foreign",
+            "link": "tours",
+            "field": "tourCostCurrency",
+            "view": "views/fields/foreign-enum",
+            "isCustom": true
+        },
+        "tourEndDate": {
+            "readOnly": true,
+            "type": "foreign",
+            "link": "tours",
+            "field": "tourEndDate",
+            "view": "views/fields/foreign-date",
+            "isCustom": true
+        },
+        "tourStartDate": {
+            "readOnly": true,
+            "type": "foreign",
+            "link": "tours",
+            "field": "tourStartDate",
+            "view": "views/fields/foreign-date",
+            "isCustom": true
+        },
+        "travelInsurance": {
+            "type": "enum",
+            "options": [
+                "Unknown",
+                "Yes",
+                "No"
+            ],
+            "style": {
+                "Unknown": null,
+                "Yes": null,
+                "No": null
+            },
+            "default": "Unknown",
+            "maxLength": 100,
+            "isCustom": true
+        },
+        "travelInsuranceNotes": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "preferredName": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "street": {
+            "readOnly": true,
+            "type": "foreign",
+            "link": "contact",
+            "field": "addressStreet",
+            "view": "views/fields/foreign-text",
+            "isCustom": true
+        },
+        "city": {
+            "readOnly": true,
+            "type": "foreign",
+            "link": "contact",
+            "field": "addressCity",
+            "view": "views/fields/foreign-varchar",
+            "isCustom": true
+        },
+        "state": {
+            "readOnly": true,
+            "type": "foreign",
+            "link": "contact",
+            "field": "addressState",
+            "view": "views/fields/foreign-varchar",
+            "isCustom": true
+        },
+        "zipCode": {
+            "readOnly": true,
+            "type": "foreign",
+            "link": "contact",
+            "field": "addressPostalCode",
+            "view": "views/fields/foreign-varchar",
+            "isCustom": true
+        },
+        "country": {
+            "readOnly": true,
+            "type": "foreign",
+            "link": "contact",
+            "field": "addressCountry",
+            "view": "views/fields/foreign-varchar",
+            "isCustom": true
+        },
+        "company": {
+            "readOnly": true,
+            "type": "foreign",
+            "link": "contact",
+            "field": "cCompany",
+            "view": "views/fields/foreign-varchar",
+            "isCustom": true
+        },
+        "phone": {
+            "readOnly": true,
+            "type": "foreign",
+            "link": "contact",
+            "field": "phoneNumber",
+            "view": "views/fields/foreign-phone",
+            "isCustom": true
+        },
+        "returnDate": {
+            "notNull": false,
+            "type": "date",
+            "isCustom": true
+        },
+        "contractStatus": {
+            "type": "enum",
+            "options": [
+                "Unknown",
+                "Sent",
+                "Returned",
+                "Completed"
+            ],
+            "style": {
+                "Unknown": null,
+                "Sent": null,
+                "Returned": null,
+                "Completed": null
+            },
+            "default": "Unknown",
+            "maxLength": 100,
+            "isCustom": true
+        },
+        "passportDetails": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 400,
+            "readOnly": false,
+            "isCustom": true
+        },
+        "photo": {
+            "type": "image",
+            "previewSize": "medium",
+            "isCustom": true
+        },
+        "birthdate": {
+            "notNull": false,
+            "type": "date",
+            "isCustom": true
+        },
+        "alternateEmergencyContact": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "firstEmergencyContactName": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "secondEmergencyContactName": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "firstEmergencyContactRelationship": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "secondEmergencyContactRelationship": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "firstEmergencyContactEmail": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "secondEmergencyContactEmail": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "firstEmergencyContactPhone": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "secondEmergencyContactPhone": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "firstEmergencyContact": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "secondEmergencyContact": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "connectingFlights": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "contract": {
+            "type": "file",
+            "sourceList": [],
+            "accept": [],
+            "isCustom": true
+        },
+        "workshopsAttended": {
+            "readOnly": true,
+            "type": "foreign",
+            "link": "contact",
+            "field": "cWorkshopsAttended",
+            "view": "views/fields/foreign-multi-enum",
+            "isCustom": true
+        },
+        "toursAttended": {
+            "readOnly": true,
+            "type": "foreign",
+            "link": "contact",
+            "field": "cToursAttended",
+            "view": "views/fields/foreign-multi-enum",
+            "isCustom": true
+        },
+        "workshopNotes": {
+            "readOnly": true,
+            "type": "foreign",
+            "link": "contact",
+            "field": "cWorkshopNotes",
+            "view": "views/fields/foreign-text",
+            "isCustom": true
+        },
+        "tourNotes": {
+            "readOnly": true,
+            "type": "foreign",
+            "link": "contact",
+            "field": "cTourNotes",
+            "view": "views/fields/foreign-text",
+            "isCustom": true
+        },
+        "personalNotes": {
+            "readOnly": true,
+            "type": "foreign",
+            "link": "contact",
+            "field": "cPersonalNotes",
+            "view": "views/fields/foreign-text",
+            "isCustom": true
+        },
+        "roomNumber": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "tourName": {
+            "type": "enum",
+            "required": false,
+            "options": [
+                "OCT 2026 Blue Japan Indigo Tour",
+                "J — FEB 2026 Textile Treasures of Okinawa",
+                "K — MAR 2026 Kyoto Textile Adventure",
+                "N — FEB 2027 Textile Treasures of Okinawa",
+                "O — MAR 2027 Kyoto Textile Adventure",
+                "Choose a Tour"
+            ],
+            "style": {
+                "OCT 2026 Blue Japan Indigo Tour": null,
+                "J — FEB 2026 Textile Treasures of Okinawa": null,
+                "K — MAR 2026 Kyoto Textile Adventure": null,
+                "N — FEB 2027 Textile Treasures of Okinawa": null,
+                "O — MAR 2027 Kyoto Textile Adventure": null,
+                "Choose a Tour": null
+            },
+            "default": "Choose a Tour",
+            "isSorted": true,
+            "maxLength": 100,
+            "isCustom": true,
+            "tooltip": false
+        },
+        "contactFullName": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "contactEmail": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "contactPhone": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "contactAddressStreet": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "contactAddressCity": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "contactAddressState": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "contactAddressPostalCode": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "contactAddressCountry": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "testTest": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "newEmail": {
+            "type": "varchar",
+            "required": false,
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "testTwo": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "firstName": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "lastName": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "socialMedia": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "fullName": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "tourTitle": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "tourNameVarchar": {
+            "type": "varchar",
+            "required": false,
+            "maxLength": 500,
+            "options": [],
+            "isCustom": true
+        },
+        "targetList": {
+            "type": "link"
+        },
+        "bookingId": {
+            "type": "varchar",
+            "maxLength": 100,
+            "readOnly": false,
+            "options": [],
+            "tooltip": true,
+            "isCustom": true
+        },
+        "debugFormula": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "emailAddress": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "bookingCode": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "bookings": {
+            "type": "link"
+        },
+        "followUpSent": {
+            "notNull": true,
+            "type": "bool",
+            "default": false,
+            "isCustom": true,
+            "readOnly": false,
+            "audited": false,
+            "readOnlyAfterCreate": false
+        },
+        "sendFollowUp": {
+            "notNull": true,
+            "type": "bool",
+            "isCustom": true,
+            "tooltip": true,
+            "readOnly": false,
+            "audited": true
+        },
+        "followUpSentAt": {
+            "notNull": false,
+            "type": "datetime",
+            "readOnly": false,
+            "audited": false,
+            "minuteStep": 30,
+            "isCustom": true
+        },
+        "tourCode": {
+            "type": "varchar",
+            "maxLength": 200,
+            "options": [],
+            "isCustom": true
+        },
+        "passportCountry": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "followUpReceivedAt": {
+            "notNull": false,
+            "type": "datetime",
+            "readOnly": false,
+            "minuteStep": 30,
+            "isCustom": true,
+            "readOnlyAfterCreate": false
+        },
+        "bookingCodeUrl": {
+            "type": "varchar",
+            "maxLength": 255,
+            "readOnly": true,
+            "options": [],
+            "isCustom": true
+        },
+        "followUpFormUrl": {
+            "type": "varchar",
+            "maxLength": 255,
+            "readOnly": true,
+            "options": [],
+            "isCustom": true
+        },
+        "jotformForm": {
+            "type": "link"
+        },
+        "arrivalDateTime": {
+            "notNull": false,
+            "type": "datetime",
+            "minuteStep": 5,
+            "isCustom": true,
+            "useNumericFormat": false,
+            "default": null
+        },
+        "departureDateTime": {
+            "notNull": false,
+            "type": "datetime",
+            "minuteStep": 5,
+            "isCustom": true
+        },
+        "followUpSubmissionId": {
+            "type": "varchar",
+            "maxLength": 64,
+            "readOnly": true,
+            "options": [],
+            "isCustom": true
+        },
+        "followUpEditUrl": {
+            "type": "varchar",
+            "maxLength": 100,
+            "readOnly": false,
+            "options": [],
+            "isCustom": true
+        },
+        "allowFollowUpResend": {
+            "notNull": true,
+            "type": "bool",
+            "isCustom": true
+        },
+        "followUpChangedFields": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "followUpEditNotified": {
+            "notNull": true,
+            "type": "bool",
+            "isCustom": true
+        },
+        "jotformSubmissionId": {
+            "type": "varchar",
+            "maxLength": 644,
+            "options": [],
+            "isCustom": true
+        },
+        "syncState": {
+            "type": "enum",
+            "options": [
+                "initial_created",
+                "followup_sent",
+                "followup_received",
+                "followup_confirmed"
+            ],
+            "style": {
+                "initial_created": null,
+                "followup_sent": null,
+                "followup_received": null,
+                "followup_confirmed": null
+            },
+            "default": "initial_created",
+            "maxLength": 100,
+            "isCustom": true
+        },
+        "lastFollowupSubmissionId": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "lastFollowupUpdatedAt": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "followUpLifecycleState": {
+            "type": "enum",
+            "options": [
+                "Not Sent",
+                "Awaiting Response",
+                "Follow-Up Received"
+            ],
+            "style": {
+                "Not Sent": "danger",
+                "Awaiting Response": "warning",
+                "Follow-Up Received": "success"
+            },
+            "default": "Not Sent",
+            "maxLength": 100,
+            "isCustom": true
+        },
+        "followUpChangeSummary": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "followUpFormUrlLong": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "contractLifecycleState": {
+            "type": "enum",
+            "options": [
+                "Outstanding",
+                "Review",
+                "Accepted",
+                "Contact for Information"
+            ],
+            "style": {
+                "Outstanding": "primary",
+                "Review": "warning",
+                "Accepted": "success",
+                "Contact for Information": "danger"
+            },
+            "default": "Outstanding",
+            "maxLength": 100,
+            "isCustom": true
+        },
+        "contractDecision": {
+            "type": "enum",
+            "options": [
+                "Accepted",
+                "Contact for Information",
+                ""
+            ],
+            "style": {
+                "Accepted": "success",
+                "Contact for Information": "danger",
+                "": null
+            },
+            "maxLength": 100,
+            "isCustom": true
+        },
+        "followUpCustomerSnapshotHtml": {
+            "type": "text",
+            "rowsMin": 2,
+            "cutHeight": 200,
+            "isCustom": true
+        },
+        "contractSubmitted": {
+            "notNull": false,
+            "type": "datetime",
+            "minuteStep": 30,
+            "isCustom": true
+        },
+        "depositTotal": {
+            "type": "currency",
+            "isCustom": true
+        },
+        "depositDate": {
+            "notNull": false,
+            "type": "datetime",
+            "minuteStep": 30,
+            "isCustom": true
+        },
+        "depositCount": {
+            "type": "int",
+            "isCustom": true
+        },
+        "hasDeposit": {
+            "notNull": true,
+            "type": "bool",
+            "isCustom": true
+        },
+        "depositLinkedCount": {
+            "type": "int",
+            "isCustom": true
+        },
+        "linkedContact": {
+            "type": "enum",
+            "options": [
+                "Linked",
+                "Unlinked"
+            ],
+            "style": {
+                "Linked": "success",
+                "Unlinked": "warning"
+            },
+            "default": "Linked",
+            "maxLength": 100,
+            "isCustom": true,
+            "readOnly": false
+        },
+        "linked": {
+            "notNull": true,
+            "type": "bool",
+            "default": false,
+            "isCustom": true,
+            "readOnlyAfterCreate": false
+        }
+    },
+    "links": {
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "modifiedBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "assignedUser": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "teams": {
+            "type": "hasMany",
+            "entity": "Team",
+            "relationName": "entityTeam",
+            "layoutRelationshipsDisabled": true
+        },
+        "meetings": {
+            "type": "hasMany",
+            "entity": "Meeting",
+            "foreign": "parent"
+        },
+        "calls": {
+            "type": "hasMany",
+            "entity": "Call",
+            "foreign": "parent"
+        },
+        "tasks": {
+            "type": "hasChildren",
+            "entity": "Task",
+            "foreign": "parent"
+        },
+        "emails": {
+            "type": "hasChildren",
+            "entity": "Email",
+            "foreign": "parent",
+            "layoutRelationshipsDisabled": true
+        },
+        "tours": {
+            "type": "belongsTo",
+            "foreign": "bookings",
+            "entity": "CTours",
+            "audited": false,
+            "isCustom": true
+        },
+        "contact": {
+            "type": "belongsTo",
+            "foreign": "cBookings",
+            "entity": "Contact",
+            "audited": false,
+            "isCustom": true
+        },
+        "photo": {
+            "type": "belongsTo",
+            "entity": "Attachment",
+            "skipOrmDefs": true,
+            "utility": true
+        },
+        "contract": {
+            "type": "belongsTo",
+            "entity": "Attachment",
+            "skipOrmDefs": true,
+            "utility": true
+        },
+        "targetList": {
+            "type": "belongsTo",
+            "foreign": "cBookings",
+            "entity": "TargetList",
+            "audited": false,
+            "isCustom": true
+        },
+        "activeBooking": {
+            "type": "hasMany",
+            "foreign": "cActiveBookingContacts",
+            "entity": "Contact",
+            "audited": false,
+            "isCustom": true
+        },
+        "bookings": {
+            "type": "belongsTo",
+            "foreign": "cContact",
+            "entity": "Contact",
+            "audited": false,
+            "isCustom": true
+        },
+        "jotformForms": {
+            "type": "hasMany",
+            "foreign": "booking",
+            "entity": "CJotformForm",
+            "audited": false,
+            "isCustom": true
+        },
+        "jotformForm": {
+            "type": "belongsTo",
+            "foreign": "bookings",
+            "entity": "CJotformForm",
+            "audited": false,
+            "isCustom": true
+        },
+        "shopifyTourDeposits": {
+            "type": "hasMany",
+            "foreign": "booking",
+            "entity": "CShopifyTourDeposit",
+            "audited": false,
+            "isCustom": true
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc",
+        "textFilterFields": [
+            "name"
+        ],
+        "fullTextSearch": false,
+        "countDisabled": false
+    },
+    "indexes": {
+        "name": {
+            "columns": [
+                "name",
+                "deleted"
+            ]
+        },
+        "assignedUser": {
+            "columns": [
+                "assignedUserId",
+                "deleted"
+            ]
+        },
+        "createdAt": {
+            "columns": [
+                "createdAt"
+            ]
+        },
+        "createdAtId": {
+            "unique": true,
+            "columns": [
+                "createdAt",
+                "id"
+            ]
+        }
+    },
+    "optimisticConcurrencyControl": false
+}

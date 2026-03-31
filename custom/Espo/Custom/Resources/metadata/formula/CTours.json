@@ -1,0 +1,3 @@
+{
+  "beforeSaveCustomScript": "bookedPlaces = countRelated('bookings'); depositCount = countRelated('shopifyTourDeposits'); contractsMissing = depositCount - bookedPlaces; availablePlaces = tourCapacity - bookedPlaces;"
+}

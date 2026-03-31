@@ -1,0 +1,39 @@
+{
+    "fields": {
+        "flowchartElementsDataHash": {
+            "readOnly": true
+        },
+        "workflowId": {
+            "readOnly": true
+        },
+        "parentProcess": {
+            "readOnly": true
+        },
+        "flowchartData": {
+            "readOnly": true
+        },
+        "createdEntitiesData": {
+            "readOnly": true
+        },
+        "variables": {
+            "readOnly": true
+        },
+        "endedAt": {
+            "readOnly": true
+        },
+        "status": {
+            "readOnly": true
+        },
+        "parentProcessFlowNode": {
+            "readOnly": true
+        }
+    },
+    "links": {
+        "parentProcess": {
+            "readOnly": true
+        },
+        "childProcesses": {
+            "readOnly": true
+        }
+    }
+}

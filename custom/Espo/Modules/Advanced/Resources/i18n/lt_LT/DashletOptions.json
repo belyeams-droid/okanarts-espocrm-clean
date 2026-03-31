@@ -1,0 +1,10 @@
+{
+    "fields": {
+        "report": "Ataskaita",
+        "column": "Sumavimo stulpelis",
+        "displayOnlyCount": "Tik rodymas Iš viso",
+        "displayTotal": "Rodyti iš viso",
+        "useSiMultiplier": "SI daugiklis",
+        "displayType": "Ką rodyti"
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "labels": {
+    "Reset": "Zurücksetzen"
+  },
+  "fields": {
+    "processedAt": "Verarbeitet bei",
+    "elementType": "Elementtyp"
+  },
+  "options": {
+    "status": {
+      "Created": "Erstellt",
+      "Pending": "Schwebend",
+      "In Process": "In Arbeit",
+      "Processed": "Verarbeitet",
+      "Rejected": "Abgelehnt",
+      "Failed": "Fehlgeschlagen",
+      "Interrupted": "Unterbrochen"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "RebuildEngagementScores": {
+    "implementationClassName": "\\Espo\\Custom\\Jobs\\RebuildEngagementScores",
+    "executeOnce": true
+  },
+  "ShopifySync": {
+    "implementationClassName": "\\Espo\\Custom\\Jobs\\ShopifySync",
+    "executeOnce": false
+  },
+  "ShopifyOrderSync": {
+    "implementationClassName": "\\Espo\\Custom\\Jobs\\ShopifyOrderSync",
+    "executeOnce": false
+  },
+  "ShopifyDepositSync": {
+    "implementationClassName": "\\Espo\\Custom\\Jobs\\ShopifyDepositSync",
+    "executeOnce": false
+  },
+  "JotformToBookingSync": {
+    "implementationClassName": "\\Espo\\Custom\\Jobs\\JotformToBookingSync",
+    "executeOnce": false
+  },
+  "DepositBookingBackfill": {
+    "implementationClassName": "\\Espo\\Custom\\Jobs\\DepositBookingBackfill",
+    "executeOnce": true
+  },
+  "DepositContractMonitor": {
+    "implementationClassName": "\\Espo\\Custom\\Jobs\\DepositContractMonitor",
+    "executeOnce": false
+  },
+  "CleanupJobHistory": {
+    "implementationClassName": "\\Espo\\Custom\\Jobs\\CleanupJobHistory",
+    "executeOnce": false
+  },
+  "CampaignMonitorSync": {
+    "implementationClassName": "\\Espo\\Custom\\Jobs\\CampaignMonitorSync",
+    "executeOnce": false
+  },
+  "CampaignMonitorActivitySync": {
+    "implementationClassName": "\\Espo\\Custom\\Jobs\\CampaignMonitorActivitySync",
+    "executeOnce": false,
+    "scheduling": "0 3 * * *"
+  },
+  "CampaignMonitorSubscriberSync": {
+    "implementationClassName": "\\Espo\\Custom\\Jobs\\CampaignMonitorSubscriberSync",
+    "executeOnce": false
+  },
+
+  "ExportEngagementCsv": {
+    "implementationClassName": "\\Espo\\Custom\\Jobs\\ExportEngagementCsv",
+    "executeOnce": true
+  }
+}

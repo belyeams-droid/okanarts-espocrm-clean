@@ -1,0 +1,8 @@
+{
+  "afterSave": [
+    "Espo\\Custom\\Hooks\\CBooking\\AfterSave"
+  ],
+  "afterDelete": [
+    "Espo\\Custom\\Hooks\\CBooking\\AfterDelete"
+  ]
+}

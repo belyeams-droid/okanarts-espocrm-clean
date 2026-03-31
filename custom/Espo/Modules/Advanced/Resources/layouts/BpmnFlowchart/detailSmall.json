@@ -1,0 +1,30 @@
+[
+    {
+        "label": "",
+        "rows": [
+            [
+                {
+                    "name": "name"
+                }
+            ],
+            [
+                {
+                    "name": "targetType"
+                }
+            ],
+            [
+                {
+                    "name": "isActive"
+                },
+                {
+                    "name": "category"
+                }
+            ],
+            [
+                {
+                    "name": "description"
+                }
+            ]
+        ]
+    }
+]

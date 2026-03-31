@@ -1,0 +1,50 @@
+{
+    "labels": {
+        "Create BpmnProcess": "Procesa sākšana",
+        "Stop Process": "Apstādināt procesu",
+        "User Tasks": "Lietotāja uzdevumi",
+        "Flowcharts": "Plūsmu diagrammas",
+        "Interrupt": "Pārtraukums",
+        "Reject": "Noraidīt",
+        "Start flow from here": "Sākt plūsmu no šejienes"
+    },
+    "fields": {
+        "status": "Statuss",
+        "targetType": "Mērķa subjekta veids",
+        "target": "Mērķis",
+        "createdEntitiesData": "Izveidoto vienību dati",
+        "flowchartData": "Diagrammas dati",
+        "flowchart": "Plūsmas shēma",
+        "flowchartVisualization": "Diagramma (vizualizācija)",
+        "flowchartElementsDataHash": "Diagrammas elementi",
+        "variables": "Mainīgie",
+        "endedAt": "Beidzās pie",
+        "startElementId": "Sākuma elements",
+        "workflowId": "Darba plūsmas ID",
+        "parentProcess": "Vecāku process",
+        "parentProcessFlowNode": "Vecākais procesa plūsmas mezgls"
+    },
+    "links": {
+        "flowchart": "Plūsmas shēma",
+        "target": "Mērķis",
+        "flowNodes": "Plūsmas žurnāls",
+        "userTasks": "Lietotāja procesu uzdevumi",
+        "childProcesses": "Bērnu procesi",
+        "parentProcess": "Vecāku process",
+        "parentProcessFlowNode": "Vecākais procesa plūsmas mezgls"
+    },
+    "options": {
+        "status": {
+            "Created": "Izveidots",
+            "Started": "Sākts",
+            "Ended": "Noslēgts",
+            "Paused": "Pārtraukts",
+            "Stopped": "Pārtraukta",
+            "Interrupted": "Pārtraukts"
+        }
+    },
+    "presetFilters": {
+        "actual": "Faktiskais",
+        "ended": "Noslēgts"
+    }
+}

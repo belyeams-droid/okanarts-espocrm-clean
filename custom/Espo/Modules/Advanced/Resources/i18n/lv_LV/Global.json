@@ -1,0 +1,31 @@
+{
+    "scopeNames": {
+        "Workflow": "Darba plūsma",
+        "Report": "Ziņojums",
+        "ReportCategory": "Ziņojuma kategorija",
+        "WorkflowLogRecord": "Darba plūsmas žurnāla ieraksts",
+        "BpmnFlowchart": "Procesa shēma",
+        "BpmnProcess": "Process",
+        "BpmnUserTask": "Procesa lietotāja uzdevums",
+        "ReportFilter": "Pārskatu filtrs",
+        "ReportPanel": "Ziņojumu panelis"
+    },
+    "scopeNamesPlural": {
+        "Workflow": "Darba plūsmas",
+        "Report": "Ziņojumi",
+        "ReportCategory": "Pārskatu kategorijas",
+        "WorkflowLogRecord": "Darba plūsmu žurnāls",
+        "BpmnFlowchart": "Procesu plūsmas diagrammas",
+        "BpmnProcess": "Procesi",
+        "BpmnUserTask": "Lietotāja procesu uzdevumi",
+        "ReportFilter": "Pārskatu filtri",
+        "ReportPanel": "Pārskatu paneļi"
+    },
+    "dashlets": {
+        "Report": "Ziņojums",
+        "BpmnUserTasks": "Lietotāja procesu uzdevumi"
+    },
+    "labels": {
+        "Start Process": "Procesa sākšana"
+    }
+}

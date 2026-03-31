@@ -1,0 +1,226 @@
+{
+    "fields": {
+        "cmToursClicks": {
+            "type": "int",
+            "default": 0,
+            "isCustom": true
+        },
+        "cmWorkshopClicks": {
+            "type": "int",
+            "default": 0,
+            "isCustom": true
+        },
+        "cmArticleClicks": {
+            "type": "int",
+            "default": 0,
+            "isCustom": true
+        },
+        "cmEventClicks": {
+            "type": "int",
+            "default": 0,
+            "isCustom": true
+        },
+        "cmSubscriberId": {
+            "type": "varchar",
+            "maxLength": 100,
+            "isCustom": true
+        },
+        "cmStatus": {
+            "type": "varchar",
+            "maxLength": 50,
+            "isCustom": true
+        },
+        "cmLastOpen": {
+            "type": "datetime",
+            "isCustom": true
+        },
+        "cmLastClick": {
+            "type": "datetime",
+            "isCustom": true,
+            "minuteStep": 30
+        },
+        "cmOpenCount": {
+            "type": "int",
+            "default": 0,
+            "isCustom": true
+        },
+        "cmClickCount": {
+            "type": "int",
+            "default": 0,
+            "isCustom": true
+        },
+        "engagementScore": {
+            "type": "int",
+            "default": 0,
+            "readOnly": true,
+            "isCustom": true
+        },
+        "relationshipNarrative": {
+            "type": "text"
+        },
+        "relationshipInsight": {
+            "type": "varchar",
+            "maxLength": 100
+        },
+        "cTotalOrders": {
+            "type": "int",
+            "isCustom": true
+        },
+        "cTotalSpent": {
+            "type": "currency",
+            "isCustom": true
+        },
+        "cShopifyId": {
+            "type": "varchar",
+            "maxLength": 100,
+            "isCustom": true
+        },
+        "cCompany": {
+            "type": "varchar",
+            "maxLength": 100,
+            "isCustom": true
+        },
+        "cWorkshopsAttended": {
+            "type": "multiEnum",
+            "storeArrayValues": true,
+            "default": [],
+            "options": [
+                "Designer Facings",
+                "Creativity and Inserted Curves",
+                "Creativity and Complex Curves",
+                "Complex Curves Intensive",
+                "Essentials of Complex Curves",
+                "La Conner Quilt Retreat",
+                "The Patricia Retreat",
+                "CA Okan Retreat",
+                "The Joe Retreat"
+            ],
+            "isCustom": true
+        },
+        "cToursAttended": {
+            "type": "multiEnum",
+            "storeArrayValues": true,
+            "default": [],
+            "options": [
+                "A1_JP_JAN20",
+                "A2_KYO_OCT23",
+                "B_JP_OCT23",
+                "C1_KYO_FEB24",
+                "C2_KYO_MAR24",
+                "D1_JP_OCT24",
+                "D2_KYO_OCT24",
+                "D3_JP_OCT24",
+                "E_JP_FEB25",
+                "F_KYO_MAR25",
+                "G_BLUE_OCT25",
+                "H_KYO_OCT25",
+                "J_OKI_FEB26",
+                "K_KYO_MAR26"
+            ],
+            "isCustom": true
+        },
+        "cWorkshopNotes": {
+            "type": "text",
+            "isCustom": true
+        },
+        "cTourNotes": {
+            "type": "text",
+            "isCustom": true
+        },
+        "cPersonalNotes": {
+            "type": "text",
+            "isCustom": true
+        },
+        "cSocialMedia": {
+            "type": "text",
+            "isCustom": true
+        },
+        "cActiveBookingContacts": {
+            "type": "link"
+        },
+        "cActiveBookingCodeEmail": {
+            "type": "varchar",
+            "maxLength": 200,
+            "readOnly": true,
+            "isCustom": true
+        },
+        "cPreferredName": {
+            "type": "varchar",
+            "maxLength": 100,
+            "isCustom": true
+        },
+        "cOkanartsRoles": {
+            "type": "multiEnum",
+            "storeArrayValues": true,
+            "default": [],
+            "options": [
+                "Tour Traveler",
+                "Merch Customer",
+                "Workshop Student",
+                "Partner",
+                "Unknown"
+            ],
+            "isCustom": true
+        },
+        "cLeadSource": {
+            "type": "enum",
+            "options": [
+                "Shopify",
+                "Campaign Monitor Intent",
+                "Manual"
+            ],
+            "style": {
+                "Shopify": null,
+                "Campaign Monitor Intent": null,
+                "Manual": null
+            },
+            "default": "Shopify",
+            "maxLength": 100,
+            "isCustom": true
+        }
+    },
+    "links": {
+        "cBookings": {
+            "type": "hasMany",
+            "foreign": "contact",
+            "entity": "CBooking",
+            "isCustom": true
+        },
+        "cWaitingLists": {
+            "type": "hasMany",
+            "foreign": "contact",
+            "entity": "CWaitingList",
+            "isCustom": true
+        },
+        "cCancellationses": {
+            "type": "hasMany",
+            "foreign": "contact",
+            "entity": "CCancellations",
+            "isCustom": true
+        },
+        "cActiveBookingContacts": {
+            "type": "belongsTo",
+            "foreign": "activeBooking",
+            "entity": "CBooking",
+            "isCustom": true
+        },
+        "cContact": {
+            "type": "hasMany",
+            "foreign": "bookings",
+            "entity": "CBooking",
+            "isCustom": true
+        },
+        "cShopifyTourDeposits": {
+            "type": "hasMany",
+            "foreign": "contact",
+            "entity": "CShopifyTourDeposit",
+            "isCustom": true
+        },
+        "cEngagements": {
+            "type": "hasMany",
+            "foreign": "contact",
+            "entity": "CEngagement",
+            "isCustom": true
+        }
+    }
+}

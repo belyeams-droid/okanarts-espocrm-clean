@@ -1,0 +1,21 @@
+{
+    "mandatory": {
+        "scopeLevel": {
+            "Workflow": false,
+            "WorkflowLogRecord": false,
+            "ReportPanel": false,
+            "BpmnFlowNode": "BpmnProcess"
+        }
+    },
+    "adminMandatory": {
+        "scopeLevel": {
+            "BpmnFlowchart": {
+                "create": "yes",
+                "read": "all",
+                "edit": "all",
+                "delete": "all",
+                "stream": "all"
+            }
+        }
+    }
+}

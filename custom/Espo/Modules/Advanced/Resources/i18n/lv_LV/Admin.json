@@ -1,0 +1,29 @@
+{
+    "labels": {
+        "Workflow Manager": "Darba plūsmas pārvaldnieks",
+        "Flowcharts": "Plūsmu diagrammas",
+        "Processes": "Procesi",
+        "Business Process Management": "Biznesa procesu pārvaldība",
+        "Report Filters": "Pārskatu filtri",
+        "Report Panels": "Pārskatu paneļi"
+    },
+    "descriptions": {
+        "workflowManager": "Konfigurēt darbplūsmas noteikumus.",
+        "bpmnFlowcharts": "Biznesa procesu definīcijas.",
+        "bpmnProcesses": "Biznesa procesu gadījumi.",
+        "reportFilters": "Pielāgotie saraksta skata filtri, pamatojoties uz pārskatiem.",
+        "reportPanels": "Detalizētu pārskatu paneļi, kuros redzami pārskatu rezultāti."
+    },
+    "messages": {
+        "newAdvancedPackVersionIsAvailable": "Ir pieejama jauna Advanced Pack versija {latestVersion}. To var lejupielādēt klientu portālā."
+    },
+    "templates": {
+        "reportSendingGrid1": "Ziņojums Grid-1",
+        "reportSendingGrid2": "Ziņojums Grid-2",
+        "reportSendingList": "Pārskatu saraksts"
+    },
+    "keywords": {
+        "bpmnFlowcharts": "bpm",
+        "bpmnProcesses": "bpm"
+    }
+}

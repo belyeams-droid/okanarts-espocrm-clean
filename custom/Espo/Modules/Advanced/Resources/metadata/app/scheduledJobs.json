@@ -1,0 +1,7 @@
+{
+    "AdvancedPack": {
+        "isSystem": true,
+        "scheduling": "3 3 * * *",
+        "jobClassName": "Espo\\Modules\\Advanced\\Core\\App\\Job"
+    }
+}

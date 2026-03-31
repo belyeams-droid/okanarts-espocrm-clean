@@ -1,0 +1,36 @@
+{
+    "labels": {
+        "Create ReportPanel": "Sukurti skydelį",
+        "Rebuild Panels": "Atstatymo skydai"
+    },
+    "fields": {
+        "report": "Ataskaita",
+        "entityType": "Subjekto tipas",
+        "isActive": "Ar įjungta",
+        "type": "Tipas",
+        "reportType": "Ataskaitos tipas",
+        "displayTotal": "Rodyti iš viso",
+        "displayOnlyTotal": "Tik rodymas Iš viso",
+        "column": "Stulpelis",
+        "reportEntityType": "Ataskaitos subjekto tipas",
+        "columnList": "Stulpelių sąrašas",
+        "dynamicLogicVisible": "Sąlygos, kuriomis skydelis tampa matomas",
+        "order": "Užsisakykite",
+        "displayType": "Ką rodyti",
+        "useSiMultiplier": "SI daugiklis"
+    },
+    "links": {
+        "report": "Ataskaita"
+    },
+    "tooltips": {
+        "teams": "Komandos, kurioms bus rodomas skydelis. Jei komandos nenurodytos, apribojimai pagal komandas nebus taikomi.",
+        "report": "Ataskaita, kuri bus naudojama ekspertų grupei.",
+        "order": "[0..1] - prieš srauto skydelį;\n[3..4] - prieš santykių skydus;\n[6..] - po santykių plokščių."
+    },
+    "options": {
+        "type": {
+            "side": "Šoninė pusė",
+            "bottom": "Dugnas"
+        }
+    }
+}

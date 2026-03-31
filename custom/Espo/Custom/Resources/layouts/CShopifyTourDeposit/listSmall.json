@@ -1,0 +1,21 @@
+[
+    {
+        "name": "contractStatus",
+        "width": 20,
+        "link": true,
+        "align": "left"
+    },
+    {
+        "name": "contact",
+        "width": 20,
+        "align": "left"
+    },
+    {
+        "name": "orderDate",
+        "width": 20
+    },
+    {
+        "name": "contractSentAt",
+        "width": 20
+    }
+]

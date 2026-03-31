@@ -1,0 +1,44 @@
+{
+    "relationshipPanels": {
+        "bookings": {
+            "layout": null,
+            "selectPrimaryFilterName": null
+        },
+        "interestedList": {
+            "layout": null,
+            "selectPrimaryFilterName": null
+        },
+        "interestedLists": {
+            "layout": null,
+            "selectPrimaryFilterName": null
+        },
+        "waitingLists": {
+            "layout": null,
+            "selectPrimaryFilterName": null
+        },
+        "cancellationses": {
+            "layout": null,
+            "selectPrimaryFilterName": null
+        },
+        "activeBookingContacts": {
+            "layout": null,
+            "selectPrimaryFilterName": null
+        },
+        "contact": {
+            "layout": null,
+            "selectPrimaryFilterName": null
+        },
+        "shopifyTourDeposits": {
+            "layout": null,
+            "selectPrimaryFilterName": null
+        },
+        "matchedContact": {
+            "layout": null,
+            "selectPrimaryFilterName": null
+        },
+        "engagements": {
+            "layout": null,
+            "selectPrimaryFilterName": null
+        }
+    }
+}

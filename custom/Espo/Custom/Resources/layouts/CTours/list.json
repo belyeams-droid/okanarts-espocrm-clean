@@ -1,0 +1,10 @@
+[
+    {
+        "name": "tourCode",
+        "width": 16
+    },
+    {
+        "name": "name",
+        "link": true
+    }
+]

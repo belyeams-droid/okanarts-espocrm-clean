@@ -1,0 +1,38 @@
+[
+    {
+        "name": "description",
+        "width": 16
+    },
+    {
+        "name": "contact",
+        "width": 16,
+        "link": true,
+        "align": "left"
+    },
+    {
+        "name": "createdBy",
+        "width": 16
+    },
+    {
+        "name": "createdAt",
+        "width": 16
+    },
+    {
+        "name": "engagementType",
+        "width": 16
+    },
+    {
+        "name": "firstEngagedAt",
+        "width": 16
+    },
+    {
+        "name": "engagementStatus",
+        "width": 16,
+        "link": true,
+        "align": "left"
+    },
+    {
+        "name": "lastActivityAt",
+        "width": 16
+    }
+]

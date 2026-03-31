@@ -1,0 +1,12 @@
+[
+    {
+        "route": "Report/runGridPreview",
+        "method": "post",
+        "actionClassName": "Espo\\Modules\\Advanced\\Tools\\Report\\Api\\PostRunGridPreview"
+    },
+    {
+        "route": "Report/runListPreview",
+        "method": "get",
+        "actionClassName": "Espo\\Modules\\Advanced\\Tools\\Report\\Api\\GetRunListPreview"
+    }
+]

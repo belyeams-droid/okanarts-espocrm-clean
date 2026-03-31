@@ -1,0 +1,36 @@
+{
+    "labels": {
+        "Create ReportPanel": "Izveidot paneli",
+        "Rebuild Panels": "Pārbūves paneļi"
+    },
+    "fields": {
+        "report": "Ziņojums",
+        "entityType": "Vienības veids",
+        "isActive": "Ir iespējots",
+        "type": "Tips",
+        "reportType": "Ziņojuma veids",
+        "displayTotal": "Displejs Kopā",
+        "displayOnlyTotal": "Tikai displejs Kopā",
+        "column": "Kolonna",
+        "reportEntityType": "Ziņojuma subjekta veids",
+        "columnList": "Kolonnu saraksts",
+        "dynamicLogicVisible": "Nosacījumi, kas padara paneli redzamu",
+        "order": "Pasūtījums",
+        "displayType": "Ko rādīt",
+        "useSiMultiplier": "SI reizinātājs"
+    },
+    "links": {
+        "report": "Ziņojums"
+    },
+    "tooltips": {
+        "teams": "Komandas, kurām tiks rādīts panelis. Ja nav norādītas komandas, tad ierobežojumi pēc komandas netiks piemēroti.",
+        "report": "Ziņojums, kas tiks izmantots paneļdiskusijā.",
+        "order": "[0..1] - pirms plūsmas paneļa;\n[3..4] - pirms attiecību paneļiem;\n[6..] - pēc attiecību paneļiem."
+    },
+    "options": {
+        "type": {
+            "side": "Sānu",
+            "bottom": "Apakšējā daļa"
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "fields": {
+        "report": "Ziņojums",
+        "column": "Summēšanas sleja",
+        "displayOnlyCount": "Tikai displejs Kopā",
+        "displayTotal": "Displejs Kopā",
+        "useSiMultiplier": "SI reizinātājs",
+        "displayType": "Ko rādīt"
+    }
+}
