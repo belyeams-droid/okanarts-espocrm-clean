@@ -16,24 +16,22 @@ class ShopifySync extends Base
 
     public function run(): void
     {
-        // Example: replace with your actual Shopify fetch logic
         $customers = $this->getShopifyCustomers();
 
         foreach ($customers as $customer) {
-            $contact = $this->resolveContact($customer);
 
-            // Always enforce Shopify ID if present
+            $isNew = false;
+            $contact = $this->resolveContact($customer, $isNew);
+
             if (!empty($customer['id'])) {
                 $contact->set('cShopifyId', (string) $customer['id']);
             }
 
-            // Normalize email
             if (!empty($customer['email'])) {
                 $email = strtolower(trim($customer['email']));
                 $contact->set('emailAddress', $email);
             }
 
-            // Map fields
             if (!empty($customer['first_name'])) {
                 $contact->set('firstName', $customer['first_name']);
             }
@@ -46,12 +44,11 @@ class ShopifySync extends Base
                 $contact->set('phoneNumber', $customer['phone']);
             }
 
-            // Save safely (idempotent)
-            $this->entityManager->saveEntity($contact);
+            $this->entityManager->saveEntity($contact, ['silent' => true]);
         }
     }
 
-    private function resolveContact(array $customer)
+    private function resolveContact(array $customer, &$isNew = false)
     {
         $contactRepository = $this->entityManager->getRDBRepository('Contact');
 
@@ -84,6 +81,8 @@ class ShopifySync extends Base
         }
 
         // 3. Create ONLY if no match
+        $isNew = true;
+
         $contact = $this->entityManager->getEntity('Contact');
 
         if ($shopifyId) {
@@ -99,7 +98,7 @@ class ShopifySync extends Base
 
     private function getShopifyCustomers(): array
     {
-        // Placeholder — replace with your actual API logic
+        // Replace with real Shopify API logic
         return [];
     }
 }
