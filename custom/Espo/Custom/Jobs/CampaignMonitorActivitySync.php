@@ -122,31 +122,48 @@ class CampaignMonitorActivitySync extends Base
                 $contact = $this->findContactByEmail($email);
 
                 if (!$contact) {
-                    continue; // keep behavior simple and safe
+                    continue;
                 }
 
-                // ✅ NEW: STORE RAW CLICK EVENT (SOURCE OF TRUTH)
                 $clickedAt = date('Y-m-d H:i:s', strtotime($date));
 
-                $this->storeClickEvent(
+                // ✅ Only proceed if new event
+                $isNewEvent = $this->storeClickEvent(
                     $contact->getId(),
                     $campaignId,
                     $urlClicked,
                     $clickedAt
                 );
 
-                // ✅ EXISTING: engagement record (kept)
-                $engagement = $this->entityManager->getEntity('CEngagement');
+                // ✅ Idempotent engagement
+                $existing = $this->entityManager
+                    ->getRepository('CEngagement')
+                    ->where([
+                        'contactId' => $contact->getId(),
+                        'clickedUrl' => $urlClicked
+                    ])
+                    ->findOne();
 
-                $engagement->set('contactId', $contact->getId());
-                $engagement->set('clickedUrl', $urlClicked);
-                $engagement->set('firstEngagedAt', $date);
-                $engagement->set('lastActivityAt', $date);
+                if (!$existing) {
+                    $engagement = $this->entityManager->getEntity('CEngagement');
 
-                $this->entityManager->saveEntity($engagement);
+                    $engagement->set('contactId', $contact->getId());
+                    $engagement->set('clickedUrl', $urlClicked);
+                    $engagement->set('firstEngagedAt', $date);
+                    $engagement->set('lastActivityAt', $date);
 
-                // ✅ EXISTING: counters (kept)
-                $contact->set('cmClickCount', ($contact->get('cmClickCount') ?? 0) + 1);
+                    $this->entityManager->saveEntity($engagement);
+                } else {
+                    if (strtotime($date) > strtotime($existing->get('lastActivityAt'))) {
+                        $existing->set('lastActivityAt', $date);
+                        $this->entityManager->saveEntity($existing);
+                    }
+                }
+
+                // ✅ Only increment if new event
+                if ($isNewEvent) {
+                    $contact->set('cmClickCount', ($contact->get('cmClickCount') ?? 0) + 1);
+                }
 
                 if (
                     !$contact->get('cmLastClick') ||
@@ -162,14 +179,12 @@ class CampaignMonitorActivitySync extends Base
         }
     }
 
-    // ✅ NEW CORE FUNCTION (RAW EVENT STORAGE)
-    private function storeClickEvent($contactId, $campaignId, $url, $clickedAt)
+    private function storeClickEvent($contactId, $campaignId, $url, $clickedAt): bool
     {
         $pdo = $this->entityManager->getPDO();
 
         $urlHash = md5($url);
 
-        // dedupe check
         $stmt = $pdo->prepare("
             SELECT id FROM cm_click_event
             WHERE contact_id = :contact_id
@@ -185,7 +200,7 @@ class CampaignMonitorActivitySync extends Base
         ]);
 
         if ($stmt->fetch()) {
-            return;
+            return false;
         }
 
         $id = \Espo\Core\Utils\Util::generateId();
@@ -216,6 +231,8 @@ class CampaignMonitorActivitySync extends Base
             'url_hash' => $urlHash,
             'clicked_at' => $clickedAt
         ]);
+
+        return true;
     }
 
     private function fetch($url, $apiKey)
@@ -240,12 +257,12 @@ class CampaignMonitorActivitySync extends Base
             FROM contact c
             JOIN entity_email_address eea ON eea.entity_id = c.id
             JOIN email_address ea ON ea.id = eea.email_address_id
-            WHERE ea.name = :email
+            WHERE LOWER(ea.name) = :email
             AND eea.deleted = 0
             LIMIT 1
         ");
 
-        $stmt->execute(['email' => $email]);
+        $stmt->execute(['email' => strtolower($email)]);
 
         $row = $stmt->fetch();
 
