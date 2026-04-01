@@ -167,7 +167,7 @@ class ShopifyOrderSync implements JobDataLess
                                 $tour = $this->entityManager
                                     ->getRepository('CTours')
                                     ->where(['contactId' => $contactId])
-                                    ->orderBy(['createdAt' => 'DESC'])
+                                    ->order('createdAt', 'DESC')
                                     ->findOne();
 
                                 if ($tour) {
