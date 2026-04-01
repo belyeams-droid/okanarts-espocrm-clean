@@ -34,12 +34,13 @@ class RebuildTourMetrics implements JobDataLess
             $pdo = $this->em->getPDO();
 
             // -----------------------------
-            // Deposits (TRUE seats taken)
+            // Deposits (TRUE deposits count)
             // -----------------------------
             $stmt = $pdo->prepare("
-                SELECT COUNT(DISTINCT contact_id)
+                SELECT COUNT(*)
                 FROM c_shopify_tour_deposit
                 WHERE tour_code = :code
+                AND deleted = 0
             ");
             $stmt->execute(['code' => $tourCode]);
             $deposits = (int) $stmt->fetchColumn();
