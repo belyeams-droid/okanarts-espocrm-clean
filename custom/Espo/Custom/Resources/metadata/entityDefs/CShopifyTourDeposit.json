@@ -128,27 +128,29 @@
             "maxLength": 100,
             "isCustom": true
         },
-
         "contractSentAt": {
             "type": "datetime",
             "dbName": "contract_sent_at",
             "isCustom": true
         },
-
         "contractReceivedAt": {
             "type": "datetime",
             "dbName": "contract_received_at",
             "isCustom": true
         },
-
         "shopifyLineItemId": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
+        },
+        "tourCode": {
             "type": "varchar",
             "maxLength": 100,
             "options": [],
             "isCustom": true
         }
     },
-
     "links": {
         "createdBy": {
             "type": "belongsTo",
@@ -190,12 +192,10 @@
             "isCustom": true
         }
     },
-
     "collection": {
         "orderBy": "createdAt",
         "order": "desc"
     },
-
     "indexes": {
         "name": {
             "columns": [

@@ -2,7 +2,7 @@
     "fields": {
         "arrivalAirport": "Arrival Airport",
         "availablePlaces": "Available Places",
-        "bookedPlaces": "Deposits",
+        "bookedPlaces": "Tour Deposits",
         "contractPdf": "Contract Pdf",
         "departureAirport": "Departure Airport",
         "deposit": "Deposit",
@@ -88,7 +88,8 @@
         "bookingCount": "Accepted Bookings",
         "contractsMissing": "Contracts Missing",
         "contractsOutstanding": "Contracts Outstanding",
-        "leaders": "Leaders"
+        "leaders": "Leaders",
+        "deposits": "Deposits"
     },
     "links": {
         "meetings": "Meetings",

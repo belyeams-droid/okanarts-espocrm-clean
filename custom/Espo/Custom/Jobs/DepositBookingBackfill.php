@@ -31,20 +31,56 @@ class DepositBookingBackfill implements JobDataLess
         foreach ($deposits as $deposit) {
 
             $contactId = $deposit->get('contactId');
-            $tourId = $deposit->get('tourId');
+            $tourId    = $deposit->get('tourId');
+            $tourCode  = $deposit->get('tourCode');
 
-            if (!$contactId || !$tourId) {
+            if (!$contactId) {
                 continue;
             }
 
-            $booking = $this->entityManager
-                ->getRepository('CBooking')
-                ->where([
-                    'contactId' => $contactId,
-                    'tourId' => $tourId
-                ])
-                ->findOne();
+            $booking = null;
 
+            // -----------------------------------------
+            // 1. PRIMARY: Match by contactId + tourCode
+            // -----------------------------------------
+            if ($tourCode) {
+
+                $list = $this->entityManager
+                    ->getRepository('CBooking')
+                    ->where([
+                        'contactId' => $contactId,
+                        'tourCode'  => $tourCode
+                    ])
+                    ->order('createdAt', 'DESC')
+                    ->find();
+
+                if ($list && count($list) > 0) {
+                    $booking = $list[0];
+                }
+            }
+
+            // -----------------------------------------
+            // 2. FALLBACK: Legacy match (contactId + toursId)
+            // -----------------------------------------
+            if (!$booking && $tourId) {
+
+                $list = $this->entityManager
+                    ->getRepository('CBooking')
+                    ->where([
+                        'contactId' => $contactId,
+                        'toursId'   => $tourId
+                    ])
+                    ->order('createdAt', 'DESC')
+                    ->find();
+
+                if ($list && count($list) > 0) {
+                    $booking = $list[0];
+                }
+            }
+
+            // -----------------------------------------
+            // 3. LINK IF FOUND
+            // -----------------------------------------
             if ($booking) {
 
                 $deposit->set('bookingId', $booking->getId());
@@ -52,7 +88,7 @@ class DepositBookingBackfill implements JobDataLess
                 $this->entityManager->saveEntity($deposit);
 
                 $this->log->warning(
-                    "Backfilled deposit {$deposit->getId()} → booking {$booking->getId()}"
+                    "Linked deposit {$deposit->getId()} → booking {$booking->getId()}"
                 );
             }
         }

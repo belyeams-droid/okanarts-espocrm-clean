@@ -408,6 +408,10 @@
             "rowsMin": 2,
             "cutHeight": 200,
             "isCustom": true
+        },
+        "deposits": {
+            "type": "int",
+            "isCustom": true
         }
     },
     "links": {

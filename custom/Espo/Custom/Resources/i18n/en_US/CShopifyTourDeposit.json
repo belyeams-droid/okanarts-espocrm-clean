@@ -15,7 +15,8 @@
         "contractStatus": "Contract Status",
         "shopifyLineItemId": "Shopify Line Item Id",
         "tour": "Tour",
-        "contractSentAt": "Contract Sent"
+        "contractSentAt": "Contract Sent",
+        "tourCode": "TourCode"
     },
     "labels": {
         "Create CShopifyTourDeposit": "Create ShopifyTourDeposit"
