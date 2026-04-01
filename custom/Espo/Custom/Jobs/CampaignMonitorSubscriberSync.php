@@ -18,10 +18,7 @@ class CampaignMonitorSubscriberSync extends Base
     {
         echo "Starting Campaign Monitor Subscriber Sync\n";
 
-        // -----------------------------
-        // DRY RUN TOGGLE
-        // -----------------------------
-        $dryRun = false; // ← set to false to enable real writes
+        $dryRun = false;
 
         $env = parse_ini_file('/var/www/html/custom/campaign-monitor.env');
 
@@ -59,9 +56,6 @@ class CampaignMonitorSubscriberSync extends Base
                 $email = strtolower(trim($subscriber['EmailAddress'] ?? ''));
                 $state = $subscriber['State'] ?? 'Active';
 
-                // -----------------------------------------
-                // GENERATE DETERMINISTIC CM ID
-                // -----------------------------------------
                 $cmId = $email ? md5($email) : '';
 
                 if (!$cmId && !$email) {
@@ -76,60 +70,69 @@ class CampaignMonitorSubscriberSync extends Base
                 if ($cmId) {
                     $contact = $this->entityManager
                         ->getRepository('Contact')
-                        ->where(['c_cm_subscriber_id' => $cmId])
+                        ->where(['cmSubscriberId' => $cmId])
                         ->findOne();
                 }
 
                 // -----------------------------------------
-                // 2. FALLBACK: Match by Email
+                // 2. FALLBACK: Match by Email (ROBUST)
                 // -----------------------------------------
                 if (!$contact && $email) {
-                    $contact = $this->entityManager
-                        ->getRepository('Contact')
-                        ->where(['emailAddress' => $email])
-                        ->findOne();
+                    $pdo = $this->entityManager->getPDO();
+
+                    $stmt = $pdo->prepare("
+                        SELECT eea.entity_id
+                        FROM entity_email_address eea
+                        JOIN email_address ea ON ea.id = eea.email_address_id
+                        WHERE LOWER(ea.name) = :email
+                        AND eea.entity_type = 'Contact'
+                        AND eea.deleted = 0
+                        LIMIT 1
+                    ");
+
+                    $stmt->execute(['email' => $email]);
+                    $row = $stmt->fetch();
+
+                    if ($row) {
+                        $contact = $this->entityManager
+                            ->getEntityById('Contact', $row['entity_id']);
+                    }
                 }
 
                 // -----------------------------------------
                 // 3. CREATE if not found
                 // -----------------------------------------
-                $isNew = false;
-
                 if (!$contact) {
                     $contact = $this->entityManager->getNewEntity('Contact');
-                    $isNew = true;
                 }
 
                 // -----------------------------------------
-                // 4. SET IDENTIFIERS FIRST
+                // 4. SET IDENTIFIERS
                 // -----------------------------------------
                 if ($cmId) {
-                    $contact->set('c_cm_subscriber_id', $cmId);
+                    $contact->set('cmSubscriberId', $cmId);
                 }
 
                 if ($email) {
-                    $contact->set('emailAddress', $email);
+                    $contact->set('emailAddressData', [
+                        [
+                            'emailAddress' => $email,
+                            'primary' => true,
+                            'optOut' => false,
+                            'invalid' => false,
+                        ]
+                    ]);
                 }
 
                 // -----------------------------------------
-                // 5. BUSINESS FIELDS
+                // 5. BUSINESS FIELD
                 // -----------------------------------------
                 $contact->set('cmStatus', $state);
 
                 // -----------------------------------------
-                // 6. SAVE OR DRY RUN
+                // 6. SAVE
                 // -----------------------------------------
-                $action = $isNew ? 'CREATE' : 'UPDATE';
-
-                if ($dryRun) {
-                    echo "[DRY RUN][$action] "
-                        . ($contact->get('id') ?? 'NEW')
-                        . " | email: $email"
-                        . " | cm_id: $cmId"
-                        . " | status: $state\n";
-                } else {
-                    $this->entityManager->saveEntity($contact, ['silent' => true]);
-                }
+                $this->entityManager->saveEntity($contact, ['silent' => true]);
             }
 
             echo "Synced subscriber page $page\n";
