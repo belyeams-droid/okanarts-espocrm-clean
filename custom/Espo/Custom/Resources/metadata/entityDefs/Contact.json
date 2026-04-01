@@ -194,6 +194,12 @@
             "type": "image",
             "previewSize": "small",
             "isCustom": true
+        },
+        "cCmSubscriberId": {
+            "type": "varchar",
+            "maxLength": 250,
+            "options": [],
+            "isCustom": true
         }
     },
     "links": {

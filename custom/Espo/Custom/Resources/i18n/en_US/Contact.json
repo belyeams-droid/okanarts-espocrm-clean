@@ -31,7 +31,8 @@
         "relationshipNarrative": "Narrative",
         "cWorkshops": "Workshops",
         "cTours": "Tours",
-        "cPhoto": "Photo"
+        "cPhoto": "Photo",
+        "cCmSubscriberId": "CmSubscriberId"
     },
     "links": {
         "cBookings": "Bookings",
