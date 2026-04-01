@@ -20,42 +20,50 @@ class RebuildTourMetrics implements JobDataLess
 
         foreach ($tours as $tour) {
 
+            $tourId = $tour->getId();
             $tourCode = $tour->get('tourCode');
 
-            if (!$tourCode) {
+            if (!$tourId) {
                 continue;
             }
 
             // -----------------------------------------
             // NORMALIZE (hyphen → underscore)
+            // (still used for bookings only)
             // -----------------------------------------
-            $tourCode = str_replace('-', '_', trim($tourCode));
+            $normalizedCode = $tourCode
+                ? str_replace('-', '_', trim($tourCode))
+                : null;
 
             $pdo = $this->em->getPDO();
 
             // -----------------------------
-            // Deposits (TRUE deposits count)
+            // Deposits (FIXED: use tour_id)
             // -----------------------------
             $stmt = $pdo->prepare("
                 SELECT COUNT(*)
                 FROM c_shopify_tour_deposit
-                WHERE tour_code = :code
+                WHERE tour_id = :tourId
                 AND deleted = 0
             ");
-            $stmt->execute(['code' => $tourCode]);
+            $stmt->execute(['tourId' => $tourId]);
             $deposits = (int) $stmt->fetchColumn();
 
             // -----------------------------
-            // Bookings (normalize in SQL)
+            // Bookings (still using code)
             // -----------------------------
-            $stmt = $pdo->prepare("
-                SELECT COUNT(*)
-                FROM c_booking
-                WHERE REPLACE(tour_code, '-', '_') = :code
-                AND deleted = 0
-            ");
-            $stmt->execute(['code' => $tourCode]);
-            $bookings = (int) $stmt->fetchColumn();
+            $bookings = 0;
+
+            if ($normalizedCode) {
+                $stmt = $pdo->prepare("
+                    SELECT COUNT(*)
+                    FROM c_booking
+                    WHERE REPLACE(tour_code, '-', '_') = :code
+                    AND deleted = 0
+                ");
+                $stmt->execute(['code' => $normalizedCode]);
+                $bookings = (int) $stmt->fetchColumn();
+            }
 
             // -----------------------------
             // Capacity math
