@@ -85,11 +85,12 @@
         "tourCode": "TourCode",
         "passportExpiry": "If Passport Expires Before",
         "depositCount": "Deposits",
-        "bookingCount": "Accepted Bookings",
+        "bookingCount": "Bookings Received",
         "contractsMissing": "Contracts Missing",
         "contractsOutstanding": "Contracts Outstanding",
         "leaders": "Leaders",
-        "deposits": "Deposits"
+        "deposits": "Deposits",
+        "bookingAccepted": "Bookings Accepted"
     },
     "links": {
         "meetings": "Meetings",

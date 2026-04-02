@@ -53,8 +53,11 @@ class RebuildTourMetrics implements JobDataLess
             // Bookings (still using code)
             // -----------------------------
             $bookings = 0;
+            $acceptedBookings = 0;
 
             if ($normalizedCode) {
+
+                // All bookings
                 $stmt = $pdo->prepare("
                     SELECT COUNT(*)
                     FROM c_booking
@@ -63,6 +66,19 @@ class RebuildTourMetrics implements JobDataLess
                 ");
                 $stmt->execute(['code' => $normalizedCode]);
                 $bookings = (int) $stmt->fetchColumn();
+
+                // -----------------------------
+                // Accepted bookings (FIXED)
+                // -----------------------------
+                $stmt = $pdo->prepare("
+                    SELECT COUNT(*)
+                    FROM c_booking
+                    WHERE REPLACE(tour_code, '-', '_') = :code
+                    AND contract_lifecycle_state = 'Accepted'
+                    AND deleted = 0
+                ");
+                $stmt->execute(['code' => $normalizedCode]);
+                $acceptedBookings = (int) $stmt->fetchColumn();
             }
 
             // -----------------------------
@@ -79,6 +95,7 @@ class RebuildTourMetrics implements JobDataLess
                 'bookedPlaces' => $deposits,
                 'availablePlaces' => $available,
                 'bookingCount' => $bookings,
+                'bookingAccepted' => $acceptedBookings,
                 'contractsOutstanding' => $outstanding
             ]);
 

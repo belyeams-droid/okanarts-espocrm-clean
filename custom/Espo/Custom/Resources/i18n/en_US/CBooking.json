@@ -151,7 +151,8 @@
         "hasDeposit": "Has Deposit",
         "depositLinkedCount": "Deposit Linked Count",
         "linkedContact": "Linked to Contact",
-        "linked": "Linked"
+        "linked": "Linked",
+        "bookingAccepted": "Booking Accepted"
     },
     "links": {
         "meetings": "Meetings",

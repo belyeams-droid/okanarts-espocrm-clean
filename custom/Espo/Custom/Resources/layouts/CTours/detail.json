@@ -38,14 +38,16 @@
                     "name": "tourLeaders"
                 },
                 {
-                    "name": "contractsOutstanding"
+                    "name": "bookingAccepted"
                 }
             ],
             [
                 {
                     "name": "leaders"
                 },
-                false
+                {
+                    "name": "contractsOutstanding"
+                }
             ]
         ],
         "dynamicLogicVisible": null,

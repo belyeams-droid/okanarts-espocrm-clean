@@ -412,6 +412,12 @@
         "deposits": {
             "type": "int",
             "isCustom": true
+        },
+        "bookingAccepted": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
         }
     },
     "links": {

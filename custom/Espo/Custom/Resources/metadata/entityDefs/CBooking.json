@@ -900,7 +900,7 @@
                 "Accepted": "success",
                 "Contact for Information": "danger"
             },
-            "default": "Outstanding",
+            "default": "Review",
             "maxLength": 100,
             "isCustom": true
         },
@@ -975,6 +975,12 @@
             "default": false,
             "isCustom": true,
             "readOnlyAfterCreate": false
+        },
+        "bookingAccepted": {
+            "type": "varchar",
+            "maxLength": 100,
+            "options": [],
+            "isCustom": true
         }
     },
     "links": {

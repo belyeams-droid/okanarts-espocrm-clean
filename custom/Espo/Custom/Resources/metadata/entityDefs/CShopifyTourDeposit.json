@@ -111,7 +111,6 @@
             "options": [
                 "Deposit Received",
                 "Contract Sent",
-                "Contract Received",
                 "Booking Created",
                 "Customer Requires Attention",
                 "Cancelled"
@@ -119,7 +118,6 @@
             "style": {
                 "Deposit Received": "success",
                 "Contract Sent": "info",
-                "Contract Received": "success",
                 "Booking Created": "primary",
                 "Customer Requires Attention": "warning",
                 "Cancelled": null
