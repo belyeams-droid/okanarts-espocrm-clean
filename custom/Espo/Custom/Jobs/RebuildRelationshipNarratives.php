@@ -17,15 +17,63 @@ class RebuildRelationshipNarratives extends Base
 
     public function run(): void
     {
-        $service = new RelationshipNarrative($this->em);
+        $limit = 50;
+        $lastId = null;
 
-        $contacts = $this->em
-            ->getRepository('Contact')
-            ->where(['deleted' => false])
-            ->find();
+        echo "Starting job...\n";
 
-        foreach ($contacts as $contact) {
-            $service->generateForContact($contact->getId());
+        while (true) {
+
+            // 🔥 always use fresh PDO from current EM
+            $pdo = $this->em->getPDO();
+
+            if ($lastId) {
+                $stmt = $pdo->prepare("
+                    SELECT id
+                    FROM contact
+                    WHERE deleted = 0
+                    AND id > :lastId
+                    ORDER BY id
+                    LIMIT {$limit}
+                ");
+                $stmt->execute(['lastId' => $lastId]);
+            } else {
+                $stmt = $pdo->query("
+                    SELECT id
+                    FROM contact
+                    WHERE deleted = 0
+                    ORDER BY id
+                    LIMIT {$limit}
+                ");
+            }
+
+            $rows = $stmt->fetchAll();
+
+            $count = count($rows);
+            echo "Fetched: {$count}\n";
+
+            if (!$count) {
+                echo "Done.\n";
+                break;
+            }
+
+            foreach ($rows as $row) {
+
+                $contactId = $row['id'];
+                echo "Processing: {$contactId}\n";
+
+                // 🔥 recreate service EACH iteration
+                $service = new RelationshipNarrative($this->em);
+                $service->generateForContact($contactId);
+
+                // 🔥 detach reference immediately
+                unset($service);
+            }
+
+            $lastId = end($rows)['id'];
+
+            // 🔥 force PHP memory cleanup
+            gc_collect_cycles();
         }
     }
 }
