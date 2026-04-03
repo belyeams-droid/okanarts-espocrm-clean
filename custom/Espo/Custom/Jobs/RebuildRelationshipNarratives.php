@@ -17,63 +17,63 @@ class RebuildRelationshipNarratives extends Base
 
     public function run(): void
     {
+        $GLOBALS['log']->error("🔥 JOB ACTUALLY STARTED 🔥");
+
         $limit = 50;
-        $lastId = null;
 
-        echo "Starting job...\n";
+        $pdo = $this->em->getPDO();
 
-        while (true) {
+        // 🔥 CLEANUP: remove flags from deleted contacts
+        $pdo->exec("
+            UPDATE contact
+            SET needs_narrative_rebuild = 0
+            WHERE deleted = 1
+        ");
 
-            // 🔥 always use fresh PDO from current EM
-            $pdo = $this->em->getPDO();
+        $stmt = $pdo->query("
+            SELECT id
+            FROM contact
+            WHERE deleted = 0
+            AND needs_narrative_rebuild = 1
+            ORDER BY id
+            LIMIT {$limit}
+        ");
 
-            if ($lastId) {
-                $stmt = $pdo->prepare("
-                    SELECT id
-                    FROM contact
-                    WHERE deleted = 0
-                    AND id > :lastId
-                    ORDER BY id
-                    LIMIT {$limit}
-                ");
-                $stmt->execute(['lastId' => $lastId]);
-            } else {
-                $stmt = $pdo->query("
-                    SELECT id
-                    FROM contact
-                    WHERE deleted = 0
-                    ORDER BY id
-                    LIMIT {$limit}
-                ");
-            }
+        $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
-            $rows = $stmt->fetchAll();
+        if (!$rows) {
+            $GLOBALS['log']->info("RebuildRelationshipNarratives: no dirty records");
+            return;
+        }
 
-            $count = count($rows);
-            echo "Fetched: {$count}\n";
+        $service = new RelationshipNarrative($this->em);
 
-            if (!$count) {
-                echo "Done.\n";
-                break;
-            }
+        foreach ($rows as $row) {
 
-            foreach ($rows as $row) {
+            $contactId = $row['id'];
 
-                $contactId = $row['id'];
-                echo "Processing: {$contactId}\n";
-
-                // 🔥 recreate service EACH iteration
-                $service = new RelationshipNarrative($this->em);
+            try {
                 $service->generateForContact($contactId);
 
-                // 🔥 detach reference immediately
-                unset($service);
+                $GLOBALS['log']->info("Processed contact {$contactId}");
+
+            } catch (\Throwable $e) {
+
+                $GLOBALS['log']->error(
+                    "FAILED CONTACT {$contactId} :: " .
+                    $e->getMessage() . " :: " .
+                    $e->getFile() . ":" . $e->getLine()
+                );
             }
 
-            $lastId = end($rows)['id'];
+            // 🔥 ALWAYS clear flag (success OR failure)
+            $stmtUpdate = $pdo->prepare("
+                UPDATE contact
+                SET needs_narrative_rebuild = 0
+                WHERE id = :id
+            ");
 
-            // 🔥 force PHP memory cleanup
-            gc_collect_cycles();
+            $stmtUpdate->execute(['id' => $contactId]);
         }
     }
 }

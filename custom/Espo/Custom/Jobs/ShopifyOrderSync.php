@@ -115,12 +115,6 @@ class ShopifyOrderSync implements JobDataLess
                                 $deposit = $this->entityManager->getEntity('CShopifyTourDeposit');
                             }
 
-                            /*
-                            -----------------------------------------
-                            FIND CONTACT
-                            -----------------------------------------
-                            */
-
                             $contactId = null;
                             $tour = null;
                             $tourId = null;
@@ -157,12 +151,6 @@ class ShopifyOrderSync implements JobDataLess
                                 }
                             }
 
-                            /*
-                            -----------------------------------------
-                            FIND TOUR (ORIGINAL WORKING LOGIC)
-                            -----------------------------------------
-                            */
-
                             if ($contactId) {
                                 $tour = $this->entityManager
                                     ->getRepository('CTours')
@@ -180,13 +168,6 @@ class ShopifyOrderSync implements JobDataLess
                                 }
                             }
 
-                            /*
-                            -----------------------------------------
-                            SAFE TOURCODE ASSIGNMENT (FILTERED)
-                            -----------------------------------------
-                            */
-
-                            // Only assign tourCode if SKU matches real tour pattern
                             if (
                                 !$tourCode &&
                                 $sku &&
@@ -210,6 +191,19 @@ class ShopifyOrderSync implements JobDataLess
                             ]);
 
                             $this->entityManager->saveEntity($deposit);
+
+                            // 🔥 FIXED DIRTY FLAG TRIGGER
+                            if ($contactId) {
+                                $contact = $this->entityManager
+                                    ->getRepository('Contact')
+                                    ->where(['id' => $contactId])
+                                    ->findOne();
+
+                                if ($contact && !$contact->get('needsNarrativeRebuild')) {
+                                    $contact->set('needsNarrativeRebuild', true);
+                                    $this->entityManager->saveEntity($contact, ['silent' => true]);
+                                }
+                            }
                         }
                     }
                 }

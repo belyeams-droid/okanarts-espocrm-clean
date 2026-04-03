@@ -26,9 +26,6 @@ class DepositBookingBackfill implements JobDataLess
         $pdo = $this->entityManager->getPDO();
         $limit = 50;
 
-        // -----------------------------
-        // LOAD STATE
-        // -----------------------------
         $lastId = null;
 
         if (file_exists($this->stateFile)) {
@@ -36,9 +33,6 @@ class DepositBookingBackfill implements JobDataLess
             $this->log->warning("Resuming from ID: {$lastId}");
         }
 
-        // -----------------------------
-        // FETCH BATCH
-        // -----------------------------
         if ($lastId) {
             $stmt = $pdo->prepare("
                 SELECT id
@@ -72,9 +66,6 @@ class DepositBookingBackfill implements JobDataLess
             return;
         }
 
-        // -----------------------------
-        // PROCESS
-        // -----------------------------
         foreach ($rows as $row) {
 
             $depositId = $row['id'];
@@ -98,9 +89,6 @@ class DepositBookingBackfill implements JobDataLess
 
             $booking = null;
 
-            // -----------------------------------------
-            // PRIMARY: contactId + tourCode
-            // -----------------------------------------
             if ($tourCode) {
 
                 $list = $this->entityManager
@@ -117,9 +105,6 @@ class DepositBookingBackfill implements JobDataLess
                 }
             }
 
-            // -----------------------------------------
-            // FALLBACK: contactId + toursId
-            // -----------------------------------------
             if (!$booking && $tourId) {
 
                 $list = $this->entityManager
@@ -137,20 +122,29 @@ class DepositBookingBackfill implements JobDataLess
             }
 
             // -----------------------------------------
-            // LINK
+            // LINK + DIRTY FLAG
             // -----------------------------------------
             if ($booking) {
 
                 $deposit->set('bookingId', $booking->getId());
-
                 $this->entityManager->saveEntity($deposit);
 
                 $this->log->warning(
                     "Linked deposit {$depositId} → booking {$booking->getId()}"
                 );
+
+                // 🔥 DIRTY FLAG TRIGGER (ONLY WHEN LINK CREATED)
+                $contact = $this->entityManager
+                    ->getRepository('Contact')
+                    ->where(['id' => $contactId])
+                    ->findOne();
+
+                if ($contact && !$contact->get('needsNarrativeRebuild')) {
+                    $contact->set('needsNarrativeRebuild', true);
+                    $this->entityManager->saveEntity($contact, ['silent' => true]);
+                }
             }
 
-            // SAVE STATE
             file_put_contents($this->stateFile, $depositId);
         }
 
