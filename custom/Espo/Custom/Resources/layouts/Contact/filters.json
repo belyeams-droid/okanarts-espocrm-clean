@@ -1,0 +1,17 @@
+[
+    "firstName",
+    "lastName",
+    "assignedUser",
+    "teams",
+    "createdAt",
+    "createdBy",
+    "modifiedAt",
+    "streamUpdatedAt",
+    "accounts",
+    "address",
+    "emailAddress",
+    "phoneNumber",
+    "title",
+    "targetLists",
+    "campaign"
+]
