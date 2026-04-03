@@ -11,7 +11,6 @@ class ExportEngagementCsv extends Base
     {
         $em = $this->getEntityManager();
 
-        // 🔥 TEMP QUERY (replace later with UI input)
         $queryText = "show japan prospects";
 
         $qi = new QueryInterpreter();
@@ -33,82 +32,101 @@ class ExportEngagementCsv extends Base
             'Priority'
         ]);
 
-        $repo = $em->getRepository('Contact');
+        $pdo = $em->getPDO();
+        $limit = 200;
+        $lastId = null;
 
-        $contacts = $repo
-            ->where(['deleted' => false])
-            ->limit(2000)
-            ->find();
+        while (true) {
 
-        foreach ($contacts as $contact) {
-
-            $status = $this->determineStatus($contact);
-            $score = $this->calculateScore($contact);
-
-            $context = [
-                'name' => $contact->get('name'),
-                'status' => $status,
-                'score' => $score,
-                'orders' => (int) ($contact->get('cTotalOrders') ?? 0),
-                'spent' => (float) ($contact->get('cTotalSpent') ?? 0),
-                'interest' => $this->inferInterest($contact)
-            ];
-
-            /*
-            ----------------------------------------
-            APPLY QUERY FILTERS
-            ----------------------------------------
-            */
-
-            if (!empty($filters['interest']) && $context['interest'] !== $filters['interest']) {
-                continue;
+            if ($lastId) {
+                $stmt = $pdo->prepare("
+                    SELECT id
+                    FROM contact
+                    WHERE deleted = 0
+                    AND id > :lastId
+                    ORDER BY id
+                    LIMIT {$limit}
+                ");
+                $stmt->execute(['lastId' => $lastId]);
+            } else {
+                $stmt = $pdo->query("
+                    SELECT id
+                    FROM contact
+                    WHERE deleted = 0
+                    ORDER BY id
+                    LIMIT {$limit}
+                ");
             }
 
-            if (!empty($filters['status']) && $context['status'] !== $filters['status']) {
-                continue;
+            $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+            if (!count($rows)) {
+                break;
             }
 
-            if (!empty($filters['minScore']) && $context['score'] < $filters['minScore']) {
-                continue;
-            }
+            foreach ($rows as $row) {
 
-            if (!empty($filters['noOrders']) && $context['orders'] > 0) {
-                continue;
-            }
+                $contact = $em->getRepository('Contact')
+                    ->where(['id' => $row['id']])
+                    ->findOne();
 
-            /*
-            ----------------------------------------
-            DECISION ENGINE
-            ----------------------------------------
-            */
+                if (!$contact) {
+                    continue;
+                }
 
-            $decision = $this->ruleBasedDecision($context);
+                $status = $this->determineStatus($contact);
+                $score = $this->calculateScore($contact);
 
-            if ($decision === null) {
-                $decision = [
-                    'intent' => 'review',
-                    'action' => 'Manual review required',
-                    'priority' => 'low'
+                $context = [
+                    'name' => $contact->get('name'),
+                    'status' => $status,
+                    'score' => $score,
+                    'orders' => (int) ($contact->get('cTotalOrders') ?? 0),
+                    'spent' => (float) ($contact->get('cTotalSpent') ?? 0),
+                    'interest' => $this->inferInterest($contact)
                 ];
+
+                // Filters
+                if (!empty($filters['interest']) && $context['interest'] !== $filters['interest']) continue;
+                if (!empty($filters['status']) && $context['status'] !== $filters['status']) continue;
+                if (!empty($filters['minScore']) && $context['score'] < $filters['minScore']) continue;
+                if (!empty($filters['noOrders']) && $context['orders'] > 0) continue;
+
+                $decision = $this->ruleBasedDecision($context);
+
+                if ($decision === null) {
+                    $decision = [
+                        'intent' => 'review',
+                        'action' => 'Manual review required',
+                        'priority' => 'low'
+                    ];
+                }
+
+                if (($decision['priority'] ?? '') !== 'high') {
+                    continue;
+                }
+
+                fputcsv($fp, [
+                    $contact->getId(),
+                    $context['name'],
+                    $status,
+                    $score,
+                    $context['orders'],
+                    $context['spent'],
+                    $context['interest'],
+                    $decision['intent'] ?? '',
+                    $decision['action'] ?? '',
+                    $decision['priority'] ?? ''
+                ]);
+
+                unset($contact);
             }
 
-            // 🔥 ONLY EXPORT HIGH PRIORITY
-            if (($decision['priority'] ?? '') !== 'high') {
-                continue;
-            }
+            $lastId = end($rows)['id'];
 
-            fputcsv($fp, [
-                $contact->getId(),
-                $context['name'],
-                $status,
-                $score,
-                $context['orders'],
-                $context['spent'],
-                $context['interest'],
-                $decision['intent'] ?? '',
-                $decision['action'] ?? '',
-                $decision['priority'] ?? ''
-            ]);
+            if (function_exists('gc_collect_cycles')) {
+                gc_collect_cycles();
+            }
         }
 
         fclose($fp);
@@ -140,12 +158,6 @@ class ExportEngagementCsv extends Base
 
         return $score;
     }
-
-    /*
-    ----------------------------------------
-    🔥 FIXED: USE NARRATIVE FOR INTEREST
-    ----------------------------------------
-    */
 
     private function inferInterest($contact): ?string
     {

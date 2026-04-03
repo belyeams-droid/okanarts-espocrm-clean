@@ -21,7 +21,11 @@ class DepositContractMonitor implements JobDataLess
     {
         $repo = $this->entityManager->getRepository('CShopifyTourDeposit');
 
-        $deposits = $repo->where([])->find();
+        // 🔥 ONLY RELEVANT RECORDS
+        $deposits = $repo->where([
+            'deleted' => false,
+            'contractStatus!=' => 'Booking Created'
+        ])->find();
 
         foreach ($deposits as $deposit) {
 
@@ -45,7 +49,7 @@ class DepositContractMonitor implements JobDataLess
             }
 
             /*
-            CONTRACT SENT (event-driven)
+            CONTRACT SENT
             */
 
             if ($status === 'Deposit Received' && $sentAt) {

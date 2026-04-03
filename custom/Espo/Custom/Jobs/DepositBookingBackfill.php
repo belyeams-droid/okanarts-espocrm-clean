@@ -11,6 +11,8 @@ class DepositBookingBackfill implements JobDataLess
     private $entityManager;
     private $log;
 
+    private string $stateFile = 'data/deposit_booking_backfill.state';
+
     public function __construct(EntityManager $entityManager, Log $log)
     {
         $this->entityManager = $entityManager;
@@ -21,14 +23,70 @@ class DepositBookingBackfill implements JobDataLess
     {
         $this->log->warning('DepositBookingBackfill started');
 
-        $deposits = $this->entityManager
-            ->getRepository('CShopifyTourDeposit')
-            ->where([
-                'bookingId' => null
-            ])
-            ->find();
+        $pdo = $this->entityManager->getPDO();
+        $limit = 50;
 
-        foreach ($deposits as $deposit) {
+        // -----------------------------
+        // LOAD STATE
+        // -----------------------------
+        $lastId = null;
+
+        if (file_exists($this->stateFile)) {
+            $lastId = trim(file_get_contents($this->stateFile)) ?: null;
+            $this->log->warning("Resuming from ID: {$lastId}");
+        }
+
+        // -----------------------------
+        // FETCH BATCH
+        // -----------------------------
+        if ($lastId) {
+            $stmt = $pdo->prepare("
+                SELECT id
+                FROM c_shopify_tour_deposit
+                WHERE booking_id IS NULL
+                AND deleted = 0
+                AND id > :lastId
+                ORDER BY id
+                LIMIT {$limit}
+            ");
+            $stmt->execute(['lastId' => $lastId]);
+        } else {
+            $stmt = $pdo->query("
+                SELECT id
+                FROM c_shopify_tour_deposit
+                WHERE booking_id IS NULL
+                AND deleted = 0
+                ORDER BY id
+                LIMIT {$limit}
+            ");
+        }
+
+        $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $count = count($rows);
+
+        $this->log->warning("Fetched: {$count}");
+
+        if (!$count) {
+            $this->log->warning('All deposits processed. Resetting state.');
+            @unlink($this->stateFile);
+            return;
+        }
+
+        // -----------------------------
+        // PROCESS
+        // -----------------------------
+        foreach ($rows as $row) {
+
+            $depositId = $row['id'];
+
+            $deposit = $this->entityManager
+                ->getRepository('CShopifyTourDeposit')
+                ->where(['id' => $depositId])
+                ->findOne();
+
+            if (!$deposit) {
+                continue;
+            }
 
             $contactId = $deposit->get('contactId');
             $tourId    = $deposit->get('tourId');
@@ -41,7 +99,7 @@ class DepositBookingBackfill implements JobDataLess
             $booking = null;
 
             // -----------------------------------------
-            // 1. PRIMARY: Match by contactId + tourCode
+            // PRIMARY: contactId + tourCode
             // -----------------------------------------
             if ($tourCode) {
 
@@ -52,15 +110,15 @@ class DepositBookingBackfill implements JobDataLess
                         'tourCode'  => $tourCode
                     ])
                     ->order('createdAt', 'DESC')
-                    ->find();
+                    ->findOne();
 
-                if ($list && count($list) > 0) {
-                    $booking = $list[0];
+                if ($list) {
+                    $booking = $list;
                 }
             }
 
             // -----------------------------------------
-            // 2. FALLBACK: Legacy match (contactId + toursId)
+            // FALLBACK: contactId + toursId
             // -----------------------------------------
             if (!$booking && $tourId) {
 
@@ -71,15 +129,15 @@ class DepositBookingBackfill implements JobDataLess
                         'toursId'   => $tourId
                     ])
                     ->order('createdAt', 'DESC')
-                    ->find();
+                    ->findOne();
 
-                if ($list && count($list) > 0) {
-                    $booking = $list[0];
+                if ($list) {
+                    $booking = $list;
                 }
             }
 
             // -----------------------------------------
-            // 3. LINK IF FOUND
+            // LINK
             // -----------------------------------------
             if ($booking) {
 
@@ -88,11 +146,18 @@ class DepositBookingBackfill implements JobDataLess
                 $this->entityManager->saveEntity($deposit);
 
                 $this->log->warning(
-                    "Linked deposit {$deposit->getId()} → booking {$booking->getId()}"
+                    "Linked deposit {$depositId} → booking {$booking->getId()}"
                 );
             }
+
+            // SAVE STATE
+            file_put_contents($this->stateFile, $depositId);
         }
 
-        $this->log->warning('DepositBookingBackfill finished');
+        $this->log->warning('DepositBookingBackfill batch complete');
+
+        if (function_exists('gc_collect_cycles')) {
+            gc_collect_cycles();
+        }
     }
 }
