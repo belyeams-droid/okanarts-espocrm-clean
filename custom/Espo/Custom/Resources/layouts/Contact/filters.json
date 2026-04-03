@@ -1,6 +1,7 @@
 [
     "firstName",
     "lastName",
+    "emailAddress",
     "assignedUser",
     "teams",
     "createdAt",
@@ -9,7 +10,6 @@
     "streamUpdatedAt",
     "accounts",
     "address",
-    "emailAddress",
     "phoneNumber",
     "title",
     "targetLists",

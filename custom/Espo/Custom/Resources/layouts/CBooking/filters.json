@@ -1,4 +1,7 @@
 [
-    "tourCode",
-    "fullName"
+    "fullName",
+    "firstName",
+    "lastName",
+    "contactEmail",
+    "tourCode"
 ]
