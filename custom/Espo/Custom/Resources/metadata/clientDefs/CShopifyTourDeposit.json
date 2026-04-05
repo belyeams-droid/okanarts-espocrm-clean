@@ -3,6 +3,10 @@
     "boolFilterList": [
         "onlyMy"
     ],
+    "actions": {
+        "delete": false,
+        "massDelete": false
+    },
     "relationshipPanels": {
         "contact": {
             "layout": null,

@@ -92,34 +92,56 @@ class ShopifyOrderSync implements JobDataLess
                     foreach ($order['line_items'] as $item) {
 
                         $title = trim($item['name'] ?? ($item['title'] ?? ''));
-                        $sku   = $item['sku'] ?? '';
+                        $sku   = strtoupper(trim($item['sku'] ?? ''));
                         $price = isset($item['price']) ? (float)$item['price'] : 0;
                         $quantity = isset($item['quantity']) ? (int)$item['quantity'] : 1;
                         $lineItemId = $item['id'] ?? null;
 
-                        if (!$title || stripos($title, 'deposit') === false) {
+                        // 🔒 Guard against invalid records
+                        if (!$orderId || !$lineItemId) {
+                            $this->log->warning('Invalid Shopify record — skipping');
                             continue;
+                        }
+
+                        // Normalize SKU
+                        $normalizedSku = str_replace('-', '_', $sku);
+
+                        // Only process TOUR SKUs OR allow fallback via title
+                        if (
+                            !$normalizedSku ||
+                            !preg_match('/^[A-Z]_[A-Z]+_[A-Z0-9]+$/', $normalizedSku)
+                        ) {
+                            if (!$title || stripos($title, 'deposit') === false) {
+                                $this->log->warning('SKIPPED NON-TOUR ITEM: ' . $title . ' | SKU: ' . $sku);
+                                continue;
+                            }
                         }
 
                         for ($i = 0; $i < $quantity; $i++) {
 
                             $sequence = $i + 1;
-                            $uniqueLineId = $lineItemId . '-' . $sequence;
 
-                            $deposit = $this->entityManager
+                            // ✅ IDEMPOTENCY CHECK (correct form)
+                            $existing = $this->entityManager
                                 ->getRepository('CShopifyTourDeposit')
-                                ->where(['shopifyLineItemId' => $uniqueLineId])
+                                ->where([
+                                    'shopifyLineItemId' => $lineItemId,
+                                    'sequence' => $sequence
+                                ])
                                 ->findOne();
 
-                            if (!$deposit) {
-                                $deposit = $this->entityManager->getEntity('CShopifyTourDeposit');
+                            if ($existing) {
+                                continue;
                             }
+
+                            $deposit = $this->entityManager->getEntity('CShopifyTourDeposit');
 
                             $contactId = null;
                             $tour = null;
                             $tourId = null;
                             $tourCode = null;
 
+                            // Resolve contact (unchanged)
                             if ($email) {
 
                                 $pdo = $this->entityManager->getPDO();
@@ -151,29 +173,41 @@ class ShopifyOrderSync implements JobDataLess
                                 }
                             }
 
-                            if ($contactId) {
+                            // ✅ Resolve tour by SKU
+                            if ($normalizedSku) {
                                 $tour = $this->entityManager
                                     ->getRepository('CTours')
-                                    ->where(['contactId' => $contactId])
-                                    ->order('createdAt', 'DESC')
+                                    ->where(['tourCode' => $normalizedSku])
                                     ->findOne();
+                            }
 
-                                if ($tour) {
-                                    $tourId = $tour->getId();
-                                    $tourCode = $tour->get('tourCode');
+                            // 🔒 Safe fallback (deposit + keyword required)
+                            if (!$tour && $title) {
 
-                                    if ($tourCode) {
-                                        $tourCode = str_replace('-', '_', trim($tourCode));
+                                $titleLower = strtolower($title);
+
+                                $tourMap = [
+                                    'okinawa' => 'N_OKI_FEB27',
+                                    'kyoto'   => 'O_KYOTO_MAR27',
+                                ];
+
+                                foreach ($tourMap as $keyword => $code) {
+                                    if (
+                                        strpos($titleLower, 'deposit') !== false &&
+                                        strpos($titleLower, $keyword) !== false
+                                    ) {
+                                        $tour = $this->entityManager
+                                            ->getRepository('CTours')
+                                            ->where(['tourCode' => $code])
+                                            ->findOne();
+                                        break;
                                     }
                                 }
                             }
 
-                            if (
-                                !$tourCode &&
-                                $sku &&
-                                preg_match('/^[A-Z]_[A-Z]+_[A-Z0-9]+$/', $sku)
-                            ) {
-                                $tourCode = strtoupper(trim($sku));
+                            if ($tour) {
+                                $tourId = $tour->getId();
+                                $tourCode = $tour->get('tourCode');
                             }
 
                             $deposit->set([
@@ -182,7 +216,8 @@ class ShopifyOrderSync implements JobDataLess
                                 'shopifySku' => $sku,
                                 'amount' => $price,
                                 'shopifyOrderId' => $orderId,
-                                'shopifyLineItemId' => $uniqueLineId,
+                                'shopifyLineItemId' => $lineItemId,
+                                'sequence' => $sequence,
                                 'shopifyEmail' => $email,
                                 'contractStatus' => 'Deposit Received',
                                 'contactId' => $contactId,
@@ -192,7 +227,6 @@ class ShopifyOrderSync implements JobDataLess
 
                             $this->entityManager->saveEntity($deposit);
 
-                            // 🔥 FIXED DIRTY FLAG TRIGGER
                             if ($contactId) {
                                 $contact = $this->entityManager
                                     ->getRepository('Contact')
