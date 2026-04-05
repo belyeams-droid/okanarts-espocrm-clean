@@ -97,16 +97,13 @@ class ShopifyOrderSync implements JobDataLess
                         $quantity = isset($item['quantity']) ? (int)$item['quantity'] : 1;
                         $lineItemId = $item['id'] ?? null;
 
-                        // 🔒 Guard against invalid records
                         if (!$orderId || !$lineItemId) {
                             $this->log->warning('Invalid Shopify record — skipping');
                             continue;
                         }
 
-                        // Normalize SKU
                         $normalizedSku = str_replace('-', '_', $sku);
 
-                        // Only process TOUR SKUs OR allow fallback via title
                         if (
                             !$normalizedSku ||
                             !preg_match('/^[A-Z]_[A-Z]+_[A-Z0-9]+$/', $normalizedSku)
@@ -121,7 +118,6 @@ class ShopifyOrderSync implements JobDataLess
 
                             $sequence = $i + 1;
 
-                            // ✅ IDEMPOTENCY CHECK (correct form)
                             $existing = $this->entityManager
                                 ->getRepository('CShopifyTourDeposit')
                                 ->where([
@@ -141,7 +137,6 @@ class ShopifyOrderSync implements JobDataLess
                             $tourId = null;
                             $tourCode = null;
 
-                            // Resolve contact (unchanged)
                             if ($email) {
 
                                 $pdo = $this->entityManager->getPDO();
@@ -173,7 +168,6 @@ class ShopifyOrderSync implements JobDataLess
                                 }
                             }
 
-                            // ✅ Resolve tour by SKU
                             if ($normalizedSku) {
                                 $tour = $this->entityManager
                                     ->getRepository('CTours')
@@ -181,7 +175,6 @@ class ShopifyOrderSync implements JobDataLess
                                     ->findOne();
                             }
 
-                            // 🔒 Safe fallback (deposit + keyword required)
                             if (!$tour && $title) {
 
                                 $titleLower = strtolower($title);
@@ -222,7 +215,8 @@ class ShopifyOrderSync implements JobDataLess
                                 'contractStatus' => 'Deposit Received',
                                 'contactId' => $contactId,
                                 'tourId' => $tourId,
-                                'tourCode' => $tourCode
+                                'tourCode' => $tourCode,
+                                'sourceType' => 'Shopify'
                             ]);
 
                             $this->entityManager->saveEntity($deposit);

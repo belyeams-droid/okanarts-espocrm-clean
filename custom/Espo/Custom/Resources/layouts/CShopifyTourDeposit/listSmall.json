@@ -17,5 +17,9 @@
     {
         "name": "contractSentAt",
         "width": 20
+    },
+    {
+        "name": "sourceType",
+        "width": 20
     }
 ]

@@ -16,7 +16,8 @@
         "shopifyLineItemId": "Shopify Line Item Id",
         "tour": "Tour",
         "contractSentAt": "Contract Sent",
-        "tourCode": "TourCode"
+        "tourCode": "TourCode",
+        "sourceType": "Source"
     },
     "labels": {
         "Create CShopifyTourDeposit": "Create ShopifyTourDeposit"

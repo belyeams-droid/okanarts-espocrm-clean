@@ -147,6 +147,21 @@
             "default": 1,
             "isCustom": true
         },
+        "sourceType": {
+            "type": "enum",
+            "options": [
+                "Shopify",
+                "Manual",
+                "Legacy"
+            ],
+            "default": "Manual",
+            "isCustom": true,
+            "style": {
+                "Shopify": null,
+                "Manual": null,
+                "Legacy": null
+            }
+        },
         "tourCode": {
             "type": "varchar",
             "maxLength": 100,

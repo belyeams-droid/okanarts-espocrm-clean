@@ -38,6 +38,10 @@
         "width": 16
     },
     {
+        "name": "sourceType",
+        "width": 12
+    },
+    {
         "name": "touchFlag",
         "width": 16
     }
