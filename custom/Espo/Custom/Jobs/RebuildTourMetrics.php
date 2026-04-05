@@ -29,7 +29,6 @@ class RebuildTourMetrics implements JobDataLess
 
             // -----------------------------------------
             // NORMALIZE (hyphen → underscore)
-            // (still used for bookings only)
             // -----------------------------------------
             $normalizedCode = $tourCode
                 ? str_replace('-', '_', trim($tourCode))
@@ -38,16 +37,17 @@ class RebuildTourMetrics implements JobDataLess
             $pdo = $this->em->getPDO();
 
             // -----------------------------
-            // Deposits (FIXED: use tour_id)
+            // Deposits (FIXED: exclude Cancelled)
             // -----------------------------
             $stmt = $pdo->prepare("
                 SELECT COUNT(*)
                 FROM c_shopify_tour_deposit
                 WHERE tour_id = :tourId
                 AND deleted = 0
+                AND contract_status != 'Cancelled'
             ");
             $stmt->execute(['tourId' => $tourId]);
-            $deposits = (int) $stmt->fetchColumn();
+            $depositCount = (int) $stmt->fetchColumn();
 
             // -----------------------------
             // Bookings (still using code)
@@ -67,9 +67,7 @@ class RebuildTourMetrics implements JobDataLess
                 $stmt->execute(['code' => $normalizedCode]);
                 $bookings = (int) $stmt->fetchColumn();
 
-                // -----------------------------
-                // Accepted bookings (FIXED)
-                // -----------------------------
+                // Accepted bookings
                 $stmt = $pdo->prepare("
                     SELECT COUNT(*)
                     FROM c_booking
@@ -82,17 +80,17 @@ class RebuildTourMetrics implements JobDataLess
             }
 
             // -----------------------------
-            // Capacity math
+            // Capacity math (FIXED)
             // -----------------------------
             $capacity = (int) $tour->get('tourCapacity');
-            $available = max(0, $capacity - $deposits);
-            $outstanding = max(0, $deposits - $bookings);
+            $available = max(0, $capacity - $depositCount);
+            $outstanding = max(0, $depositCount - $bookings);
 
             // -----------------------------
-            // Save to YOUR fields
+            // Save to correct fields (FIXED)
             // -----------------------------
             $tour->set([
-                'bookedPlaces' => $deposits,
+                'depositCount' => $depositCount,
                 'availablePlaces' => $available,
                 'bookingCount' => $bookings,
                 'bookingAccepted' => $acceptedBookings,
